@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="中科达云官网需求与页面结构草案。">
+    <title>中科达云｜官网结构草案</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23181714'/%3E%3C/svg%3E">
+    <link rel="stylesheet" href="./css/site.css">
+    <script src="./js/site.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到主要内容</a>
+
+    <header class="site-header" data-site-header>
+      <a class="brand" href="#top" aria-label="中科达云首页">
+        <img src="./assets/brand/logo-lockup.svg?v=20260820-160823" alt="中科达云 ZKDA Cloud">
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" data-menu-toggle>
+        <span>菜单</span>
+      </button>
+
+      <nav class="primary-nav" id="primary-nav" aria-label="主要导航" data-primary-nav>
+        <a class="nav-home" href="#top">首页</a>
+
+        <details class="nav-group">
+          <summary>产品 <span aria-hidden="true">⌄</span></summary>
+          <div class="nav-panel">
+            <span class="nav-future">智算云平台</span>
+            <span class="nav-future">Token Hub</span>
+            <span class="nav-future">AutoDev</span>
+          </div>
+        </details>
+
+        <details class="nav-group">
+          <summary>解决方案 <span aria-hidden="true">⌄</span></summary>
+          <div class="nav-panel">
+            <span class="nav-future">国产算力迁移</span>
+            <span class="nav-future">企业智算中心</span>
+            <span class="nav-future">企业大模型</span>
+            <span class="nav-future">AI 应用开发</span>
+          </div>
+        </details>
+
+        <details class="nav-group">
+          <summary>专家服务 <span aria-hidden="true">⌄</span></summary>
+          <div class="nav-panel">
+            <span class="nav-future">算子优化</span>
+            <span class="nav-future">数据治理</span>
+            <span class="nav-future">MaaS 搭建</span>
+          </div>
+        </details>
+
+        <details class="nav-group">
+          <summary>资源 <span aria-hidden="true">⌄</span></summary>
+          <div class="nav-panel">
+            <span class="nav-future">产品文档</span>
+            <span class="nav-future">API 文档</span>
+            <span class="nav-future">帮助中心</span>
+          </div>
+        </details>
+
+        <span class="nav-future nav-about">关于我们</span>
+      </nav>
+
+      <div class="header-account">
+        <a href="https://zhongkedayun.vercel.app/login">登录</a>
+        <a class="header-cta" href="https://zhongkedayun.vercel.app/login">免费体验</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="container container--wide">
+          <p class="eyebrow">第 1/8 步 · 网站结构草案 · 不是最终视觉</p>
+          <h1 id="hero-title">连接国产算力、模型<br>与 AI 应用开发</h1>
+          <div class="hero-support">
+            <p>
+              中科达云官网将围绕一套完整的 AI 基础设施展开，让企业访客理解平台如何统一连接国产多芯算力、模型服务与应用开发。
+            </p>
+            <a href="./review/">检查本轮需求 →</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="purpose" aria-labelledby="purpose-title">
+        <div class="container container--wide section-heading">
+          <p class="section-index">01 / 网站目标</p>
+          <h2 id="purpose-title">访客离开网站前<br>应该记住三件事</h2>
+        </div>
+        <div class="container container--wide statement-list">
+          <article>
+            <span>01</span>
+            <h3>这是一套 AI 基础设施平台</h3>
+            <p>它不是三个互不相关的产品，而是一套从算力到模型、再到 AI 应用的连续能力。</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>一套平台连接多种国产算力</h3>
+            <p>“一云多芯”和“平滑迁移”是最需要建立的品牌记忆点。</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>可以立即进入现有系统体验</h3>
+            <p>官网负责说明价值与建立信任，注册和登录仍由现有系统承接。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section--muted" id="audience" aria-labelledby="audience-title">
+        <div class="container container--medium split-heading">
+          <p class="section-index">02 / 服务对象</p>
+          <div>
+            <h2 id="audience-title">先服务企业决策，<br>再支撑技术判断</h2>
+            <p>首页先讲业务价值和平台关系，产品页再承载足够的技术信息，避免把后台功能菜单直接搬上官网。</p>
+          </div>
+        </div>
+        <div class="container container--medium audience-table" role="list">
+          <div role="listitem">
+            <strong>主要访客</strong>
+            <span>规划国产 AI 基础设施、智算中心或迁移项目的企业决策者</span>
+          </div>
+          <div role="listitem">
+            <strong>技术访客</strong>
+            <span>负责算力运维、模型训练推理和平台建设的技术负责人</span>
+          </div>
+          <div role="listitem">
+            <strong>开发团队</strong>
+            <span>需要模型 API、MaaS 或 AI 开发工具的产品与研发团队</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="scope" aria-labelledby="scope-title">
+        <div class="container container--wide section-heading section-heading--row">
+          <div>
+            <p class="section-index">03 / 页面范围</p>
+            <h2 id="scope-title">首版 16 个计划页面</h2>
+          </div>
+          <p>顶部导航已经按你给出的层级呈现。灰色菜单项用于确认名称和归类，会在“确认网站有哪些页面”步骤建立真实页面后变为链接。</p>
+        </div>
+        <div class="container container--wide route-list">
+          <div class="route-row is-current">
+            <span>01</span><strong>首页</strong><em>顶部导航</em>
+          </div>
+          <div class="route-row">
+            <span>02—04</span><strong>智算云平台、Token Hub、AutoDev</strong><em>产品</em>
+          </div>
+          <div class="route-row">
+            <span>05—08</span><strong>国产算力迁移、企业智算中心、企业大模型、AI 应用开发</strong><em>解决方案</em>
+          </div>
+          <div class="route-row">
+            <span>09—11</span><strong>算子优化、数据治理、MaaS 搭建</strong><em>专家服务</em>
+          </div>
+          <div class="route-row">
+            <span>12—14</span><strong>产品文档、API 文档、帮助中心</strong><em>资源</em>
+          </div>
+          <div class="route-row">
+            <span>15</span><strong>关于我们</strong><em>顶部导航</em>
+          </div>
+          <div class="route-row">
+            <span>16</span><strong>联系我们</strong><em>页脚入口</em>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--ink" id="structure" aria-labelledby="structure-title">
+        <div class="container container--wide structure-grid">
+          <div class="structure-intro">
+            <p class="section-index">04 / 首页内容顺序</p>
+            <h2 id="structure-title">从定位到体验，<br>完成一条完整故事线</h2>
+            <p>这只是内容目录，不代表最终排版。后续每个区域都会拥有自己的目的和视觉节奏。</p>
+          </div>
+          <ol class="structure-list">
+            <li><span>01</span>全局导航</li>
+            <li><span>02</span>品牌定位首屏</li>
+            <li><span>03</span>公开数据</li>
+            <li><span>04</span>AI 基础设施产品架构</li>
+            <li><span>05</span>三大产品总览</li>
+            <li><span>06</span>一云多芯</li>
+            <li><span>07</span>平滑迁移</li>
+            <li><span>08</span>平台能力</li>
+            <li><span>09</span>中科达云核心优势</li>
+            <li><span>10</span>国产算力迁移入口</li>
+            <li><span>11</span>国产 AI 生态</li>
+            <li><span>12</span>专家服务</li>
+            <li><span>13</span>品牌信任说明</li>
+            <li><span>14</span>免费体验入口</li>
+            <li><span>15</span>页脚</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section" id="facts" aria-labelledby="facts-title">
+        <div class="container container--medium split-heading">
+          <p class="section-index">05 / 已确认事实</p>
+          <div>
+            <h2 id="facts-title">真实信息已经锁定，<br>表现方式仍会逐步确认</h2>
+            <p>以下信息已由你确认可以对外使用。现阶段只核对内容，不代表最终字体、颜色和数字样式。</p>
+          </div>
+        </div>
+        <div class="container container--wide metric-strip" aria-label="公开数据">
+          <div><strong>5000+</strong><span>纳管 GPU 卡</span></div>
+          <div><strong>20+</strong><span>支持芯片厂商</span></div>
+          <div><strong>99.9%</strong><span>系统可用性</span></div>
+          <div><strong>100+</strong><span>服务企业</span></div>
+        </div>
+      </section>
+
+      <section class="section section--muted" id="boundaries" aria-labelledby="boundaries-title">
+        <div class="container container--wide section-heading section-heading--row">
+          <div>
+            <p class="section-index">06 / 首版边界</p>
+            <h2 id="boundaries-title">官网说明价值，<br>现有系统承接体验</h2>
+          </div>
+          <ul class="boundary-list">
+            <li>网站使用简体中文。</li>
+            <li>免费体验跳转到现有登录页。</li>
+            <li>不实施后台、注册、计费或控制台。</li>
+            <li>不包含部署、SEO、分析或 CMS。</li>
+            <li>两张原创图片会在后续单独确认后生成。</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="final-check" aria-labelledby="check-title">
+        <div class="container container--wide">
+          <p class="section-index">下一步之前</p>
+          <h2 id="check-title">请确认目标、访客、页面和内容顺序</h2>
+          <p>确认后，这些内容会作为后续参考研究、页面搭建、文字、排版和视觉设计的基础。</p>
+          <a href="./review/">打开中文确认页 →</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>中科达云官网结构草案</span>
+      <span>第 1/8 步</span>
+      <span>© <span data-current-year>2026</span> 中科达云</span>
+    </footer>
+  </body>
+</html>

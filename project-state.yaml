@@ -1,0 +1,89 @@
+schema_version: 2
+project:
+  id: zkdacloud-official-site
+  name: 中科达云官网
+  website_language:
+    primary: zh-CN
+    multilingual: false
+communication:
+  conversation_language: zh-CN
+  mode: plain-language
+workspace:
+  mode: standalone
+  root: .
+  source_materials: ..
+capabilities:
+  browser: available
+  fetch: available
+  image_generation: available
+  subagent: available
+  git: available
+workflow:
+  current_phase: reference
+  status: in-progress
+  allowed_transition: next:sitemap
+documents:
+  spec:
+    path: ./docs/spec.md
+    source_hash: 8a75b4a5919f4a67877693aa5ee535ff36821e825135c24bec4fcc06ea8d11b1
+  design:
+    path: ./docs/design.md
+    source_hash: ad76798e54c31a72b18a63a8c4998b49334a061b391d2a9d00d834e004dbb529
+rendered:
+  review:
+    entrypoint: ./review/index.html
+    preview_url: http://127.0.0.1:4173/review/
+  website:
+    entrypoint: ./index.html
+    preview_url: http://127.0.0.1:4173/
+    rendered_stage: requirements
+brand_assets:
+  symbol:
+    path: ./assets/brand/logo-symbol.svg
+    source_changed: false
+  lockup:
+    path: ./assets/brand/logo-lockup.svg
+    source_updated_at: 2026-08-20T16:08:23+08:00
+    browser_cache_version: 20260820-160823
+approved:
+  - requirements
+locked:
+  - requirements
+editable:
+  - reference
+pending_decisions:
+  - confirm-reference-coverage-and-reusable-principles
+  - confirm-desktop-and-mobile-menu-behavior
+  - confirm-rejected-patterns-and-copying-boundary
+review:
+  mode: standard-review
+  status: in-progress
+  must_fix: []
+  viewport_checks: pending-reference-stage-render
+  console_errors: pending-reference-stage-render
+blockers: []
+final_acceptance:
+  viewports:
+    - 2560x1440
+    - 1920x1080
+    - 1180x820
+    - 820x1180
+    - 390x844
+  graceful_fallbacks:
+    - mobile
+    - prefers-reduced-motion
+    - no-javascript
+    - image-or-animation-dependency-failure
+  public_package_excludes:
+    - review/
+git_checkpoint:
+  status: creating-requirements-checkpoint
+transition_history:
+  - from: setup
+    to: requirements
+    date: 2026-08-20
+    trigger: automatic-after-setup
+  - from: requirements
+    to: reference
+    date: 2026-08-20
+    trigger: next:reference
