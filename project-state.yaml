@@ -19,16 +19,16 @@ capabilities:
   subagent: available
   git: available
 workflow:
-  current_phase: sitemap
+  current_phase: content
   status: in-progress
-  allowed_transition: next:content
+  allowed_transition: next:layout
 documents:
   spec:
     path: ./docs/spec.md
-    source_hash: f13788481ac49aa42d28781b8447600060dc57e565c3f8e06e6c9037254ee6f8
+    source_hash: 4625dce5d499bdb037ca10f8e15134f5a133c8f7bd1327f16ebe8db613739ec6
   design:
     path: ./docs/design.md
-    source_hash: ad76798e54c31a72b18a63a8c4998b49334a061b391d2a9d00d834e004dbb529
+    source_hash: 259dbad10885306765b799f52ac756798b917daa2041ae81ea1f995d8a63b932
 rendered:
   review:
     entrypoint: ./review/index.html
@@ -36,7 +36,7 @@ rendered:
   website:
     entrypoint: ./index.html
     preview_url: http://127.0.0.1:4173/
-    rendered_stage: reference
+    rendered_stage: sitemap
 brand_assets:
   symbol:
     path: ./assets/brand/logo-symbol.svg
@@ -48,23 +48,25 @@ brand_assets:
 approved:
   - requirements
   - reference
+  - sitemap
 locked:
   - requirements
   - reference
-editable:
   - sitemap
+editable:
+  - content
 pending_decisions:
-  - confirm-all-routes-and-url-structure
-  - confirm-page-families-and-shared-templates
-  - confirm-section-order-for-each-family
-  - confirm-navigation-and-footer-relationships
+  - confirm-writing-approach
+  - confirm-page-copy-and-cta-labels
+  - confirm-resource-page-placeholder-boundary
+  - confirm-two-image-generation-prompts-before-generation
 review:
   mode: standard-review
   status: in-progress
   must_fix: []
-  viewport_checks: pending-sitemap-stage-render
-  interaction_checks: pending-sitemap-stage-render
-  console_errors: pending-sitemap-stage-render
+  viewport_checks: pending-content-render
+  interaction_checks: pending-content-render
+  console_errors: pending-content-render
 reference_research:
   evidence_mode: fetched-plus-user-recording-observed
   researched_at: 2026-08-20
@@ -113,6 +115,14 @@ reference_research:
       - no-javascript-native-details
       - prefers-reduced-motion
 blockers: []
+sitemap:
+  route_count: 16
+  page_family_count: 7
+  collection_listing_detail_pairs: not-applicable-no-content-collections
+  external_resource_routes: local-static-until-real-urls-provided
+  static_link_check: pass
+  duplicate_id_check: pass
+  single_h1_check: pass
 final_acceptance:
   viewports:
     - 2560x1440
@@ -129,9 +139,8 @@ final_acceptance:
     - review/
     - docs/evidence/
 git_checkpoint:
-  status: creating-reference-checkpoint
-  stage: reference
-  previous_commit: 8ca7084
+  status: creating
+  stage: sitemap
 transition_history:
   - from: setup
     to: requirements
@@ -145,3 +154,7 @@ transition_history:
     to: sitemap
     date: 2026-08-20
     trigger: next:sitemap
+  - from: sitemap
+    to: content
+    date: 2026-08-20
+    trigger: next:content

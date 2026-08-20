@@ -487,6 +487,11 @@ li,
   font-style: normal;
 }
 
+.route-row strong a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.25em;
+}
+
 .route-row.is-current em {
   color: var(--ink);
   font-weight: 700;
@@ -597,6 +602,10 @@ li,
 
 .site-footer span:last-child {
   text-align: right;
+}
+
+.site-footer > a {
+  text-underline-offset: 0.25em;
 }
 
 @media (max-width: 900px) {

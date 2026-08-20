@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="中科达云Token Hub页面结构草案。">
+    <title>Token Hub｜中科达云</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23181714'/%3E%3C/svg%3E">
+    <link rel="stylesheet" href="../../css/site.css">
+    <link rel="stylesheet" href="../../css/pages.css">
+    <script src="../../js/site.js" defer></script>
+  </head>
+  <body class="route-page">
+    <a class="skip-link" href="#main">跳到主要内容</a>
+    <header class="site-header" data-site-header>
+      <a class="brand" href="../../index.html" aria-label="中科达云首页">
+        <img src="../../assets/brand/logo-lockup.svg?v=20260820-160823" alt="中科达云 ZKDA Cloud">
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" data-menu-toggle><span>菜单</span></button>
+      <nav class="primary-nav" id="primary-nav" aria-label="主要导航" data-primary-nav>
+        <a class="nav-home" href="../../index.html">首页</a>
+        <details class="nav-group" data-nav-group>
+          <summary>产品 <span aria-hidden="true">⌄</span></summary>
+          <div class="nav-panel" aria-label="产品菜单">
+            <div class="nav-panel__main">
+              <p class="nav-panel__label">平台产品</p>
+              <a class="nav-future nav-panel__item" href="../../pages/products/intelligent-computing-cloud.html"><i aria-hidden="true">01</i><span><strong>智算云平台</strong><small>统一纳管多芯算力</small></span></a>
+              <a class="nav-future nav-panel__item" href="../../pages/products/token-hub.html" aria-current="page"><i aria-hidden="true">02</i><span><strong>Token Hub</strong><small>连接模型服务与 API</small></span></a>
+              <a class="nav-future nav-panel__item" href="../../pages/products/autodev.html"><i aria-hidden="true">03</i><span><strong>AutoDev</strong><small>面向 AI 应用开发</small></span></a>
+            </div>
+            <div class="nav-panel__aside">
+              <p class="nav-panel__label">导览</p>
+              <strong>算力 → 模型 → 应用</strong>
+              <span>三项产品共同组成中科达云 AI 基础设施平台。</span>
+            </div>
+          </div>
+        </details>
+
+        <details class="nav-group" data-nav-group>
+          <summary>解决方案 <span aria-hidden="true">⌄</span></summary>
+          <div class="nav-panel" aria-label="解决方案菜单">
+            <div class="nav-panel__main">
+              <p class="nav-panel__label">场景方案</p>
+              <a class="nav-future nav-panel__item" href="../../pages/solutions/domestic-computing-migration.html"><i aria-hidden="true">01</i><span><strong>国产算力迁移</strong><small>迁移方案入口</small></span></a>
+              <a class="nav-future nav-panel__item" href="../../pages/solutions/enterprise-intelligent-computing-center.html"><i aria-hidden="true">02</i><span><strong>企业智算中心</strong><small>企业基础设施场景</small></span></a>
+              <a class="nav-future nav-panel__item" href="../../pages/solutions/enterprise-large-model.html"><i aria-hidden="true">03</i><span><strong>企业大模型</strong><small>企业模型服务场景</small></span></a>
+              <a class="nav-future nav-panel__item" href="../../pages/solutions/ai-application-development.html"><i aria-hidden="true">04</i><span><strong>AI 应用开发</strong><small>应用开发场景</small></span></a>
+            </div>
+            <div class="nav-panel__aside">
+              <p class="nav-panel__label">导览</p>
+              <strong>从基础设施到应用</strong>
+              <span>按企业所处阶段进入对应解决方案。</span>
+            </div>
+          </div>
+        </details>
+
+        <details class="nav-group" data-nav-group>
+          <summary>专家服务 <span aria-hidden="true">⌄</span></summary>
+          <div class="nav-panel" aria-label="专家服务菜单">
+            <div class="nav-panel__main">
+              <p class="nav-panel__label">专项服务</p>
+              <a class="nav-future nav-panel__item" href="../../pages/services/operator-optimization.html"><i aria-hidden="true">01</i><span><strong>算子优化</strong><small>计算优化专项</small></span></a>
+              <a class="nav-future nav-panel__item" href="../../pages/services/data-governance.html"><i aria-hidden="true">02</i><span><strong>数据治理</strong><small>数据治理专项</small></span></a>
+              <a class="nav-future nav-panel__item" href="../../pages/services/maas-platform.html"><i aria-hidden="true">03</i><span><strong>MaaS 搭建</strong><small>模型服务平台专项</small></span></a>
+            </div>
+            <div class="nav-panel__aside">
+              <p class="nav-panel__label">导览</p>
+              <strong>围绕关键环节协作</strong>
+              <span>为企业项目补充专项技术能力。</span>
+            </div>
+          </div>
+        </details>
+
+        <details class="nav-group" data-nav-group>
+          <summary>资源 <span aria-hidden="true">⌄</span></summary>
+          <div class="nav-panel" aria-label="资源菜单">
+            <div class="nav-panel__main">
+              <p class="nav-panel__label">技术资源</p>
+              <a class="nav-future nav-panel__item" href="../../pages/resources/product-docs.html"><i aria-hidden="true">01</i><span><strong>产品文档</strong><small>了解产品与使用方式</small></span></a>
+              <a class="nav-future nav-panel__item" href="../../pages/resources/api-docs.html"><i aria-hidden="true">02</i><span><strong>API 文档</strong><small>查看接口说明</small></span></a>
+              <a class="nav-future nav-panel__item" href="../../pages/resources/help-center.html"><i aria-hidden="true">03</i><span><strong>帮助中心</strong><small>查找常见问题</small></span></a>
+            </div>
+            <div class="nav-panel__aside">
+              <p class="nav-panel__label">导览</p>
+              <strong>独立资源入口</strong>
+              <span>真实系统地址确认后可替换对应入口。</span>
+            </div>
+          </div>
+        </details>
+        <a class="nav-about" href="../../pages/about.html">关于我们</a>
+      </nav>
+      <div class="header-account">
+        <a href="https://zhongkedayun.vercel.app/login">登录</a>
+        <a class="header-cta" href="https://zhongkedayun.vercel.app/login">免费体验</a>
+      </div>
+    </header>
+    <main class="route-main" id="main">
+      <section class="route-hero" aria-labelledby="route-title">
+        <div class="container container--wide">
+          <nav class="route-breadcrumb" aria-label="当前位置"><a href="../../index.html">首页</a><span>/</span><span>产品</span><span>/</span><span aria-current="page">Token Hub</span></nav>
+          <div class="route-hero__grid">
+            <div><p class="route-kicker">第 3/8 步 · 产品 · 页面结构草案</p><h1 id="route-title">Token Hub</h1></div>
+            <p class="route-purpose">确认 Token Hub 详情页如何连接模型服务、API 与下游应用入口。</p>
+          </div>
+        </div>
+      </section>
+      <section class="route-section route-section--ink" aria-labelledby="outline-title">
+        <div class="container container--wide">
+          <div class="route-section__heading"><div><p class="route-section__label">从上到下</p><h2 id="outline-title">本页内容顺序</h2></div><p>以下是信息顺序，不是正式文案或最终排版。确认后，第 4 步会把真实文字和媒体状态填入这些位置。</p></div>
+          <div class="route-outline"><div class="route-outline__row"><span>01</span><strong>产品位置</strong><p class="route-outline__note">说明该产品在中科达云整体平台中的作用与主要入口。</p></div>
+            <div class="route-outline__row"><span>02</span><strong>适用对象</strong><p class="route-outline__note">列出适合阅读本页的企业角色和典型使用场景。</p></div>
+            <div class="route-outline__row"><span>03</span><strong>平台关系</strong><p class="route-outline__note">说明产品与算力、模型服务及应用开发之间的连接。</p></div>
+            <div class="route-outline__row"><span>04</span><strong>核心能力</strong><p class="route-outline__note">承载经过确认的能力目录，不在本阶段填入未经批准的卖点。</p></div>
+            <div class="route-outline__row"><span>05</span><strong>接入路径</strong><p class="route-outline__note">用步骤解释从了解、接入到使用的基本路径。</p></div>
+            <div class="route-outline__row"><span>06</span><strong>相关解决方案</strong><p class="route-outline__note">从产品能力返回对应企业场景。</p></div>
+            <div class="route-outline__row"><span>07</span><strong>免费体验</strong><p class="route-outline__note">进入现有登录系统，不在官网内实现注册。</p></div>
+            <div class="route-outline__row"><span>08</span><strong>同组产品</strong><p class="route-outline__note">提供另外两项产品和联系我们的返回路径。</p></div></div>
+        </div>
+      </section>
+      
+      <section class="route-section" aria-labelledby="states-title">
+        <div class="container container--wide">
+          <div class="route-section__heading"><div><p class="route-section__label">需要覆盖</p><h2 id="states-title">内容状态</h2></div><p>页面不会因为标题变长、图片未提供或外部系统地址缺失而失去基本阅读和导航能力。</p></div>
+          <div class="route-state-list"><div><strong>标准状态</strong><span>按已确认区块顺序显示</span></div>
+            <div><strong>长标题</strong><span>验证中文标题换行</span></div>
+            <div><strong>媒体未提供</strong><span>不使用未经批准图片</span></div>
+            <div><strong>内容待填写</strong><span>明确标注后续确认</span></div></div>
+        </div>
+      </section>
+      <section class="route-section route-section--surface" aria-labelledby="related-title">
+        <div class="container container--medium">
+          <div class="route-section__heading"><div><p class="route-section__label">继续浏览</p><h2 id="related-title">相关入口</h2></div><p>提供同组页面和联系入口，避免详情页成为阅读终点。</p></div>
+          <div class="related-routes"><a href="../../pages/products/intelligent-computing-cloud.html"><span>01</span><strong>智算云平台</strong><span>打开 →</span></a>
+            <a href="../../pages/products/autodev.html"><span>02</span><strong>AutoDev</strong><span>打开 →</span></a>
+            <a href="../../pages/contact.html"><span>→</span><strong>联系我们</strong><span>打开 →</span></a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer"><a class="route-footer-link" href="../../pages/contact.html">联系我们</a><span>第 3/8 步 · 页面目录</span><span>© <span data-current-year>2026</span> 中科达云</span></footer>
+  </body>
+</html>
