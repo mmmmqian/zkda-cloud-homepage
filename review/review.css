@@ -204,6 +204,25 @@ figure {
   margin: 0;
 }
 
+.review-evidence-media {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 0.7fr);
+  gap: 0.5rem;
+  align-items: stretch;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid var(--review-line);
+  background: var(--review-surface);
+}
+
+.review-evidence-media img {
+  display: block;
+  width: 100%;
+  height: 14rem;
+  object-fit: cover;
+  object-position: top center;
+}
+
 .review-placeholder {
   display: grid;
   place-items: center;
@@ -223,6 +242,10 @@ figure {
 .review-placeholder--text strong {
   margin-bottom: 0.5rem;
   font-size: 1.35rem;
+}
+
+.review-placeholder--compact {
+  min-height: 10rem;
 }
 
 figcaption {

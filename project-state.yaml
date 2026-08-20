@@ -19,13 +19,13 @@ capabilities:
   subagent: available
   git: available
 workflow:
-  current_phase: reference
+  current_phase: sitemap
   status: in-progress
-  allowed_transition: next:sitemap
+  allowed_transition: next:content
 documents:
   spec:
     path: ./docs/spec.md
-    source_hash: 8a75b4a5919f4a67877693aa5ee535ff36821e825135c24bec4fcc06ea8d11b1
+    source_hash: f13788481ac49aa42d28781b8447600060dc57e565c3f8e06e6c9037254ee6f8
   design:
     path: ./docs/design.md
     source_hash: ad76798e54c31a72b18a63a8c4998b49334a061b391d2a9d00d834e004dbb529
@@ -36,7 +36,7 @@ rendered:
   website:
     entrypoint: ./index.html
     preview_url: http://127.0.0.1:4173/
-    rendered_stage: requirements
+    rendered_stage: reference
 brand_assets:
   symbol:
     path: ./assets/brand/logo-symbol.svg
@@ -47,20 +47,71 @@ brand_assets:
     browser_cache_version: 20260820-160823
 approved:
   - requirements
+  - reference
 locked:
   - requirements
-editable:
   - reference
+editable:
+  - sitemap
 pending_decisions:
-  - confirm-reference-coverage-and-reusable-principles
-  - confirm-desktop-and-mobile-menu-behavior
-  - confirm-rejected-patterns-and-copying-boundary
+  - confirm-all-routes-and-url-structure
+  - confirm-page-families-and-shared-templates
+  - confirm-section-order-for-each-family
+  - confirm-navigation-and-footer-relationships
 review:
   mode: standard-review
   status: in-progress
   must_fix: []
-  viewport_checks: pending-reference-stage-render
-  console_errors: pending-reference-stage-render
+  viewport_checks: pending-sitemap-stage-render
+  interaction_checks: pending-sitemap-stage-render
+  console_errors: pending-sitemap-stage-render
+reference_research:
+  evidence_mode: fetched-plus-user-recording-observed
+  researched_at: 2026-08-20
+  real_browser_external_access:
+    transform9: navigation-timed-out
+    coreweave: navigation-timed-out
+    together-ai: page-connected-interaction-read-timed-out
+    alternate-chrome: unavailable
+  sources:
+    - https://www.transform9.com/
+    - https://www.coreweave.com/
+    - https://www.coreweave.com/platform
+    - https://www.coreweave.com/pricing
+    - https://www.together.ai/
+    - https://docs.together.ai/intro
+  verified_scope:
+    - public-page-content
+    - information-architecture
+    - content-order
+    - together-ai-desktop-navigation-from-user-recording
+    - together-ai-mobile-navigation-from-user-recording
+  unverified_scope:
+    - rendered-visual-design
+    - exact-source-code-and-motion-timing
+    - together-ai-keyboard-behavior
+    - scroll-motion
+  latest_navigation_reference:
+    selected: https://www.together.ai/
+    supersedes: https://www.coreweave.com/platform
+    browser_result: interaction-read-timed-out-then-supplemented-by-user-recordings
+    alternate_browser: unavailable
+    evidence: observed-user-recordings
+    source_files:
+      - /Users/mmmmqian/Desktop/录屏2026-08-20 20.30.34.mov
+      - /Users/mmmmqian/Desktop/录屏2026-08-20 20.58.28.mov
+    observed_behaviors:
+      - desktop-hover-open-and-horizontal-switch
+      - desktop-floating-two-zone-panel
+      - desktop-pointer-leave-close
+      - mobile-fullscreen-menu
+      - mobile-single-open-inline-accordion
+      - mobile-page-theme-adaptation
+    implemented_with_site-specific-accessibility:
+      - keyboard-enter-and-escape
+      - outside-click-close
+      - no-javascript-native-details
+      - prefers-reduced-motion
 blockers: []
 final_acceptance:
   viewports:
@@ -76,8 +127,11 @@ final_acceptance:
     - image-or-animation-dependency-failure
   public_package_excludes:
     - review/
+    - docs/evidence/
 git_checkpoint:
-  status: creating-requirements-checkpoint
+  status: creating-reference-checkpoint
+  stage: reference
+  previous_commit: 8ca7084
 transition_history:
   - from: setup
     to: requirements
@@ -87,3 +141,7 @@ transition_history:
     to: reference
     date: 2026-08-20
     trigger: next:reference
+  - from: reference
+    to: sitemap
+    date: 2026-08-20
+    trigger: next:sitemap
