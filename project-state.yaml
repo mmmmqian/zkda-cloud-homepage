@@ -328,8 +328,8 @@ final_acceptance:
     - docs/evidence/
 git_checkpoint:
   status: complete
-  stage: sitemap
-  commit: 167d506
+  stage: content-sitemap-pricing-revision
+  commit: 776a153
 transition_history:
   - from: setup
     to: requirements
