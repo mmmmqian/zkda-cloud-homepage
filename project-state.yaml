@@ -20,12 +20,13 @@ capabilities:
   git: available
 workflow:
   current_phase: content
-  status: in-progress
+  status: in-review
   allowed_transition: next:layout
+  allowed_action: null
 documents:
   spec:
     path: ./docs/spec.md
-    source_hash: 4625dce5d499bdb037ca10f8e15134f5a133c8f7bd1327f16ebe8db613739ec6
+    source_hash: 0dd101f21197796a57043b69bd40a8846520f3ab293973580db026dcea1158fa
   design:
     path: ./docs/design.md
     source_hash: 259dbad10885306765b799f52ac756798b917daa2041ae81ea1f995d8a63b932
@@ -36,7 +37,7 @@ rendered:
   website:
     entrypoint: ./index.html
     preview_url: http://127.0.0.1:4173/
-    rendered_stage: sitemap
+    rendered_stage: content
 brand_assets:
   symbol:
     path: ./assets/brand/logo-symbol.svg
@@ -52,21 +53,42 @@ approved:
 locked:
   - requirements
   - reference
-  - sitemap
 editable:
+  - sitemap
   - content
 pending_decisions:
   - confirm-writing-approach
   - confirm-page-copy-and-cta-labels
   - confirm-resource-page-placeholder-boundary
-  - confirm-two-image-generation-prompts-before-generation
+  - confirm-pricing-content-boundary
 review:
   mode: standard-review
-  status: in-progress
+  status: pending-user-content-approval
   must_fix: []
-  viewport_checks: pending-content-render
-  interaction_checks: pending-content-render
-  console_errors: pending-content-render
+  viewport_checks:
+    2560x1440: pass
+    1920x1080: pass
+    1180x820: pass
+    820x1180: pass
+    390x844: pass
+  interaction_checks:
+    desktop-navigation: pass
+    mobile-menu-open-close: pass
+    mobile-accordion: pass
+    escape-close-and-scroll-unlock: pass
+    local-route-and-placeholder-links: pass
+    hero-canvas-autoplay: pass
+    hero-pointer-response: pass
+    hero-wide-per-cell-non-circular-reveal: pass
+    hero-pointer-leave-retains-last-area: pass
+    hero-local-focus-grid: pass
+    hero-rare-green-and-white-events: pass
+    hero-no-image-dependency: pass
+    hero-final-reference-calibration: pass
+    hero-no-cell-outline-or-structural-grid: pass
+    pricing-navigation-order: pass
+    pricing-page-no-invented-amounts: pass
+  console_errors: 0
 reference_research:
   evidence_mode: fetched-plus-user-recording-observed
   researched_at: 2026-08-20
@@ -116,13 +138,179 @@ reference_research:
       - prefers-reduced-motion
 blockers: []
 sitemap:
-  route_count: 16
-  page_family_count: 7
+  route_count: 17
+  page_family_count: 8
   collection_listing_detail_pairs: not-applicable-no-content-collections
   external_resource_routes: local-static-until-real-urls-provided
   static_link_check: pass
   duplicate_id_check: pass
   single_h1_check: pass
+content:
+  rendered_routes: 17
+  writing_approach:
+    recommended: platform-judgment
+    applied_to_site: true
+    approval: pending-next-layout
+  source_inventory: complete
+  factual_integrity: no-invented-clients-cases-pricing-api-parameters
+  logo:
+    selected: user-provided-official-svg
+    generated_logo: false
+  resource_pages: honest-local-pages-until-real-system-urls
+  migration_media: placeholder-selected-by-user
+  qa:
+    all-routes-desktop-and-mobile: pass
+    representative-page-families-all-five-viewports: pass
+    review-page-all-five-viewports: pass
+    horizontal_overflow: 0
+    duplicate_ids: 0
+    missing_local_targets: 0
+    hero_motion_all_five_viewports: pass
+    hero_motion_console_errors: 0
+    hero_motion_horizontal_overflow: 0
+    hero_motion_public_images: 0
+    homepage_image_placeholder: 0
+    migration_image_placeholder: 1
+media_generation:
+  batch: B01-home-infrastructure-and-domestic-migration
+  status: generated-both-candidates-internal-only-user-selected-placeholder
+  approval_received: media:generate-b01
+  allowed_action: null
+  asset_count: 2
+  inserted_assets: 0
+  candidates:
+    home-infrastructure-a:
+      path: ./docs/evidence/media-candidates/b01/home-infrastructure-candidate-a.png
+      dimensions: 2560x1440
+      status: cancelled-by-user-use-code-motion-instead
+    domestic-migration-a:
+      path: ./docs/evidence/media-candidates/b01/domestic-migration-candidate-a.png
+      dimensions: 2560x1440
+      sha256: 4f1368b58d179b4523a1908fe31a9684fc205b4846f3444f4ca6150dfd6634ec
+      status: not-selected-by-user-placeholder-retained
+  placeholders:
+    - domestic-computing-migration
+hero_motion:
+  source_reference: https://www.transform9.com/
+  evidence_mode: fetched-plus-observed-in-user-chrome
+  evidence_dir: ./docs/evidence/transform9-hero-motion-20260821/
+  user_reference_images:
+    - ./docs/evidence/transform9-hero-motion-20260821/user-reference-soft-blocks.png
+    - ./docs/evidence/transform9-hero-motion-20260821/user-reference-reveal-range.png
+  user_reference_recording: /Users/mmmmqian/Desktop/录屏2026-08-21 02.53.55.mov
+  user_reference_recording_evidence: ./docs/evidence/hero-motion-reference-20260821-025355/
+  implementation: native-webgl-field-plus-canvas2d-data-grid-plus-gsap-dom-entrance
+  public_image_dependency: false
+  observed_behaviors:
+    - full-bleed-dark-pixel-field
+    - slow-cell-drift-and-opacity-breathing
+    - sparse-blue-and-green-cells
+    - pointer-following-green-glow
+    - text-and-grid-above-motion
+    - user-recording-shows-brighter-blue-green-cells-sharper-large-blocks-and-brief-white-spikes
+  user_clarifications:
+    - aligned-square-cell-grid
+    - foreground-gaussian-like-haze
+    - pointer-nearby-cells-flicker
+    - cursor-itself-has-no-glow
+    - ambient-node-glow-and-hard-block-use-independent-time-systems
+    - event-intensity-mostly-micro-with-rare-strong-spikes
+    - single-double-triple-event-ratio-approximately-70-20-10
+    - white-spike-shorter-and-sharper-than-color-pulse
+    - large-softened-blocks-cluster-left-to-center-with-dark-right-negative-space
+    - pointer-reveals-a-wide-area-with-dark-cell-gaps-not-a-circular-window
+    - rare-green-accent-and-occasional-white-spike-must-remain-visible
+    - every-visible-lit-cell-must-flicker
+    - base-cell-flicker-must-feel-like-continuous-breathing
+    - adjacent-cells-must-differ-in-color-or-opacity
+    - every-cell-randomly-cycles-through-black-blue-cyan-green-white
+    - no-large-same-color-cell-clusters
+    - nearest-pointer-grid-cells-have-lower-blur-and-clearer-edges
+    - last-pointer-area-remains-visible-and-pulsing-after-pointer-leaves
+    - final-screenshot-comparison-supersedes-prior-twenty-percent-cell-shrink
+    - later-hard-cap-limits-entity-cell-edge-to-approximately-one-hundred-pixels
+    - most-regions-pure-black-with-discrete-blue-cyan-green-and-white-foci
+    - entity-blocks-clearer-with-stronger-separate-peripheral-glow
+    - rare-peaks-must-be-significantly-brighter-than-normal-cells
+    - three-line-heading-positioned-near-hero-middle
+    - structural-grid-lines-must-recede-behind-light-blocks
+    - square-matrix-has-no-cell-outline-and-no-structural-grid-lines
+  independent_implementation:
+    - webgl-gradient-field-continuous-noise-and-light-deformation
+    - regular-square-cell-grid-with-slow-opacity-breathing
+    - asynchronous-color-pulse-white-spike-dark-cut-and-chain-events
+    - delayed-independent-glow-canvas
+    - event-only-radial-diffusion-never-cursor-centered
+    - independently-breathing-ambient-webgl-composite
+    - event-intensity-tiers-56-percent-micro-37-percent-normal-7-percent-strong
+    - chain-length-ratio-70-percent-single-20-percent-double-10-percent-triple
+    - responsive-columns-use-ceiling-of-width-divided-by-one-hundred-with-six-nine-twelve-minimums
+    - entity-cell-edge-never-exceeds-approximately-one-hundred-pixels
+    - pulse-events-change-entity-brightness-without-scaling-entity-blocks
+    - wide-per-cell-irregular-reveal-mask-with-eighteen-percent-black-gaps
+    - desktop-reveal-radius-fifty-five-percent-width-clamped-six-hundred-twenty-to-eleven-hundred-pixels
+    - pointer-slightly-increases-nearby-event-probability-without-color-shift
+    - rare-accent-scheduler-nine-to-twenty-two-seconds-sixty-six-percent-green-thirty-four-percent-white
+    - unfiltered-focus-grid-redraws-one-to-two-cell-rings-above-six-pixel-haze
+    - brighter-blue-cyan-green-base-colors-and-ten-pixel-reveal-edge-blur
+    - every-cell-has-independent-1.5s-to-4.6s-flicker-phase-thirty-percent-faster
+    - focus-grid-reuses-underlying-cell-flicker-phase
+    - smoothstep-breathing-curve-for-all-base-cells
+    - four-tier-column-plus-two-row-opacity-pattern-guarantees-adjacent-contrast
+    - weighted-five-color-selection-at-each-cell-breathing-trough
+    - final-five-color-weights-fifty-eight-dark-twenty-seven-blue-eight-cyan-five-green-two-white
+    - rare-white-near-pure-peak-and-stronger-white-glow
+    - three-line-vertically-centered-hero-heading
+    - removed-cell-outlines-and-structural-grid-overlay
+    - neighborhood-declustering-blocks-three-cell-runs-two-by-two-and-l-shaped-same-color-groups
+    - pointer-leave-retains-seventy-two-percent-reveal-and-sixty-eight-percent-focus-layer
+    - post-leave-random-events-continue-to-favor-last-pointer-area
+    - foreground-css-haze-softens-cell-edges
+    - no-cursor-centered-radial-glow
+    - semantic-dom-content-with-gsap-entrance
+  motion_timing:
+    gradient_drift: four-independent-fields-17s-23s-27s-19s
+    ambient_blur: independent-31s-70px-to-110px-to-85px
+    glow_breathing: random-6s-to-12s
+    grid_activation: regular-events-random-1.2s-to-4.5s-rare-accents-9s-to-22s
+    cell_flicker: independent-1.5s-to-4.6s-thirty-percent-faster-than-initial
+    color_event_duration: 0.8s-to-1.5s
+    white_spike_duration: 0.35s-to-0.8s
+    glow_delay: 120ms-to-220ms
+    block_peak: approximately-0.45s
+    glow_peak: approximately-0.6s-to-0.75s
+    chain_offset: 150ms-to-400ms
+    noise: continuous
+    pointer_inertia: approximately-1.1s
+    hero_entrance: 0.8s-to-1.1s-overlapped
+  dependencies:
+    - name: GSAP
+      version: 3.13.0
+      source: ./js/vendor/motion-core.js
+      upstream: https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js
+      purpose: homepage-dom-entrance-only
+  fallbacks:
+    - mobile-lower-cell-count
+    - prefers-reduced-motion-static-dom-blocks-no-gsap
+    - webgl-unavailable-dark-base-plus-canvas2d-grid
+    - canvas2d-unavailable-webgl-field-remains
+    - event-glow-unavailable-hard-edge-grid-remains
+    - gsap-unavailable-dom-content-visible
+    - no-javascript-static-dom-blocks-and-full-content
+  copying_boundary: interaction-mechanism-only-no-code-assets-brand-or-pixel-layout
+visual_reference_supplement:
+  source: /Volumes/mq work/codex/ZKDACloud/web/录屏2026-08-20 23.17.21.mov
+  duration: 00:54
+  status: observed-keyframes-pending-layout-visual-animation-stages
+  evidence_dir: ./docs/evidence/home-visual-reference-20260820/
+  observed_keyframes:
+    - 00:00
+    - 00:12
+    - 00:24
+    - 00:36
+    - 00:48
+    - 00:53
+  copying_boundary: principles-only-no-brand-copy-assets-interface-or-complete-composition
 final_acceptance:
   viewports:
     - 2560x1440
@@ -139,8 +327,9 @@ final_acceptance:
     - review/
     - docs/evidence/
 git_checkpoint:
-  status: creating
+  status: complete
   stage: sitemap
+  commit: 167d506
 transition_history:
   - from: setup
     to: requirements
@@ -158,3 +347,7 @@ transition_history:
     to: content
     date: 2026-08-20
     trigger: next:content
+  - from: content
+    to: content
+    date: 2026-08-21
+    trigger: revise:sitemap-pricing

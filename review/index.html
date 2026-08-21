@@ -3,179 +3,164 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="noindex, nofollow">
-    <title>中科达云官网｜第 3 步确认</title>
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23176b4d'/%3E%3C/svg%3E">
-    <link rel="stylesheet" href="./review.css">
-    <script src="./review.js" defer></script>
+    <meta name="description" content="中科达云官网第 4 步文字、首页动效与图片占位确认页。">
+    <title>中科达云官网｜第 4 步确认</title>
+    <link rel="stylesheet" href="review.css">
+    <script src="review.js" defer></script>
   </head>
   <body>
-    <!--
-      This is a presentation of project-state.yaml and docs/source summaries.
-      Do not store unique decisions here. Keep HEY:* markers when adapting it.
-    -->
-    <a class="skip-link" href="#main">跳到主要内容</a>
-
-    <header class="review-header">
+    <header class="review-hero">
       <div>
-        <p class="review-kicker">中科达云官网设计进度</p>
-        <h1 data-review-project>确认网站有哪些页面以及如何进入</h1>
+        <p>中科达云官网设计进度</p>
+        <h1>确认网站文字、首页背景动效与图片占位</h1>
       </div>
-      <div class="review-stage" aria-label="当前进度">
-        <span data-review-stage-count>第 3/8 步</span>
-        <strong data-review-stage-name>确认页面目录与访问关系</strong>
-      </div>
+      <div class="review-step"><span>第 4/8 步</span><strong>填写网站文字和图片</strong></div>
     </header>
 
-    <nav class="review-nav" aria-label="预览入口">
-      <a data-review-home-link href="../index.html">打开更新后的首页</a>
-      <a href="#routes">查看全部页面</a>
+    <nav class="review-nav" aria-label="审阅入口">
+      <a href="../index.html">打开更新后的首页</a>
+      <a href="../pages/solutions/domestic-computing-migration.html">查看迁移页</a>
+      <a href="../pages/pricing.html">查看定价页</a>
+      <a href="#hero-motion">查看首页动效</a>
+      <a href="#media">查看占位图决定</a>
       <button type="button" data-copy-command>复制下一步命令</button>
     </nav>
 
-    <main id="main">
+    <main>
       <section class="review-intro" aria-labelledby="summary-title">
-        <div class="review-section-heading">
-          <p>本轮结果</p>
-          <h2 id="summary-title">现在可以看到什么</h2>
-        </div>
-        <!-- HEY:SUMMARY -->
-        <p data-review-summary>
-          已批准的 16 个页面现在全部可以打开，顶部导航、同组入口、当前位置提示和页脚已经接通。页面共用 7 类结构，但仍保持中性样式；本轮只确认页面名称、URL 和从上到下的信息顺序。
-        </p>
+        <div class="review-section-heading"><p>本轮结果</p><h2 id="summary-title">17 个页面已经填入正式中文内容</h2></div>
+        <p data-review-summary>定价页与全站导航已经新增，首页首屏已移除色块描边和结构网格线。首页继续使用自主代码动效；国产算力迁移页面保留明确标注的占位图，生成候选不会进入公开网站。</p>
+      </section>
+
+      <section aria-labelledby="pricing-revision-title">
+        <div class="review-section-heading"><p>页面目录已修订</p><h2 id="pricing-revision-title">“定价”已加入“专家服务”和“资源”之间</h2></div>
+        <p class="review-note">独立页面 <code>/pages/pricing.html</code> 已建立，公开页面从 16 个变为 17 个。真实价格、计价单位、税费和有效期尚未提供，因此页面只说明方案构成、询价准备和事实边界，不自行填写金额。</p>
+        <dl class="review-status">
+          <div><dt>导航位置</dt><dd data-status="pass">专家服务 → 定价 → 资源</dd></div>
+          <div><dt>页面数量</dt><dd data-status="pass">16 页 → 17 页</dd></div>
+          <div><dt>价格数据</dt><dd data-status="pending">尚未提供，不会虚构</dd></div>
+        </dl>
       </section>
 
       <section aria-labelledby="changes-title">
-        <div class="review-section-heading">
-          <p>网页变化</p>
-          <h2 id="changes-title">本轮已经更新</h2>
-        </div>
-        <!-- HEY:CHANGES -->
+        <div class="review-section-heading"><p>网页变化</p><h2 id="changes-title">你现在可以看到什么</h2></div>
         <ul class="review-list" data-review-changes>
-          <li>第 2 步已由 <code>next:sitemap</code> 批准并锁定，Git 恢复点为 <code>9515e5b</code>。</li>
-          <li>原来的灰色菜单占位已经变成真实链接，电脑悬停、手机分组与键盘行为继续沿用已确认方案。</li>
-          <li>新建 3 个产品页、4 个解决方案页、3 个专家服务页、3 个资源页、关于我们和联系我们。</li>
-          <li>首页“页面范围”区现在可以直接打开全部 15 个内页。</li>
-          <li>页面范围没有变化，但 6 个早期计划英文文件名已改成更完整的当前路径，具体替代关系列在下方确认项中。</li>
-          <li>没有增加产品总览、资源总览、案例、新闻、博客或定价页，范围仍为 16 页。</li>
+          <li>第 3 步已由 <code>next:content</code> 批准并锁定，Git 恢复点为 <code>167d506</code>。</li>
+          <li>首页按“定位—产品关系—差异—能力—方案—信任—行动”填入真实内容。</li>
+          <li>3 个产品、4 个解决方案、3 个专家服务、定价、3 个资源页以及关于/联系页都已有可阅读的正式文字。</li>
+          <li>登录、免费体验、邮件、电话和全部本地页面链接保持真实可用。</li>
+          <li>没有添加客户名称、案例结果、价格、接口参数、兼容清单或未经确认的产品截图。</li>
+          <li>已观察 Transform9+ 真实首屏的明暗呼吸和鼠标响应；根据你的最终分层，首页现在由 WebGL 渐变 / 噪声 / 轻形变、独立数据格 Canvas 和 GSAP DOM 入场组成；鼠标本身不带圆形光晕。</li>
+          <li>首页首屏正方形色块不再绘制边框，覆盖首屏的横纵结构网格线也已删除。</li>
         </ul>
       </section>
 
-      <section aria-labelledby="decisions-title">
-        <div class="review-section-heading">
-          <p>需要你的决定</p>
-          <h2 id="decisions-title">请重点确认这些内容</h2>
+      <section id="hero-motion" aria-labelledby="hero-motion-title">
+        <div class="review-section-heading"><p>首页第一屏新方向</p><h2 id="hero-motion-title">参考 Transform9+ 的机制，不使用背景图片</h2></div>
+        <p class="review-note">下列三帧来自 2026-08-21 在用户电脑 Chrome 中对公开首屏的只读观察。可确认像素块会缓慢移动，鼠标附近出现绿色光晕；不能据此推断对方源码和精确参数。后面的周期、概率与峰值数值来自你随后提供的设计规则，本站按这些规则独立实现。</p>
+        <div class="review-evidence">
+          <figure><img src="../docs/evidence/transform9-hero-motion-20260821/frame-01.png" alt="Transform9 首屏背景动效观察帧一"><figcaption>自动循环：黑色底上的低分辨率矩形像素场。</figcaption></figure>
+          <figure><img src="../docs/evidence/transform9-hero-motion-20260821/frame-02.png" alt="Transform9 首屏背景动效观察帧二"><figcaption>数秒后：色块位置与明暗发生缓慢变化。</figcaption></figure>
+          <figure><img src="../docs/evidence/transform9-hero-motion-20260821/frame-pointer.png" alt="Transform9 首屏鼠标响应观察帧"><figcaption>鼠标响应：指针附近出现绿光并增强蓝绿色块。</figcaption></figure>
+          <figure><img src="../docs/evidence/transform9-hero-motion-20260821/user-reference-soft-blocks.png" alt="用户提供的 Transform9 首屏视觉参考截图"><figcaption>用户补充参考：少量大块矩形集中在左至中部，统一柔焦，右侧保留深黑负空间。</figcaption></figure>
+          <figure><img src="../docs/evidence/transform9-hero-motion-20260821/user-reference-reveal-range.png" alt="用户提供的鼠标可见范围参考截图"><figcaption>用户补充参考：可见范围覆盖首屏大区域，但仍按格保留黑色缺口，不形成圆形彩色窗口。</figcaption></figure>
+          <figure><img src="../docs/evidence/hero-motion-reference-20260821-025355/observed-03s.png" alt="用户提供录屏在 3 秒的只读观察画面"><figcaption>21 秒录屏 00:03：可见清晰白色短峰、蓝绿大格与深黑缺口。</figcaption></figure>
+          <figure><img src="../docs/evidence/hero-motion-reference-20260821-025355/observed-15s.png" alt="用户提供录屏在 15 秒的只读观察画面"><figcaption>21 秒录屏 00:15：蓝、白、绿色大格错开激活，色块更亮且边缘更清楚。</figcaption></figure>
         </div>
-        <!-- HEY:DECISIONS -->
-        <ol class="review-decisions" data-review-decisions>
-          <li>16 个页面的名称和分组是否正确，没有需要新增、删除或改名的页面。</li>
-          <li>URL 是否可以使用当前英文文件名；页面上仍只显示中文名称。批准后，以下 6 个当前路径将取代需求阶段的早期计划文件名：
-            <ul>
-              <li><code>products/smart-cloud.html</code> → <code>products/intelligent-computing-cloud.html</code></li>
-              <li><code>solutions/migration.html</code> → <code>solutions/domestic-computing-migration.html</code></li>
-              <li><code>solutions/enterprise-compute.html</code> → <code>solutions/enterprise-intelligent-computing-center.html</code></li>
-              <li><code>solutions/enterprise-llm.html</code> → <code>solutions/enterprise-large-model.html</code></li>
-              <li><code>solutions/ai-app-development.html</code> → <code>solutions/ai-application-development.html</code></li>
-              <li><code>services/maas-setup.html</code> → <code>services/maas-platform.html</code></li>
-            </ul>
-          </li>
-          <li>产品、解决方案、专家服务、资源是否可以分别共用同一类页面结构。</li>
-          <li>联系我们继续放在页脚，而不是顶部导航；关于我们继续放在顶部。</li>
-          <li>产品文档、API 文档和帮助中心先保留本地静态页，未来得到真实系统地址后再替换。</li>
-          <li>当前没有新闻、案例、博客等内容集合，因此不增加列表页和详情页。</li>
-        </ol>
+        <dl class="review-status">
+          <div><dt>底层</dt><dd data-status="pass">原生 WebGL：4 个蓝 / 青 / 绿光场在原位附近缓慢漂移，叠加连续 Noise 与轻形变；独立 Ambient Blur 以 31s 呼吸</dd></div>
+          <div><dt>数据格</dt><dd data-status="pass">硬边 Canvas 2D 正方形矩阵；Color Pulse、White Spike、Dark Cut 和两类 Chain Event 随机低频发生；约 56% 微闪、37% 普通闪、7% 强闪</dd></div>
+          <div><dt>全员呼吸</dt><dd data-status="pass">所有当前亮起的格子都以自己的 1.5–4.6s 周期和相位缓慢抬亮、平滑达峰、缓慢回落；采用 smoothstep 呼吸曲线，不做基础格突然跳亮</dd></div>
+          <div><dt>相邻差异</dt><dd data-status="pass">格子按行列强制分配 4 档基础透明度；横向相邻差 1 档、纵向相邻差 2 档，即使同色也不会同透明度</dd></div>
+          <div><dt>五色随机</dt><dd data-status="pass">每格在呼吸暗谷重新抽取黑 / 蓝 / 青 / 绿 / 白；根据最新对比改为约 58 / 27 / 8 / 5 / 2，大幅减少同时亮起数量</dd></div>
+          <div><dt>去同色聚类</dt><dd data-status="pass">允许偶发两格同色，但禁止水平 / 垂直连续 3 格、同色 2×2 和 L 形三格，不出现同时大片同色</dd></div>
+          <div><dt>事件规模</dt><dd data-status="pass">约 70% 单格、20% 双格、10% 三格；链内以 150–400ms 传播；单次彩色脉冲保持自身色域，基础格只在呼吸暗谷重新抽取五色，黑色不产生 Glow</dd></div>
+          <div><dt>截图校准</dt><dd data-status="pass">最终以约 100px 为实体色块边长上限，页面越宽会自动增加列数；脉冲只改亮度、不放大实体格，高黑色比例继续控制同时激活数量，前景柔焦收紧到 6px</dd></div>
+          <div><dt>峰值层级</dt><dd data-status="pass">常态 58% 格子保持黑色；少数蓝、青、绿提高饱和度，白色只约 2% 但可达接近纯白峰值，白色 Glow 同步加强</dd></div>
+          <div><dt>首屏构图</dt><dd data-status="pass">标题拆为三行并上移到首屏中部；正方形色块无描边，覆盖首屏的结构网格线已全部删除</dd></div>
+          <div><dt>鼠标揭示</dt><dd data-status="pass">独立黑色遮罩按单格显隐；桌面半径约 55% 屏宽、限制在 620–1100px，18% 格子持续保留黑色缺口；没有圆形探照灯、鼠标光晕或鼠标换色</dd></div>
+          <div><dt>局部清晰</dt><dd data-status="pass">6px 实体柔焦之上另绘无滤镜数据格；最后指针位置约 1–2 圈矩形边缘更清晰，独立 Glow 仍保持大范围扩散</dd></div>
+          <div><dt>离开后状态</dt><dd data-status="pass">鼠标离开首屏后保留最后坐标、约 72% Reveal 与约 68% 清晰层，随机事件继续偏向该区域，不会立即退回全黑</dd></div>
+          <div><dt>稀有强调</dt><dd data-status="pass">首轮绿色脉冲后以 240–360ms 延迟触发邻格白色短峰；后续每 9–22s 低频出现，约 66% 绿色、34% 白色</dd></div>
+          <div><dt>延迟 Glow</dt><dd data-status="pass">独立 Canvas 在实体变化后 120–220ms 扩散；实体约 0.45s 到峰，Glow 约 0.6–0.75s 到峰，亮度先降而范围继续扩大</dd></div>
+          <div><dt>页面内容</dt><dd data-status="pass">真实导航、标题和按钮保持 DOM；GSAP 3.13.0 入场，加载失败时内容仍默认可见</dd></div>
+          <div><dt>动效周期</dt><dd data-status="pass">4 个光场 17 / 23 / 27 / 19s；Ambient Blur 31s；常规事件间隔 1.2–4.5s，稀有强调 9–22s；彩色实体 0.8–1.5s，白色 0.35–0.8s；Noise 持续；鼠标惯性约 1.1s</dd></div>
+          <div><dt>不复制</dt><dd data-status="pass">Transform9+ 代码、Logo、文字、像素分布、布局比例、第三方场景与医疗内容</dd></div>
+          <div><dt>静态回退</dt><dd data-status="pass">减少动画或无 JavaScript 时显示静态 DOM 色块；WebGL、实体格、Glow 或 GSAP 单独失败时仍保留其余可用层和完整内容</dd></div>
+        </dl>
+      </section>
+
+      <section id="visual-reference" aria-labelledby="visual-reference-title">
+        <div class="review-section-heading"><p>新增首页视觉参考</p><h2 id="visual-reference-title">借鉴节奏、网格和对比，不复制素材与完整构图</h2></div>
+        <div class="review-evidence">
+          <figure><img src="../docs/evidence/home-visual-reference-20260820/frame-000.png" alt="录屏首屏关键画面：黑色背景上的超大标题和荧光绿重点词"><figcaption>首屏：深色主场、超大标题、少量荧光绿重点。</figcaption></figure>
+          <figure><img src="../docs/evidence/home-visual-reference-20260820/frame-012.png" alt="录屏关键画面：白色标题栏与横向蓝色内容分栏"><figcaption>内容切换：白色标题区与横向分栏形成强对比。</figcaption></figure>
+          <figure><img src="../docs/evidence/home-visual-reference-20260820/frame-036.png" alt="录屏关键画面：左侧长列表与右侧图片并列"><figcaption>列表结构：左侧可选条目，右侧画面承接上下文。</figcaption></figure>
+          <figure><img src="../docs/evidence/home-visual-reference-20260820/frame-053.png" alt="录屏结尾关键画面：深色页脚和超大品牌文字"><figcaption>结尾：深色页脚以超大品牌文字收束。</figcaption></figure>
+        </div>
+      </section>
+
+      <section aria-labelledby="voice-title">
+        <div class="review-section-heading"><p>网站文字读起来的感觉</p><h2 id="voice-title">四种写法，当前推荐第一种</h2></div>
+        <div class="review-choices">
+          <article><p>推荐 · 当前网站使用</p><h3>A｜平台判断型</h3><strong>把国产算力、模型服务与 AI 应用开发，连接成一套基础设施</strong><span>克制、直接，企业决策者和技术负责人都能判断平台位置。</span></article>
+          <article><p>技术密度更高</p><h3>B｜工程说明型</h3><strong>统一纳管异构算力，贯通训练、推理与模型服务</strong><span>工程可信度更强，但首页更像产品手册。</span></article>
+          <article><p>传播性更强</p><h3>C｜品牌宣言型</h3><strong>让国产算力真正进入企业 AI 生产环境</strong><span>更短、更有记忆点，但需要后续内容补足细节。</span></article>
+          <article><p>协作感更强</p><h3>D｜共建顾问型</h3><strong>从第一张国产 GPU 到企业 AI 应用，我们与你一起搭建</strong><span>更温和，适合专家服务，但会削弱平台产品感。</span></article>
+        </div>
+      </section>
+
+      <section aria-labelledby="boundaries-title">
+        <div class="review-section-heading"><p>内容边界</p><h2 id="boundaries-title">哪些真实写入，哪些明确不猜</h2></div>
+        <dl class="review-status">
+          <div><dt>已经使用</dt><dd data-status="pass">三项产品关系、平台能力、四类方案、三项服务、四组数据、正式联系方式与登录链接</dd></div>
+          <div><dt>诚实保留</dt><dd data-status="pending">产品文档、API 文档和帮助中心没有外部地址，继续使用本地说明页</dd></div>
+          <div><dt>没有添加</dt><dd data-status="pass">客户名称、Logo、案例结果、资质、团队、价格、项目周期、接口参数和兼容清单</dd></div>
+        </dl>
+      </section>
+
+      <section id="media" aria-labelledby="media-title">
+        <div class="review-section-heading"><p>图片决定</p><h2 id="media-title">国产算力迁移页面暂时使用占位图</h2></div>
+        <p class="review-note">占位图会保留稳定的版面空间，并明确说明正式素材以后补充；当前生成候选只在内部记录中保留，不会复制到公开素材目录，也不会被页面加载。</p>
+        <dl class="review-status">
+          <div><dt>首页</dt><dd data-status="pass">继续使用代码背景动效，不使用生成图片</dd></div>
+          <div><dt>国产算力迁移</dt><dd data-status="pass">保留固定比例文字占位，后续可替换为经过确认的正式素材</dd></div>
+          <div><dt>公开网站</dt><dd data-status="pass">不加载本批次的任何生成图片</dd></div>
+        </dl>
       </section>
 
       <section id="routes" aria-labelledby="routes-title">
-        <div class="review-section-heading">
-          <p>全部入口</p>
-          <h2 id="routes-title">16 个真实页面</h2>
-        </div>
-        <!-- HEY:ROUTES -->
-        <div class="review-routes" data-review-routes>
-          <p class="review-route-label">首页</p>
-          <a href="../index.html"><strong>01 · 首页</strong><span>/index.html</span></a>
-
-          <p class="review-route-label">产品</p>
+        <div class="review-section-heading"><p>全部页面</p><h2 id="routes-title">逐页打开检查文字</h2></div>
+        <div class="review-routes" data-review-routes><a href="../index.html"><strong>01 · 首页</strong><span>/index.html</span></a>
           <a href="../pages/products/intelligent-computing-cloud.html"><strong>02 · 智算云平台</strong><span>/pages/products/intelligent-computing-cloud.html</span></a>
           <a href="../pages/products/token-hub.html"><strong>03 · Token Hub</strong><span>/pages/products/token-hub.html</span></a>
           <a href="../pages/products/autodev.html"><strong>04 · AutoDev</strong><span>/pages/products/autodev.html</span></a>
-
-          <p class="review-route-label">解决方案</p>
           <a href="../pages/solutions/domestic-computing-migration.html"><strong>05 · 国产算力迁移</strong><span>/pages/solutions/domestic-computing-migration.html</span></a>
           <a href="../pages/solutions/enterprise-intelligent-computing-center.html"><strong>06 · 企业智算中心</strong><span>/pages/solutions/enterprise-intelligent-computing-center.html</span></a>
           <a href="../pages/solutions/enterprise-large-model.html"><strong>07 · 企业大模型</strong><span>/pages/solutions/enterprise-large-model.html</span></a>
           <a href="../pages/solutions/ai-application-development.html"><strong>08 · AI 应用开发</strong><span>/pages/solutions/ai-application-development.html</span></a>
-
-          <p class="review-route-label">专家服务</p>
           <a href="../pages/services/operator-optimization.html"><strong>09 · 算子优化</strong><span>/pages/services/operator-optimization.html</span></a>
           <a href="../pages/services/data-governance.html"><strong>10 · 数据治理</strong><span>/pages/services/data-governance.html</span></a>
           <a href="../pages/services/maas-platform.html"><strong>11 · MaaS 搭建</strong><span>/pages/services/maas-platform.html</span></a>
-
-          <p class="review-route-label">资源</p>
-          <a href="../pages/resources/product-docs.html"><strong>12 · 产品文档</strong><span>/pages/resources/product-docs.html</span></a>
-          <a href="../pages/resources/api-docs.html"><strong>13 · API 文档</strong><span>/pages/resources/api-docs.html</span></a>
-          <a href="../pages/resources/help-center.html"><strong>14 · 帮助中心</strong><span>/pages/resources/help-center.html</span></a>
-
-          <p class="review-route-label">公司与联系</p>
-          <a href="../pages/about.html"><strong>15 · 关于我们</strong><span>/pages/about.html</span></a>
-          <a href="../pages/contact.html"><strong>16 · 联系我们</strong><span>/pages/contact.html</span></a>
-        </div>
-      </section>
-
-      <section aria-labelledby="families-title">
-        <div class="review-section-heading">
-          <p>共用结构</p>
-          <h2 id="families-title">7 类页面怎么分</h2>
-        </div>
-        <!-- HEY:EVIDENCE -->
-        <dl class="review-status">
-          <div><dt>首页</dt><dd>1 页：负责全站能力总览与主要入口。</dd></div>
-          <div><dt>产品详情</dt><dd>3 页：产品位置、对象、能力、接入和相关方案。</dd></div>
-          <div><dt>解决方案详情</dt><dd>4 页：问题背景、适用阶段、实施路径、关联能力和边界。</dd></div>
-          <div><dt>专家服务详情</dt><dd>3 页：服务范围、协作流程、准备信息、输出和边界。</dd></div>
-          <div><dt>资源工具页</dt><dd>3 页：快速入口、内容目录、版本位置、空结果和帮助路径。</dd></div>
-          <div><dt>关于我们</dt><dd>1 页：只使用已知定位和四组公开数据。</dd></div>
-          <div><dt>联系我们</dt><dd>1 页：正式邮箱、电话、北京地址和咨询准备信息。</dd></div>
-        </dl>
-      </section>
-
-      <section aria-labelledby="states-title">
-        <div class="review-section-heading">
-          <p>内容状态</p>
-          <h2 id="states-title">页面需要经得住什么</h2>
-        </div>
-        <!-- HEY:FACTS -->
-        <ul class="review-list">
-          <li>短名称与中英文混排：AutoDev、Token Hub、MaaS 搭建。</li>
-          <li>长中文标题：企业智算中心、AI 应用开发。</li>
-          <li>图片尚未批准时，页面仍完整可读，不使用未经确认的图片。</li>
-          <li>资源外部系统地址缺失时，使用诚实的本地入口和空内容提示。</li>
-          <li>没有案例和客户证明时，不生成虚构内容填满页面。</li>
-        </ul>
+          <a href="../pages/pricing.html"><strong>12 · 定价</strong><span>/pages/pricing.html</span></a>
+          <a href="../pages/resources/product-docs.html"><strong>13 · 产品文档</strong><span>/pages/resources/product-docs.html</span></a>
+          <a href="../pages/resources/api-docs.html"><strong>14 · API 文档</strong><span>/pages/resources/api-docs.html</span></a>
+          <a href="../pages/resources/help-center.html"><strong>15 · 帮助中心</strong><span>/pages/resources/help-center.html</span></a>
+          <a href="../pages/about.html"><strong>16 · 关于我们</strong><span>/pages/about.html</span></a>
+          <a href="../pages/contact.html"><strong>17 · 联系我们</strong><span>/pages/contact.html</span></a></div>
       </section>
 
       <section aria-labelledby="viewport-title">
-        <div class="review-section-heading">
-          <p>显示检查</p>
-          <h2 id="viewport-title">电脑和手机状态</h2>
-        </div>
-        <!-- HEY:VIEWPORTS -->
+        <div class="review-section-heading"><p>显示检查</p><h2 id="viewport-title">电脑和手机状态</h2></div>
         <dl class="review-status" data-review-viewports>
-          <div><dt>电脑</dt><dd data-status="pass">通过：2560×1440、1920×1080、1180×820；16 页可打开，7 类结构与顶部导航无横向溢出</dd></div>
-          <div><dt>平板</dt><dd data-status="pass">通过：820×1180；长标题、当前位置、页面目录和整屏菜单显示正常</dd></div>
-          <div><dt>手机</dt><dd data-status="pass">通过：390×844；16 页逐页检查，菜单开关、单组展开、Esc 关闭与滚动锁定正常</dd></div>
+          <div><dt>电脑</dt><dd data-status="pass">首页原五档检查保持有效；本轮定价页、17 页导航顺序与无描边首屏已在真实电脑窗口复查，无横向溢出或控制台错误</dd></div>
+          <div><dt>平板</dt><dd data-status="pass">1180×820、820×1180 已复测：分别为 12 / 9 列，实体格约 98.33 / 91.11px；标题、操作区和移动菜单正常</dd></div>
+          <div><dt>手机</dt><dd data-status="pass">390×844 的共用内容页和移动菜单此前已通过；本轮只增加同结构的独立定价链接，最终全站检查仍会统一复测 17 页</dd></div>
         </dl>
       </section>
 
       <section class="review-next" aria-labelledby="next-title">
-        <div>
-          <p>确认后怎么继续</p>
-          <h2 id="next-title">输入下面这条命令</h2>
-          <!-- HEY:NEXT-COMMAND -->
-          <code data-review-command>next:content</code>
-          <p data-review-command-help>确认页面目录后，下一步会在这 16 个页面中填写正式文字、按钮、链接和经过批准的图片状态。</p>
-        </div>
+        <div><p>页面目录、文字和图片状态已经明确</p><h2 id="next-title">确认本阶段内容后输入</h2><code data-review-command>next:layout</code><p data-review-command-help>这条命令会确认 17 个页面的文字、链接、定价事实边界、首页动效和迁移页占位图，并进入下一步页面排版；真实价格和正式图片以后仍可补充。</p></div>
         <button type="button" data-copy-command>复制命令</button>
       </section>
     </main>

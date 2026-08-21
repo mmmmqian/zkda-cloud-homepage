@@ -3,19 +3,18 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="中科达云AI 应用开发页面结构草案。">
+    <meta name="description" content="中科达云AI 应用开发：面向已经明确业务场景、需要调用模型并进入真实开发流程的企业团队。 中科达云以平台产品和专项技术服务组织实施路径，具体交付范围以实际项目确认结果为准。">
     <title>AI 应用开发｜中科达云</title>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23181714'/%3E%3C/svg%3E">
     <link rel="stylesheet" href="../../css/site.css">
     <link rel="stylesheet" href="../../css/pages.css">
-    <script src="../../js/site.js" defer></script>
+    <link rel="stylesheet" href="../../css/content.css?v=20260821-1455">
+    <script src="../../js/site.js?v=20260821-1455" defer></script>
   </head>
-  <body class="route-page">
+  <body class="content-page">
     <a class="skip-link" href="#main">跳到主要内容</a>
     <header class="site-header" data-site-header>
-      <a class="brand" href="../../index.html" aria-label="中科达云首页">
-        <img src="../../assets/brand/logo-lockup.svg?v=20260820-160823" alt="中科达云 ZKDA Cloud">
-      </a>
+      <a class="brand" href="../../index.html" aria-label="中科达云首页"><img src="../../assets/brand/logo-lockup.svg?v=20260820-160823" alt="中科达云 ZKDA Cloud"></a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" data-menu-toggle><span>菜单</span></button>
       <nav class="primary-nav" id="primary-nav" aria-label="主要导航" data-primary-nav>
         <a class="nav-home" href="../../index.html">首页</a>
@@ -24,120 +23,83 @@
           <div class="nav-panel" aria-label="产品菜单">
             <div class="nav-panel__main">
               <p class="nav-panel__label">平台产品</p>
-              <a class="nav-future nav-panel__item" href="../../pages/products/intelligent-computing-cloud.html"><i aria-hidden="true">01</i><span><strong>智算云平台</strong><small>统一纳管多芯算力</small></span></a>
-              <a class="nav-future nav-panel__item" href="../../pages/products/token-hub.html"><i aria-hidden="true">02</i><span><strong>Token Hub</strong><small>连接模型服务与 API</small></span></a>
-              <a class="nav-future nav-panel__item" href="../../pages/products/autodev.html"><i aria-hidden="true">03</i><span><strong>AutoDev</strong><small>面向 AI 应用开发</small></span></a>
+              <a class="nav-panel__item" href="../../pages/products/intelligent-computing-cloud.html"><i aria-hidden="true">01</i><span><strong>智算云平台</strong><small>统一纳管多芯算力</small></span></a>
+              <a class="nav-panel__item" href="../../pages/products/token-hub.html"><i aria-hidden="true">02</i><span><strong>Token Hub</strong><small>连接模型服务与 API</small></span></a>
+              <a class="nav-panel__item" href="../../pages/products/autodev.html"><i aria-hidden="true">03</i><span><strong>AutoDev</strong><small>面向 AI 应用开发</small></span></a>
             </div>
             <div class="nav-panel__aside">
               <p class="nav-panel__label">导览</p>
               <strong>算力 → 模型 → 应用</strong>
-              <span>三项产品共同组成中科达云 AI 基础设施平台。</span>
+              <span>选择与你当前目标最接近的入口继续了解。</span>
             </div>
           </div>
         </details>
-
         <details class="nav-group" data-nav-group>
           <summary>解决方案 <span aria-hidden="true">⌄</span></summary>
           <div class="nav-panel" aria-label="解决方案菜单">
             <div class="nav-panel__main">
               <p class="nav-panel__label">场景方案</p>
-              <a class="nav-future nav-panel__item" href="../../pages/solutions/domestic-computing-migration.html"><i aria-hidden="true">01</i><span><strong>国产算力迁移</strong><small>迁移方案入口</small></span></a>
-              <a class="nav-future nav-panel__item" href="../../pages/solutions/enterprise-intelligent-computing-center.html"><i aria-hidden="true">02</i><span><strong>企业智算中心</strong><small>企业基础设施场景</small></span></a>
-              <a class="nav-future nav-panel__item" href="../../pages/solutions/enterprise-large-model.html"><i aria-hidden="true">03</i><span><strong>企业大模型</strong><small>企业模型服务场景</small></span></a>
-              <a class="nav-future nav-panel__item" href="../../pages/solutions/ai-application-development.html" aria-current="page"><i aria-hidden="true">04</i><span><strong>AI 应用开发</strong><small>应用开发场景</small></span></a>
+              <a class="nav-panel__item" href="../../pages/solutions/domestic-computing-migration.html"><i aria-hidden="true">01</i><span><strong>国产算力迁移</strong><small>降低迁移、开发与部署复杂度</small></span></a>
+              <a class="nav-panel__item" href="../../pages/solutions/enterprise-intelligent-computing-center.html"><i aria-hidden="true">02</i><span><strong>企业智算中心</strong><small>统一管理企业异构算力</small></span></a>
+              <a class="nav-panel__item" href="../../pages/solutions/enterprise-large-model.html"><i aria-hidden="true">03</i><span><strong>企业大模型</strong><small>贯通模型训练、部署与服务</small></span></a>
+              <a class="nav-panel__item" href="../../pages/solutions/ai-application-development.html" aria-current="page"><i aria-hidden="true">04</i><span><strong>AI 应用开发</strong><small>从模型调用走向应用落地</small></span></a>
             </div>
             <div class="nav-panel__aside">
               <p class="nav-panel__label">导览</p>
               <strong>从基础设施到应用</strong>
-              <span>按企业所处阶段进入对应解决方案。</span>
+              <span>选择与你当前目标最接近的入口继续了解。</span>
             </div>
           </div>
         </details>
-
         <details class="nav-group" data-nav-group>
           <summary>专家服务 <span aria-hidden="true">⌄</span></summary>
           <div class="nav-panel" aria-label="专家服务菜单">
             <div class="nav-panel__main">
               <p class="nav-panel__label">专项服务</p>
-              <a class="nav-future nav-panel__item" href="../../pages/services/operator-optimization.html"><i aria-hidden="true">01</i><span><strong>算子优化</strong><small>计算优化专项</small></span></a>
-              <a class="nav-future nav-panel__item" href="../../pages/services/data-governance.html"><i aria-hidden="true">02</i><span><strong>数据治理</strong><small>数据治理专项</small></span></a>
-              <a class="nav-future nav-panel__item" href="../../pages/services/maas-platform.html"><i aria-hidden="true">03</i><span><strong>MaaS 搭建</strong><small>模型服务平台专项</small></span></a>
+              <a class="nav-panel__item" href="../../pages/services/operator-optimization.html"><i aria-hidden="true">01</i><span><strong>算子优化</strong><small>面向国产芯片的执行性能优化</small></span></a>
+              <a class="nav-panel__item" href="../../pages/services/data-governance.html"><i aria-hidden="true">02</i><span><strong>数据治理</strong><small>建设适用于 AI 的高质量数据资产</small></span></a>
+              <a class="nav-panel__item" href="../../pages/services/maas-platform.html"><i aria-hidden="true">03</i><span><strong>MaaS 搭建</strong><small>建设模型管理、部署与 API 服务平台</small></span></a>
             </div>
             <div class="nav-panel__aside">
               <p class="nav-panel__label">导览</p>
               <strong>围绕关键环节协作</strong>
-              <span>为企业项目补充专项技术能力。</span>
+              <span>选择与你当前目标最接近的入口继续了解。</span>
             </div>
           </div>
         </details>
-
+        <a class="nav-pricing" href="../../pages/pricing.html">定价</a>
         <details class="nav-group" data-nav-group>
           <summary>资源 <span aria-hidden="true">⌄</span></summary>
           <div class="nav-panel" aria-label="资源菜单">
             <div class="nav-panel__main">
               <p class="nav-panel__label">技术资源</p>
-              <a class="nav-future nav-panel__item" href="../../pages/resources/product-docs.html"><i aria-hidden="true">01</i><span><strong>产品文档</strong><small>了解产品与使用方式</small></span></a>
-              <a class="nav-future nav-panel__item" href="../../pages/resources/api-docs.html"><i aria-hidden="true">02</i><span><strong>API 文档</strong><small>查看接口说明</small></span></a>
-              <a class="nav-future nav-panel__item" href="../../pages/resources/help-center.html"><i aria-hidden="true">03</i><span><strong>帮助中心</strong><small>查找常见问题</small></span></a>
+              <a class="nav-panel__item" href="../../pages/resources/product-docs.html"><i aria-hidden="true">01</i><span><strong>产品文档</strong><small>产品使用信息入口</small></span></a>
+              <a class="nav-panel__item" href="../../pages/resources/api-docs.html"><i aria-hidden="true">02</i><span><strong>API 文档</strong><small>接口说明入口</small></span></a>
+              <a class="nav-panel__item" href="../../pages/resources/help-center.html"><i aria-hidden="true">03</i><span><strong>帮助中心</strong><small>常见问题与支持路径</small></span></a>
             </div>
             <div class="nav-panel__aside">
               <p class="nav-panel__label">导览</p>
-              <strong>独立资源入口</strong>
-              <span>真实系统地址确认后可替换对应入口。</span>
+              <strong>真实地址待接入</strong>
+              <span>现阶段保留本地说明页，不虚构外部文档内容。</span>
             </div>
           </div>
         </details>
         <a class="nav-about" href="../../pages/about.html">关于我们</a>
       </nav>
-      <div class="header-account">
-        <a href="https://zhongkedayun.vercel.app/login">登录</a>
-        <a class="header-cta" href="https://zhongkedayun.vercel.app/login">免费体验</a>
-      </div>
+      <div class="header-account"><a href="https://zhongkedayun.vercel.app/login">登录</a><a class="header-cta" href="https://zhongkedayun.vercel.app/login">免费体验</a></div>
     </header>
-    <main class="route-main" id="main">
-      <section class="route-hero" aria-labelledby="route-title">
-        <div class="container container--wide">
-          <nav class="route-breadcrumb" aria-label="当前位置"><a href="../../index.html">首页</a><span>/</span><span>解决方案</span><span>/</span><span aria-current="page">AI 应用开发</span></nav>
-          <div class="route-hero__grid">
-            <div><p class="route-kicker">第 3/8 步 · 解决方案 · 页面结构草案</p><h1 id="route-title">AI 应用开发</h1></div>
-            <p class="route-purpose">确认 AI 应用开发场景页如何连接模型、开发工具与实施服务。</p>
-          </div>
-        </div>
-      </section>
-      <section class="route-section route-section--ink" aria-labelledby="outline-title">
-        <div class="container container--wide">
-          <div class="route-section__heading"><div><p class="route-section__label">从上到下</p><h2 id="outline-title">本页内容顺序</h2></div><p>以下是信息顺序，不是正式文案或最终排版。确认后，第 4 步会把真实文字和媒体状态填入这些位置。</p></div>
-          <div class="route-outline"><div class="route-outline__row"><span>01</span><strong>问题背景</strong><p class="route-outline__note">先说明该解决方案所对应的企业场景。</p></div>
-            <div class="route-outline__row"><span>02</span><strong>适用阶段</strong><p class="route-outline__note">帮助访客判断当前是否适合进入该方案。</p></div>
-            <div class="route-outline__row"><span>03</span><strong>解决路径</strong><p class="route-outline__note">以总览解释方案由哪些环节组成。</p></div>
-            <div class="route-outline__row"><span>04</span><strong>实施流程</strong><p class="route-outline__note">用分步骤结构承载后续确认的真实流程。</p></div>
-            <div class="route-outline__row"><span>05</span><strong>关联能力</strong><p class="route-outline__note">连接智算云平台、Token Hub、AutoDev 或专家服务。</p></div>
-            <div class="route-outline__row"><span>06</span><strong>交付边界</strong><p class="route-outline__note">明确官网可以说明的内容与需要进一步咨询的信息。</p></div>
-            <div class="route-outline__row"><span>07</span><strong>相关方案</strong><p class="route-outline__note">提供同组方案，避免阅读路径中断。</p></div>
-            <div class="route-outline__row"><span>08</span><strong>咨询与体验</strong><p class="route-outline__note">提供联系我们和现有登录系统两个下一步。</p></div></div>
-        </div>
-      </section>
-      
-      <section class="route-section" aria-labelledby="states-title">
-        <div class="container container--wide">
-          <div class="route-section__heading"><div><p class="route-section__label">需要覆盖</p><h2 id="states-title">内容状态</h2></div><p>页面不会因为标题变长、图片未提供或外部系统地址缺失而失去基本阅读和导航能力。</p></div>
-          <div class="route-state-list"><div><strong>标准状态</strong><span>按已确认区块顺序显示</span></div>
-            <div><strong>长标题</strong><span>验证中文标题换行</span></div>
-            <div><strong>媒体未提供</strong><span>不使用未经批准图片</span></div>
-            <div><strong>内容待填写</strong><span>明确标注后续确认</span></div></div>
-        </div>
-      </section>
-      <section class="route-section route-section--surface" aria-labelledby="related-title">
-        <div class="container container--medium">
-          <div class="route-section__heading"><div><p class="route-section__label">继续浏览</p><h2 id="related-title">相关入口</h2></div><p>提供同组页面和联系入口，避免详情页成为阅读终点。</p></div>
-          <div class="related-routes"><a href="../../pages/solutions/domestic-computing-migration.html"><span>01</span><strong>国产算力迁移</strong><span>打开 →</span></a>
-            <a href="../../pages/solutions/enterprise-intelligent-computing-center.html"><span>02</span><strong>企业智算中心</strong><span>打开 →</span></a>
-            <a href="../../pages/solutions/enterprise-large-model.html"><span>03</span><strong>企业大模型</strong><span>打开 →</span></a>
-            <a href="../../pages/contact.html"><span>→</span><strong>联系我们</strong><span>打开 →</span></a>
-          </div>
-        </div>
-      </section>
-    </main>
-    <footer class="site-footer"><a class="route-footer-link" href="../../pages/contact.html">联系我们</a><span>第 3/8 步 · 页面目录</span><span>© <span data-current-year>2026</span> 中科达云</span></footer>
+    <main id="main">
+      <section class="content-hero"><div class="content-container">
+        <nav class="content-breadcrumb" aria-label="当前位置"><a href="../../index.html">首页</a><span>/</span><span>解决方案</span><span>/</span><span aria-current="page">AI 应用开发</span></nav>
+        <p class="content-kicker">第 4/8 步 · 解决方案 · 正式文字待确认</p>
+        <h1>从模型调用到开发工作流，缩短企业 AI 应用落地路径</h1>
+        <p class="content-hero__intro">面向已经明确业务场景、需要调用模型并进入真实开发流程的企业团队。 中科达云以平台产品和专项技术服务组织实施路径，具体交付范围以实际项目确认结果为准。</p>
+        <div class="content-actions"><a class="content-action content-action--primary" href="https://zhongkedayun.vercel.app/login">免费体验<span aria-hidden="true">→</span></a><a class="content-action content-action--text" href="../../pages/contact.html">联系团队<span aria-hidden="true">→</span></a></div>
+      </div></section><section class="content-section" id="context" aria-labelledby="context-title"><div class="content-container"><div class="content-heading"><p>问题背景</p><h2 id="context-title">模型能够回答问题，不等于应用已经可以上线</h2><div class="content-intro"><p>企业 AI 应用需要同时处理场景定义、模型选择、数据边界、开发集成、质量验证与运行要求。</p></div></div><div class="content-indexed"><article><span>01</span><div><h3>从真实任务开始</h3><p>用明确用户、输入和结果边界定义首个场景。</p></div></article><article><span>02</span><div><h3>连接开发流程</h3><p>把模型调用带入编码、调试与应用集成。</p></div></article><article><span>03</span><div><h3>验证运行边界</h3><p>结合安全、质量和运维要求决定上线方式。</p></div></article></div></div></section><section class="content-section" id="stage" aria-labelledby="stage-title"><div class="content-container"><div class="content-heading"><p>适用阶段</p><h2 id="stage-title">先判断是否适合进入这条路径</h2><div class="content-intro"><p>面向已经明确业务场景、需要调用模型并进入真实开发流程的企业团队。</p></div></div><div class="content-indexed"><article><span>01</span><div><h3>已明确业务目标</h3><p>知道要承接的工作负载与使用团队。</p></div></article><article><span>02</span><div><h3>可以梳理现状</h3><p>能够提供现有环境、依赖和数据边界。</p></div></article><article><span>03</span><div><h3>需要持续运行</h3><p>目标不是一次演示，而是进入企业运行体系。</p></div></article></div></div></section><section class="content-section content-section--muted" id="flow" aria-labelledby="flow-title"><div class="content-container"><div class="content-heading"><p>实施路径</p><h2 id="flow-title">从现状到运行，按四个环节推进</h2><div class="content-intro"><p>以下为官网层面的通用路径，不等同于具体项目承诺。</p></div></div><div class="content-indexed"><article><span>01</span><div><h3>定义场景</h3><p>明确用户、任务、数据与结果边界。</p></div></article><article><span>02</span><div><h3>选择模型</h3><p>通过 Token Hub 组织模型能力。</p></div></article><article><span>03</span><div><h3>开发应用</h3><p>使用 AutoDev 支撑编码、调试与工作流。</p></div></article><article><span>04</span><div><h3>验证上线</h3><p>结合企业安全、质量和运行要求完成验证。</p></div></article></div></div></section><section class="content-section" id="boundary" aria-labelledby="boundary-title"><div class="content-container"><div class="content-heading"><p>范围边界</p><h2 id="boundary-title">官网说明方法，具体结果需在项目中验证</h2><div class="content-intro"><p>模型、芯片、框架、数据、项目周期、性能结果、成本和交付清单均需结合真实环境另行确认。</p></div></div><div class="content-indexed"><article><span>01</span><div><h3>可以公开说明</h3><p>平台定位、通用流程与相关能力。</p></div></article><article><span>02</span><div><h3>需要项目确认</h3><p>兼容性、周期、资源、性能与交付成果。</p></div></article><article><span>03</span><div><h3>不会虚构</h3><p>客户名称、案例结果与量化提升。</p></div></article></div></div></section><section class="content-section content-section--ink" id="related" aria-labelledby="related-title"><div class="content-container"><div class="content-heading"><p>继续了解</p><h2 id="related-title">从相关入口继续判断</h2><div class="content-intro"><p>根据当前目标进入相邻产品、方案或联系页面。</p></div></div><div class="content-links"><a href="../../pages/products/token-hub.html"><span>01</span><strong>Token Hub</strong><small>连接模型服务</small><i aria-hidden="true">→</i></a><a href="../../pages/products/autodev.html"><span>02</span><strong>AutoDev</strong><small>进入 AI 应用开发流程</small><i aria-hidden="true">→</i></a></div></div></section></main>
+    <footer class="content-footer">
+      <div class="content-footer__lead"><img src="../../assets/brand/logo-lockup.svg?v=20260820-160823" alt="中科达云 ZKDA Cloud"><p>连接国产算力、模型服务与 AI 应用开发的基础设施平台。</p></div>
+      <div class="content-footer__links"><a href="../../pages/about.html">关于我们</a><a href="../../pages/contact.html">联系我们</a><a href="mailto:contact@zhongkedayun.com">contact@zhongkedayun.com</a><a href="tel:400-888-0000">400-888-0000</a></div>
+      <div class="content-footer__meta"><span>第 4/8 步 · 网站文字与图片待确认</span><span>© <span data-current-year>2026</span> 中科达云</span></div>
+    </footer>
   </body>
 </html>
