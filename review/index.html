@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="中科达云官网第 4 步文字、首页动效与图片占位确认页。">
-    <title>中科达云官网｜第 4 步确认</title>
+    <meta name="description" content="中科达云官网第 5 步电脑与手机页面排版确认页。">
+    <title>中科达云官网｜第 5 步确认</title>
     <link rel="stylesheet" href="review.css">
     <script src="review.js" defer></script>
   </head>
@@ -12,32 +12,62 @@
     <header class="review-hero">
       <div>
         <p>中科达云官网设计进度</p>
-        <h1>确认网站文字、首页背景动效与图片占位</h1>
+        <h1>确认各类页面在电脑和手机上怎么排</h1>
       </div>
-      <div class="review-step"><span>第 4/8 步</span><strong>填写网站文字和图片</strong></div>
+      <div class="review-step"><span>第 5/8 步</span><strong>确认页面排版</strong></div>
     </header>
 
     <nav class="review-nav" aria-label="审阅入口">
       <a href="../index.html">打开更新后的首页</a>
-      <a href="../pages/solutions/domestic-computing-migration.html">查看迁移页</a>
-      <a href="../pages/pricing.html">查看定价页</a>
-      <a href="#hero-motion">查看首页动效</a>
-      <a href="#media">查看占位图决定</a>
+      <a href="../pages/products/intelligent-computing-cloud.html">查看产品页排版</a>
+      <a href="../pages/solutions/domestic-computing-migration.html">查看方案页排版</a>
+      <a href="../pages/about.html">查看新版关于我们</a>
+      <a href="#layout">查看排版规则</a>
+      <a href="#routes">逐页打开</a>
       <button type="button" data-copy-command>复制下一步命令</button>
     </nav>
 
     <main>
       <section class="review-intro" aria-labelledby="summary-title">
-        <div class="review-section-heading"><p>本轮结果</p><h2 id="summary-title">17 个页面已经填入正式中文内容</h2></div>
-        <p data-review-summary>定价页与全站导航已经新增，首页首屏现已改为浅色基调，并继续保持无色块描边、无结构网格线的自主代码动效；国产算力迁移页面保留明确标注的占位图，生成候选不会进入公开网站。</p>
+        <div class="review-section-heading"><p>本轮结果</p><h2 id="summary-title">三项产品现在只用一个关系区讲清</h2></div>
+        <p data-review-summary>首页原“AI 基础设施产品架构”和“三大产品总览”已合并：智算云平台作为算力底座，Token Hub 承接模型服务，AutoDev 完成应用开发落地。三行内容均可进入对应产品详情页，具体功能不再在首页重复展开。</p>
+      </section>
+
+      <section id="layout" aria-labelledby="layout-title">
+        <div class="review-section-heading"><p>排版规则</p><h2 id="layout-title">同一套品牌系统，不把所有页面排成同一个模板</h2></div>
+        <dl class="review-status">
+          <div><dt>首页</dt><dd data-status="pass">保留浅色动态首屏；首屏后为同色调品牌循环带与数据单排，三层产品关系集中在一个深色区并链接详情页，深浅内容区交替形成长页节奏</dd></div>
+          <div><dt>产品页</dt><dd data-status="pass">适用对象电脑端三项单排，能力较多时使用两列开放列表；产品位置与接入路径缩窄阅读</dd></div>
+          <div><dt>解决方案</dt><dd data-status="pass">问题背景三项单排、实施路径四步单排，范围边界缩窄；迁移占位图电脑 16:9、手机 4:5</dd></div>
+          <div><dt>专家服务</dt><dd data-status="pass">适用条件三项单排，服务范围改为错位纵向列表，协作流程四步单排</dd></div>
+          <div><dt>定价与资源</dt><dd data-status="pass">不使用价格卡片；方案构成与状态信息横排，价格边界和帮助说明缩窄阅读</dd></div>
+          <div><dt>关于我们</dt><dd data-status="pass">使命与愿景左右展开，发展历程使用纵向时间轴，四位团队成员电脑单排；邮件、电话和地址合并在页面结尾</dd></div>
+          <div><dt>手机</dt><dd data-status="pass">900px 以下横向分栏恢复单列，按钮整行，流程转纵向；长标题、邮箱和电话允许自然换行</dd></div>
+          <div><dt>未改变</dt><dd data-status="pass">导航顺序、定价事实边界、首页浅色动效和迁移占位图决定</dd></div>
+        </dl>
+      </section>
+
+      <section id="chip-brand-loop" aria-labelledby="chip-brand-loop-review-title">
+        <div class="review-section-heading"><p>首屏后新增内容</p><h2 id="chip-brand-loop-review-title">浅色 Logo 带连续循环，标题区已移除</h2></div>
+        <div class="review-evidence">
+          <figure><img src="../docs/evidence/home-chip-brand-loop-20260824/reference.png" alt="用户提供的首屏后横向 Logo 循环参考截图"><figcaption>用户参考截图：只借鉴首屏后全宽单行循环机制，不复制其中客户 Logo、代码、深色背景或完整构图。</figcaption></figure>
+        </div>
+        <dl class="review-status">
+          <div><dt>展示名单</dt><dd data-status="pass">平头哥、昇腾、昆仑芯、海光、沐曦、壁仞、寒武纪、燧原、天数智芯、翰博半导体、登临、摩尔线程</dd></div>
+          <div><dt>背景</dt><dd data-status="pass">与首页首屏一致的暖白浅色，不使用参考站黑底</dd></div>
+          <div><dt>当前素材</dt><dd data-status="pass">用户提供的 6 个 SVG 与 6 个透明 PNG 已复制到项目素材目录并全部加载；原始文件保持不动</dd></div>
+          <div><dt>标题区域</dt><dd data-status="pass">公开首页已完全移除，只在审阅页保留本次变更说明</dd></div>
+          <div><dt>动态处理</dt><dd data-status="pass">约 32 秒连续循环；鼠标停留会暂停，键盘和触屏可使用“暂停循环 / 继续循环”开关；开启减少动画后停止自动移动并允许横向浏览</dd></div>
+          <div><dt>事实边界</dt><dd data-status="pass">只称“国产芯片生态”，不声称这些品牌是客户、投资方或已确认合作伙伴</dd></div>
+        </dl>
       </section>
 
       <section aria-labelledby="pricing-revision-title">
-        <div class="review-section-heading"><p>页面目录已修订</p><h2 id="pricing-revision-title">“定价”已加入“专家服务”和“资源”之间</h2></div>
-        <p class="review-note">独立页面 <code>/pages/pricing.html</code> 已建立，公开页面从 16 个变为 17 个。真实价格、计价单位、税费和有效期尚未提供，因此页面只说明方案构成、询价准备和事实边界，不自行填写金额。</p>
+        <div class="review-section-heading"><p>页面目录已修订</p><h2 id="pricing-revision-title">联系信息现在属于“关于我们”</h2></div>
+        <p class="review-note">原 <code>/pages/contact.html</code> 已删除，公开页面从 17 个收敛为 16 个。首页、定价、产品、方案、服务、资源和页脚中的联系入口都统一进入 <code>/pages/about.html#contact</code>；“发送邮件”会直接打开系统邮件应用。</p>
         <dl class="review-status">
-          <div><dt>导航位置</dt><dd data-status="pass">专家服务 → 定价 → 资源</dd></div>
-          <div><dt>页面数量</dt><dd data-status="pass">16 页 → 17 页</dd></div>
+          <div><dt>关于内容</dt><dd data-status="pass">使命、愿景、四项价值观、五个发展节点和四位核心团队成员已经写入</dd></div>
+          <div><dt>页面数量</dt><dd data-status="pass">17 页 → 16 页</dd></div>
           <div><dt>价格数据</dt><dd data-status="pending">尚未提供，不会虚构</dd></div>
         </dl>
       </section>
@@ -47,12 +77,14 @@
         <ul class="review-list" data-review-changes>
           <li>第 3 步已由 <code>next:content</code> 批准并锁定，Git 恢复点为 <code>167d506</code>。</li>
           <li>首页按“定位—产品关系—差异—能力—方案—信任—行动”填入真实内容。</li>
-          <li>3 个产品、4 个解决方案、3 个专家服务、定价、3 个资源页以及关于/联系页都已有可阅读的正式文字。</li>
+          <li>3 个产品、4 个解决方案、3 个专家服务、定价、3 个资源页以及关于我们页都已有可阅读的正式文字。</li>
           <li>登录、免费体验、邮件、电话和全部本地页面链接保持真实可用。</li>
           <li>没有添加客户名称、案例结果、价格、接口参数、兼容清单或未经确认的产品截图。</li>
           <li>已观察 Transform9+ 真实首屏的明暗呼吸和鼠标响应；根据你的最终分层，首页现在由 WebGL 渐变 / 噪声 / 轻形变、独立数据格 Canvas 和 GSAP DOM 入场组成；鼠标本身不带圆形光晕。</li>
           <li>首页首屏正方形色块不再绘制边框，覆盖首屏的横纵结构网格线也已删除。</li>
           <li>根据最新反馈，首页首屏从深色改为暖白底、浅蓝 / 浅青 / 浅绿色块与深色文字；品牌蓝用于标题重点和主要按钮，原有呼吸、随机峰值与鼠标扰动继续保留。</li>
+          <li>首屏后浅色循环带已改用用户提供的 12 份真实 Logo，并按最新截图反馈移除整块标题与素材说明。</li>
+          <li>首页原产品架构与产品总览已合并为一个“三层产品关系”区；重点说明智算云平台 → Token Hub → AutoDev 的承接关系，三个入口分别进入产品详情页。</li>
         </ul>
       </section>
 
@@ -117,7 +149,8 @@
         <dl class="review-status">
           <div><dt>已经使用</dt><dd data-status="pass">三项产品关系、平台能力、四类方案、三项服务、四组数据、正式联系方式与登录链接</dd></div>
           <div><dt>诚实保留</dt><dd data-status="pending">产品文档、API 文档和帮助中心没有外部地址，继续使用本地说明页</dd></div>
-          <div><dt>没有添加</dt><dd data-status="pass">客户名称、Logo、案例结果、资质、团队、价格、项目周期、接口参数和兼容清单</dd></div>
+          <div><dt>用户新提供</dt><dd data-status="pass">使命、愿景、价值观、2023—2026 发展历程和四位核心团队成员资料</dd></div>
+          <div><dt>没有添加</dt><dd data-status="pass">客户名称、Logo、案例结果、资质、团队照片、价格、项目周期、接口参数和兼容清单</dd></div>
         </dl>
       </section>
 
@@ -132,7 +165,7 @@
       </section>
 
       <section id="routes" aria-labelledby="routes-title">
-        <div class="review-section-heading"><p>全部页面</p><h2 id="routes-title">逐页打开检查文字</h2></div>
+        <div class="review-section-heading"><p>全部页面</p><h2 id="routes-title">逐页打开检查排版</h2></div>
         <div class="review-routes" data-review-routes><a href="../index.html"><strong>01 · 首页</strong><span>/index.html</span></a>
           <a href="../pages/products/intelligent-computing-cloud.html"><strong>02 · 智算云平台</strong><span>/pages/products/intelligent-computing-cloud.html</span></a>
           <a href="../pages/products/token-hub.html"><strong>03 · Token Hub</strong><span>/pages/products/token-hub.html</span></a>
@@ -148,21 +181,20 @@
           <a href="../pages/resources/product-docs.html"><strong>13 · 产品文档</strong><span>/pages/resources/product-docs.html</span></a>
           <a href="../pages/resources/api-docs.html"><strong>14 · API 文档</strong><span>/pages/resources/api-docs.html</span></a>
           <a href="../pages/resources/help-center.html"><strong>15 · 帮助中心</strong><span>/pages/resources/help-center.html</span></a>
-          <a href="../pages/about.html"><strong>16 · 关于我们</strong><span>/pages/about.html</span></a>
-          <a href="../pages/contact.html"><strong>17 · 联系我们</strong><span>/pages/contact.html</span></a></div>
+          <a href="../pages/about.html"><strong>16 · 关于我们（含联系入口）</strong><span>/pages/about.html</span></a></div>
       </section>
 
       <section aria-labelledby="viewport-title">
         <div class="review-section-heading"><p>显示检查</p><h2 id="viewport-title">电脑和手机状态</h2></div>
         <dl class="review-status" data-review-viewports>
-          <div><dt>电脑</dt><dd data-status="pass">首页原五档检查保持有效；本轮定价页、17 页导航顺序与无描边首屏已在真实电脑窗口复查，无横向溢出或控制台错误</dd></div>
-          <div><dt>平板</dt><dd data-status="pass">1180×820、820×1180 已复测：分别为 12 / 9 列，实体格约 98.33 / 91.11px；标题、操作区和移动菜单正常</dd></div>
-          <div><dt>手机</dt><dd data-status="pass">390×844 的共用内容页和移动菜单此前已通过；本轮只增加同结构的独立定价链接，最终全站检查仍会统一复测 17 页</dd></div>
+          <div><dt>电脑</dt><dd data-status="pass">16 页已在 1920×1080 逐页复查；新版关于我们在 2560×1440 保持使命双列、团队四人单排和清楚的联系入口</dd></div>
+          <div><dt>平板</dt><dd data-status="pass">1180×820 保留电脑横向节奏；820×1180 将使命、时间轴、团队和联系信息转换为单列</dd></div>
+          <div><dt>手机</dt><dd data-status="pass">16 页已在 390×844 逐页复查；新版关于我们无横向溢出，长邮箱正常换行，菜单按钮可见</dd></div>
         </dl>
       </section>
 
       <section class="review-next" aria-labelledby="next-title">
-        <div><p>页面目录、文字和图片状态已经明确</p><h2 id="next-title">确认本阶段内容后输入</h2><code data-review-command>next:layout</code><p data-review-command-help>这条命令会确认 17 个页面的文字、链接、定价事实边界、首页动效和迁移页占位图，并进入下一步页面排版；真实价格和正式图片以后仍可补充。</p></div>
+        <div><p>请先查看首页和各类页面在电脑与手机上的排布</p><h2 id="next-title">确认本阶段排版后输入</h2><code data-review-command>next:visual</code><p data-review-command-help>这条命令会固定页面宽度、列表方向、流程排布、占位图比例与手机转换方式，并进入网站整体风格和配色确认。</p></div>
         <button type="button" data-copy-command>复制命令</button>
       </section>
     </main>

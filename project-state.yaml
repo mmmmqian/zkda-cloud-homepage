@@ -20,16 +20,16 @@ capabilities:
   git: available
 workflow:
   current_phase: layout
-  status: in-progress
-  allowed_transition: null
+  status: in-review
+  allowed_transition: next:visual
   allowed_action: null
 documents:
   spec:
     path: ./docs/spec.md
-    source_hash: aea2db455395c10d4a1df47b9ceb71306377d6b080d4776f5eb5efacf221878b
+    source_hash: 3c127295cf8b20ea3b65efc392adba7d293ad76d327a2280d1e3f3b39416563e
   design:
     path: ./docs/design.md
-    source_hash: 259dbad10885306765b799f52ac756798b917daa2041ae81ea1f995d8a63b932
+    source_hash: 0a32b1d356570fa815a609ce1dd1b0e45d19bc86a9c77e357b5e62288c5baf86
 rendered:
   review:
     entrypoint: ./review/index.html
@@ -37,7 +37,7 @@ rendered:
   website:
     entrypoint: ./index.html
     preview_url: http://127.0.0.1:4173/
-    rendered_stage: content
+    rendered_stage: layout
 brand_assets:
   symbol:
     path: ./assets/brand/logo-symbol.svg
@@ -62,9 +62,12 @@ pending_decisions:
   - confirm-homepage-layout-rhythm
   - confirm-page-family-layout-differences
   - confirm-desktop-and-mobile-transformations
+  - confirm-about-page-consolidated-content-and-layout
+  - confirm-home-chip-brand-loop-layout
+  - confirm-home-product-relationship-merged-layout
 review:
   mode: standard-review
-  status: layout-in-progress
+  status: pending-user-layout-approval
   must_fix: []
   viewport_checks:
     2560x1440: pass
@@ -90,6 +93,18 @@ review:
     hero-light-tone-with-readable-text: pass
     pricing-navigation-order: pass
     pricing-page-no-invented-amounts: pass
+    about-page-mission-vision-values-timeline-team: pass
+    contact-consolidated-into-about-page: pass
+    all-contact-links-target-about-contact: pass
+    about-mailto-shortcut: pass
+    home-chip-brand-loop-light-tone: pass
+    home-chip-brand-loop-continuous-scroll: pass
+    home-chip-brand-loop-reduced-motion: pass-static-css-rule-and-fallback-structure
+    home-chip-brand-loop-pause-resume-control: pass-native-checkbox-click-and-focus-browser-verified
+    home-chip-brand-loop-user-logo-assets: pass-twelve-main-plus-twelve-hidden-clone-images-loaded
+    home-chip-brand-loop-title-area-removed: pass
+    home-product-architecture-and-overview-merged: pass
+    home-three-product-detail-links: pass
   console_errors: 0
 reference_research:
   evidence_mode: fetched-plus-user-recording-observed
@@ -140,15 +155,15 @@ reference_research:
       - prefers-reduced-motion
 blockers: []
 sitemap:
-  route_count: 17
-  page_family_count: 8
+  route_count: 16
+  page_family_count: 7
   collection_listing_detail_pairs: not-applicable-no-content-collections
   external_resource_routes: local-static-until-real-urls-provided
   static_link_check: pass
   duplicate_id_check: pass
   single_h1_check: pass
 content:
-  rendered_routes: 17
+  rendered_routes: 16
   writing_approach:
     recommended: platform-judgment
     applied_to_site: true
@@ -173,6 +188,82 @@ content:
     hero_motion_public_images: 0
     homepage_image_placeholder: 0
     migration_image_placeholder: 1
+layout:
+  page_family_count: 8
+  rendered_routes: 16
+  section_local_widths:
+    reading: 760px-to-820px
+    md: 1120px
+    xl: 1280px-to-1320px
+    full: 1400px-to-1440px
+  desktop_patterns:
+    - open-three-item-rows-for-audience-context-stage-factors-status
+    - open-four-step-rows-for-solution-service-about-contact
+    - two-column-product-capability-list
+    - offset-vertical-lists-for-scope-topics-difference
+  responsive_transformations:
+    - nine-hundred-pixels-and-below-single-column
+    - full-width-mobile-actions
+    - vertical-mobile-flows
+    - wrapping-long-chinese-headings-email-and-phone
+    - migration-placeholder-sixteen-by-nine-desktop-four-by-five-mobile
+  qa:
+    all-sixteen-routes-1920x1080: pass
+    all-sixteen-routes-390x844: pass
+    representative-eight-families-2560x1440: pass
+    representative-eight-families-1180x820: pass
+    representative-eight-families-820x1180: pass
+    horizontal_overflow: 0
+    console_errors: 0
+    migration-placeholder-desktop-sixteen-by-nine-mobile-four-by-five: pass
+    desktop-and-mobile-page-family-composition: pass
+    home-chip-brand-loop-1920x1080-and-390x844: pass
+    home-chip-brand-loop-horizontal-overflow: 0
+    home-chip-brand-loop-console-errors: 0
+    home-chip-brand-loop-user-assets-1920x1080-and-390x844: pass
+    home-product-relationship-1920x1080-and-390x844: pass
+    home-chip-brand-loop-missing-images: 0
+    review-chip-brand-evidence-1180x820: pass
+brand_loop:
+  route: ./index.html
+  placement: immediately-after-home-hero
+  tone: same-light-warm-background-as-home-hero
+  reference: https://tr9.webflow.io/
+  evidence: ./docs/evidence/home-chip-brand-loop-20260824/reference.png
+  reference_browser_result: timed-out-user-screenshot-used
+  implementation: css-continuous-horizontal-loop
+  duration: 32s
+  brands:
+    - 平头哥
+    - 昇腾
+    - 昆仑芯
+    - 海光
+    - 沐曦
+    - 壁仞
+    - 寒武纪
+    - 燧原
+    - 天数智芯
+    - 翰博半导体
+    - 登临
+    - 摩尔线程
+  asset_status: user-provided-six-svg-six-png-copied-into-public-assets
+  public_asset_dir: ./assets/brand/chip-vendors/
+  title_area: removed-by-user-request
+  source_dir: ../卡商logo/
+  source_asset_count: 12
+  public_asset_count: 12
+  formats:
+    svg: 6
+    png: 6
+  original_files_preserved: true
+  claim_boundary: ecosystem-list-not-client-or-partnership-proof
+  fallbacks:
+    - no-javascript-css-loop-still-works
+    - prefers-reduced-motion-static-single-list-with-horizontal-scroll
+  controls:
+    - mouse-hover-pauses
+    - native-checkbox-pause-resume-for-keyboard-and-touch
+    - visible-focus-outline
 media_generation:
   batch: B01-home-infrastructure-and-domestic-migration
   status: generated-both-candidates-internal-only-user-selected-placeholder
@@ -333,9 +424,9 @@ final_acceptance:
     - review/
     - docs/evidence/
 git_checkpoint:
-  status: pending
+  status: complete
   stage: content-approval
-  commit: null
+  commit: c8b2b13
 transition_history:
   - from: setup
     to: requirements
