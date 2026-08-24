@@ -1,14 +1,14 @@
 # 网站文字与图片
 
-- Status: in-review
+- Status: locked
 - Updated in stage: content
-- User approval: pending `revise:sitemap-pricing`; the user chose to keep the domestic-computing-migration media gap as an honest Placeholder, then requested a new Pricing page and navigation entry that revises the locked scope before `next:layout` can become available again.
+- User approval: approved by `next:layout` on 2026-08-24; the user retained the domestic-computing-migration Placeholder, approved the 17-page scope and pricing boundary, and approved the latest light-tone homepage Hero as the content-stage rendered state.
 
 ## Decisions
 
 ### 文字写法比较
 
-四个方案保持事实与信息量大致一致，只改变读起来的感觉。当前真实网站暂时采用推荐方案 A。B01 已完成生成；用户随后明确取消首页图片并要求国产算力迁移页面暂不使用生成图，两个生成候选都只保留为内部记录。迁移页面继续显示诚实占位图。用户又要求在“专家服务”和“资源”之间新增“定价”，这会把已锁定的页面范围从 16 页改为 17 页；当前先等待 `revise:sitemap-pricing`，确认后再修改页面目录、导航和定价页内容边界。
+四个方案保持事实与信息量大致一致，只改变读起来的感觉。真实网站采用用户已通过 `next:layout` 批准的推荐方案 A。B01 已完成生成；用户随后明确取消首页图片并要求国产算力迁移页面暂不使用生成图，两个生成候选都只保留为内部记录。迁移页面继续显示诚实占位图。用户又通过 `revise:sitemap-pricing` 批准在“专家服务”和“资源”之间新增“定价”，页面范围已由 16 页改为 17 页；定价页不填写未经确认的金额。
 
 #### A｜平台判断型（推荐，当前已填入网站）
 
@@ -203,6 +203,13 @@
 - 依赖：仅首页加载项目内保存的官方 GSAP `3.13.0` 压缩文件 `js/vendor/motion-core.js`，用于 DOM 首屏入场，避免本地预览依赖 CDN；文件保留原始许可证头。使用中性文件名是为了避免浏览器扩展按 `gsap.min.js` 文件名误拦截，并未修改库内容。WebGL 与数据格使用浏览器原生 API，不引入第三方场景或渲染库。
 - 降级：手机减少数据格列数；`prefers-reduced-motion` 停止环境呼吸并隐藏连续 Canvas 动效，改为静态 DOM 色块，同时不运行 GSAP 入场；WebGL 不可用时保留深色底和 Canvas 2D 数据格，Canvas 2D 不可用时仍可显示 WebGL，二者均失败或无 JavaScript 时显示静态 DOM 色块；GSAP 加载失败时 DOM 内容默认可见，导航仍继续初始化。
 - 首页已移除图片占位与图片加载路径；生成过的首页候选仅保存在内部证据目录，不进入公开包。
+
+### 2026-08-24｜首页首屏改为浅色基调
+
+- 用户最新要求：首页首屏色调由深色改为浅色。本决定覆盖此前“深黑 / 深蓝作为本站最终首屏底色”的视觉实施，但不改变 Transform9+ 深色参考本身的观察记录，也不改变方块呼吸、随机事件、鼠标扰动、无描边和无结构网格线等互动规则。
+- 当前实现使用暖白偏灰底色、浅蓝 / 浅青 / 浅绿环境光场和深色正文；主标题重点词、首屏标签与主要按钮统一改用品牌蓝 `#1B58F4`，价值短句使用深绿色，保证浅色背景上的文字对比。
+- 原先承担“黑色缺口 / Dark Cut”的格子在浅色版本中改为低饱和中灰与局部压暗，不再形成大面积纯黑；蓝、青、绿仍保持随机呼吸，白色短峰在彩色格与浅灰格之间出现。鼠标仍只扰动光场与格子显隐，不绘制跟随光晕。
+- 顶部导航同步改为浅色半透明底，显示原始蓝色 Logo；减少动画、无 JavaScript、WebGL 或 Canvas 失败时的静态替代画面也同步改为浅色，不会闪回深黑。
 
 ## 原创图片批次执行结果
 

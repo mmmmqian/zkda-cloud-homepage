@@ -1,6 +1,6 @@
 # 页面目录与访问关系
 
-- Status: in-review
+- Status: locked
 - Updated in stage: content revision
 - User approval: original sitemap approved by `next:content` on 2026-08-20; Pricing revision approved by `revise:sitemap-pricing` on 2026-08-21
 

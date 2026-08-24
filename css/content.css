@@ -32,28 +32,28 @@
   min-height: calc(100svh - 84px);
   padding-block: clamp(118px, 12vw, 190px) 0;
   overflow: hidden;
-  background: #0b0c0b;
-  color: #f5f3ed;
+  background: #f1f4ef;
+  color: #151a17;
 }
 
 .home-content .site-header {
-  border-bottom-color: rgba(245, 243, 237, 0.2);
-  background: rgba(7, 9, 8, 0.94);
-  color: #f5f3ed;
+  border-bottom-color: rgba(21, 26, 23, 0.16);
+  background: rgba(246, 247, 242, 0.94);
+  color: #151a17;
 }
 
 .home-content .site-header .menu-toggle,
 .home-content .site-header .header-account > a:first-child {
-  color: #f5f3ed;
+  color: #151a17;
 }
 
 .home-content .site-header .menu-toggle {
-  border-color: rgba(245, 243, 237, 0.32);
-  background: #0b0c0b;
+  border-color: rgba(21, 26, 23, 0.28);
+  background: #f6f7f2;
 }
 
 .home-content .site-header .brand img {
-  filter: brightness(0) invert(1);
+  filter: none;
 }
 
 .content-hero__inner {
@@ -71,7 +71,7 @@
 }
 
 .content-hero--home h1::first-line {
-  color: #f5f3ed;
+  color: #151a17;
 }
 
 .content-hero--home h1 .hero-title-line {
@@ -79,7 +79,7 @@
 }
 
 .content-hero--home h1 .hero-title-accent {
-  color: #89ff75;
+  color: #1b58f4;
 }
 
 .content-hero__lower {
@@ -88,7 +88,7 @@
   gap: clamp(40px, 8vw, 140px);
   margin-top: clamp(72px, 9vw, 132px);
   padding-block: clamp(34px, 4.5vw, 62px);
-  border-top: 1px solid rgba(245, 243, 237, 0.22);
+  border-top: 1px solid rgba(21, 26, 23, 0.18);
 }
 
 .content-hero__lower .content-hero__intro {
@@ -136,7 +136,8 @@
 .hero-event-glow {
   z-index: 2;
   filter: saturate(1.12);
-  mix-blend-mode: screen;
+  opacity: 0.78;
+  mix-blend-mode: normal;
 }
 
 @keyframes hero-ambient-breath {
@@ -165,7 +166,7 @@
 .hero-motion-fallback {
   z-index: 0;
   overflow: hidden;
-  background: #070908;
+  background: #f1f4ef;
 }
 
 .hero-motion-fallback i {
@@ -173,22 +174,22 @@
   display: block;
   width: clamp(86px, 12vw, 190px);
   aspect-ratio: 1;
-  background: #111713;
-  opacity: 0.46;
+  background: #dce4de;
+  opacity: 0.62;
   filter: blur(5px);
 }
 
 .hero-motion-fallback i:nth-child(1) { top: 8%; left: 2%; }
-.hero-motion-fallback i:nth-child(2) { top: 1%; left: 18%; background: #111827; }
+.hero-motion-fallback i:nth-child(2) { top: 1%; left: 18%; background: #d7e1f5; }
 .hero-motion-fallback i:nth-child(3) { top: 13%; left: 34%; }
-.hero-motion-fallback i:nth-child(4) { top: 0; left: 52%; background: #0b1a38; }
+.hero-motion-fallback i:nth-child(4) { top: 0; left: 52%; background: #c8d8fa; }
 .hero-motion-fallback i:nth-child(5) { top: 9%; left: 70%; }
-.hero-motion-fallback i:nth-child(6) { top: 0; right: 0; background: #102116; }
+.hero-motion-fallback i:nth-child(6) { top: 0; right: 0; background: #d8ead2; }
 .hero-motion-fallback i:nth-child(7) { bottom: 15%; left: 12%; }
-.hero-motion-fallback i:nth-child(8) { bottom: 4%; left: 29%; background: #0c1835; }
+.hero-motion-fallback i:nth-child(8) { bottom: 4%; left: 29%; background: #d3def6; }
 .hero-motion-fallback i:nth-child(9) { bottom: 18%; left: 48%; }
-.hero-motion-fallback i:nth-child(10) { bottom: 0; left: 64%; background: #102116; }
-.hero-motion-fallback i:nth-child(11) { bottom: 8%; right: 10%; background: #0c1e49; }
+.hero-motion-fallback i:nth-child(10) { bottom: 0; left: 64%; background: #d7e8d2; }
+.hero-motion-fallback i:nth-child(11) { bottom: 8%; right: 10%; background: #cbd9f7; }
 .hero-motion-fallback i:nth-child(12) { bottom: 28%; right: -2%; }
 
 .hero-motion-ready .hero-motion-fallback {
@@ -198,7 +199,7 @@
 .hero-motion-haze {
   z-index: 2;
   pointer-events: none;
-  background: rgba(4, 6, 5, 0.025);
+  background: rgba(250, 251, 247, 0.035);
   -webkit-backdrop-filter: blur(6px) saturate(1.14);
   backdrop-filter: blur(6px) saturate(1.14);
 }
@@ -239,7 +240,7 @@
 }
 
 .content-hero--home .content-kicker {
-  color: #89ff75;
+  color: #1b58f4;
 }
 
 .content-hero h1 {
@@ -260,12 +261,12 @@
 }
 
 .content-hero--home .content-hero__intro {
-  color: #c8c6be;
+  color: #505852;
 }
 
 .content-value-line {
   margin: 28px 0 0;
-  color: #89ff75;
+  color: #265e4b;
   font-size: 15px;
   font-weight: 700;
 }
@@ -300,6 +301,12 @@
   background: #89ff75;
   border-color: #89ff75;
   color: #0b0c0b;
+}
+
+.content-hero--home .content-action--primary {
+  background: #1b58f4;
+  border-color: #1b58f4;
+  color: #fff;
 }
 
 .content-action--text {

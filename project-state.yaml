@@ -19,14 +19,14 @@ capabilities:
   subagent: available
   git: available
 workflow:
-  current_phase: content
-  status: in-review
-  allowed_transition: next:layout
+  current_phase: layout
+  status: in-progress
+  allowed_transition: null
   allowed_action: null
 documents:
   spec:
     path: ./docs/spec.md
-    source_hash: 0dd101f21197796a57043b69bd40a8846520f3ab293973580db026dcea1158fa
+    source_hash: aea2db455395c10d4a1df47b9ceb71306377d6b080d4776f5eb5efacf221878b
   design:
     path: ./docs/design.md
     source_hash: 259dbad10885306765b799f52ac756798b917daa2041ae81ea1f995d8a63b932
@@ -50,20 +50,21 @@ approved:
   - requirements
   - reference
   - sitemap
+  - content
 locked:
   - requirements
   - reference
-editable:
   - sitemap
   - content
+editable:
+  - layout
 pending_decisions:
-  - confirm-writing-approach
-  - confirm-page-copy-and-cta-labels
-  - confirm-resource-page-placeholder-boundary
-  - confirm-pricing-content-boundary
+  - confirm-homepage-layout-rhythm
+  - confirm-page-family-layout-differences
+  - confirm-desktop-and-mobile-transformations
 review:
   mode: standard-review
-  status: pending-user-content-approval
+  status: layout-in-progress
   must_fix: []
   viewport_checks:
     2560x1440: pass
@@ -86,6 +87,7 @@ review:
     hero-no-image-dependency: pass
     hero-final-reference-calibration: pass
     hero-no-cell-outline-or-structural-grid: pass
+    hero-light-tone-with-readable-text: pass
     pricing-navigation-order: pass
     pricing-page-no-invented-amounts: pass
   console_errors: 0
@@ -150,7 +152,7 @@ content:
   writing_approach:
     recommended: platform-judgment
     applied_to_site: true
-    approval: pending-next-layout
+    approval: approved-next-layout-2026-08-24
   source_inventory: complete
   factual_integrity: no-invented-clients-cases-pricing-api-parameters
   logo:
@@ -200,6 +202,7 @@ hero_motion:
   user_reference_recording: /Users/mmmmqian/Desktop/录屏2026-08-21 02.53.55.mov
   user_reference_recording_evidence: ./docs/evidence/hero-motion-reference-20260821-025355/
   implementation: native-webgl-field-plus-canvas2d-data-grid-plus-gsap-dom-entrance
+  current_tone: light-warm-paper-with-pale-blue-cyan-green-fields
   public_image_dependency: false
   observed_behaviors:
     - full-bleed-dark-pixel-field
@@ -235,6 +238,7 @@ hero_motion:
     - three-line-heading-positioned-near-hero-middle
     - structural-grid-lines-must-recede-behind-light-blocks
     - square-matrix-has-no-cell-outline-and-no-structural-grid-lines
+    - latest-home-hero-tone-is-light
   independent_implementation:
     - webgl-gradient-field-continuous-noise-and-light-deformation
     - regular-square-cell-grid-with-slow-opacity-breathing
@@ -262,6 +266,8 @@ hero_motion:
     - rare-white-near-pure-peak-and-stronger-white-glow
     - three-line-vertically-centered-hero-heading
     - removed-cell-outlines-and-structural-grid-overlay
+    - warm-light-base-dark-copy-brand-blue-accent-and-pale-color-fields
+    - dark-cut-role-remapped-to-muted-gray-local-dimming
     - neighborhood-declustering-blocks-three-cell-runs-two-by-two-and-l-shaped-same-color-groups
     - pointer-leave-retains-seventy-two-percent-reveal-and-sixty-eight-percent-focus-layer
     - post-leave-random-events-continue-to-favor-last-pointer-area
@@ -292,11 +298,11 @@ hero_motion:
   fallbacks:
     - mobile-lower-cell-count
     - prefers-reduced-motion-static-dom-blocks-no-gsap
-    - webgl-unavailable-dark-base-plus-canvas2d-grid
+    - webgl-unavailable-light-base-plus-canvas2d-grid
     - canvas2d-unavailable-webgl-field-remains
     - event-glow-unavailable-hard-edge-grid-remains
     - gsap-unavailable-dom-content-visible
-    - no-javascript-static-dom-blocks-and-full-content
+    - no-javascript-light-static-dom-blocks-and-full-content
   copying_boundary: interaction-mechanism-only-no-code-assets-brand-or-pixel-layout
 visual_reference_supplement:
   source: /Volumes/mq work/codex/ZKDACloud/web/录屏2026-08-20 23.17.21.mov
@@ -327,9 +333,9 @@ final_acceptance:
     - review/
     - docs/evidence/
 git_checkpoint:
-  status: complete
-  stage: content-sitemap-pricing-revision
-  commit: 776a153
+  status: pending
+  stage: content-approval
+  commit: null
 transition_history:
   - from: setup
     to: requirements
@@ -351,3 +357,7 @@ transition_history:
     to: content
     date: 2026-08-21
     trigger: revise:sitemap-pricing
+  - from: content
+    to: layout
+    date: 2026-08-24
+    trigger: next:layout

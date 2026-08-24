@@ -17,12 +17,12 @@
     const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
     const fullTurn = Math.PI * 2;
     const palette = {
-      dark: [13, 18, 16],
-      slate: [17, 22, 23],
-      blue: [18, 64, 164],
-      cyan: [20, 116, 137],
-      green: [54, 126, 65],
-      white: [226, 236, 232],
+      dark: [166, 174, 169],
+      slate: [202, 210, 204],
+      blue: [61, 105, 220],
+      cyan: [54, 164, 177],
+      green: [91, 180, 83],
+      white: [255, 255, 252],
     };
     const pointer = { x: 0.72, y: 0.34, targetX: 0.72, targetY: 0.34, active: false, hasEntered: false };
     let gridContext = null;
@@ -160,11 +160,14 @@
           float greenField = lightField(p, centerD, 0.58) * 0.58;
           float deformation = (field - 0.5) * 0.16;
 
-          vec3 color = vec3(0.018, 0.024, 0.021);
-          color += vec3(0.02, 0.11, 0.42) * max(0.0, blueField + deformation) * 0.82;
-          color += vec3(0.02, 0.28, 0.34) * max(0.0, cyanField - deformation) * 0.58;
-          color += vec3(0.04, 0.42, 0.11) * max(0.0, greenField + deformation) * 0.46;
-          color += (hash(gl_FragCoord.xy + u_time * 58.0) - 0.5) * 0.025;
+          vec3 color = vec3(0.91, 0.925, 0.90);
+          float blueMix = clamp(max(0.0, blueField + deformation) * 0.42, 0.0, 0.58);
+          float cyanMix = clamp(max(0.0, cyanField - deformation) * 0.34, 0.0, 0.42);
+          float greenMix = clamp(max(0.0, greenField + deformation) * 0.28, 0.0, 0.34);
+          color = mix(color, vec3(0.44, 0.62, 0.94), blueMix);
+          color = mix(color, vec3(0.48, 0.80, 0.81), cyanMix);
+          color = mix(color, vec3(0.62, 0.84, 0.57), greenMix);
+          color += (hash(gl_FragCoord.xy + u_time * 58.0) - 0.5) * 0.018;
 
           gl_FragColor = vec4(color, 1.0);
         }
@@ -307,10 +310,10 @@
     };
 
     const cyclePalette = {
-      dark: [3, 7, 8],
-      blue: [24, 82, 230],
-      cyan: [28, 184, 198],
-      green: [124, 242, 96],
+      dark: [139, 149, 144],
+      blue: [36, 88, 232],
+      cyan: [31, 172, 188],
+      green: [103, 205, 82],
       white: [255, 255, 255],
     };
 
@@ -649,7 +652,7 @@
           const strength = eventEnvelope(event, time) * event.intensity;
           if (strength <= 0) return;
           if (event.kind === "dark") {
-            gridContext.fillStyle = `rgba(0, 2, 3, ${strength * 0.9})`;
+            gridContext.fillStyle = `rgba(71, 82, 76, ${strength * 0.42})`;
           } else {
             const color = event.kind === "white" ? eventPalette.white : eventPalette[event.colorName];
             const opacity = strength * (event.kind === "white" ? 0.92 : event.kind === "glow" ? 0.52 : 0.68);
@@ -717,7 +720,7 @@
       revealContext.globalCompositeOperation = "source-over";
       revealContext.clearRect(0, 0, width, height);
       if (!cells.length) return;
-      revealContext.fillStyle = `rgba(3, 5, 5, ${0.955 - revealStrength * 0.065})`;
+      revealContext.fillStyle = `rgba(246, 247, 242, ${0.88 - revealStrength * 0.1})`;
       revealContext.fillRect(0, 0, width, height);
       if (revealStrength < 0.01) return;
 
