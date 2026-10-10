@@ -5,163 +5,336 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="中科达云连接国产算力、模型服务与 AI 应用开发，提供一云多芯、平滑迁移和专家服务。">
     <title>中科达云｜连接国产算力、模型与 AI 应用｜中科达云</title>
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23181714'/%3E%3C/svg%3E">
-    <link rel="stylesheet" href="css/site.css">
+    <link rel="icon" href="assets/brand/logo-symbol.svg">
+    <link rel="stylesheet" href="css/site.css?v=20261010-capability-content-v94">
     <link rel="stylesheet" href="css/pages.css">
-    <link rel="stylesheet" href="css/content.css?v=20260824-about">
+  <link rel="stylesheet" href="css/content.css?v=20261010-capability-content-v94">
     <script src="js/vendor/motion-core.js?v=3.13.0" defer></script>
-    <script src="js/site.js?v=20260824-light" defer></script>
+  <script src="js/site.js?v=20261010-capability-content-v94" defer></script>
   </head>
   <body class="content-page home-content">
     <a class="skip-link" href="#main">跳到主要内容</a>
     <header class="site-header" data-site-header>
       <a class="brand" href="index.html" aria-label="中科达云首页"><img src="assets/brand/logo-lockup.svg?v=20260820-160823" alt="中科达云 ZKDA Cloud"></a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" data-menu-toggle><span>菜单</span></button>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" data-menu-toggle><span class="menu-toggle__label">菜单</span><img class="menu-toggle__icon menu-toggle__icon--open" src="assets/icons/lucide/menu.svg" alt="" aria-hidden="true"><img class="menu-toggle__icon menu-toggle__icon--close" src="assets/icons/lucide/x.svg" alt="" aria-hidden="true"></button>
       <nav class="primary-nav" id="primary-nav" aria-label="主要导航" data-primary-nav>
         <a class="nav-home" href="index.html" aria-current="page">首页</a>
-        <details class="nav-group" data-nav-group>
-          <summary>产品 <span aria-hidden="true">⌄</span></summary>
-          <div class="nav-panel" aria-label="产品菜单">
-            <div class="nav-panel__main">
-              <p class="nav-panel__label">平台产品</p>
-              <a class="nav-panel__item" href="pages/products/intelligent-computing-cloud.html"><i aria-hidden="true">01</i><span><strong>智算云平台</strong><small>统一纳管多芯算力</small></span></a>
-              <a class="nav-panel__item" href="pages/products/token-hub.html"><i aria-hidden="true">02</i><span><strong>Token Hub</strong><small>连接模型服务与 API</small></span></a>
-              <a class="nav-panel__item" href="pages/products/autodev.html"><i aria-hidden="true">03</i><span><strong>AutoDev</strong><small>面向 AI 应用开发</small></span></a>
-            </div>
-            <div class="nav-panel__aside">
-              <p class="nav-panel__label">导览</p>
-              <strong>算力 → 模型 → 应用</strong>
-              <span>选择与你当前目标最接近的入口继续了解。</span>
+        <details class="nav-group nav-group--products" data-nav-group>
+          <summary><span class="nav-trigger__label">产品</span></summary>
+          <div class="nav-panel nav-panel--products" aria-label="产品菜单">
+            <div class="nav-panel__main nav-panel__group">
+              <p class="nav-panel__label">平台产品 / PRODUCTS</p>
+              <a class="nav-panel__item" href="pages/products/intelligent-computing-cloud.html"><span class="nav-panel__item-icon" aria-hidden="true"><svg class="nav-panel__item-glyph" viewBox="0 0 24 24"><use href="assets/icons/navigation/nav-icons.svg#cloud-server"></use></svg><span class="nav-panel__item-index">01</span></span><span class="nav-panel__item-body"><strong>智算云平台</strong><small>统一纳管多芯算力</small></span><span class="nav-panel__item-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="assets/icons/navigation/nav-icons.svg#arrow-right"></use></svg></span></a>
+              <a class="nav-panel__item" href="pages/products/token-hub.html"><span class="nav-panel__item-icon" aria-hidden="true"><svg class="nav-panel__item-glyph" viewBox="0 0 24 24"><use href="assets/icons/navigation/nav-icons.svg#token-network"></use></svg><span class="nav-panel__item-index">02</span></span><span class="nav-panel__item-body"><strong>Token Hub</strong><small>连接模型服务与 API</small></span><span class="nav-panel__item-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="assets/icons/navigation/nav-icons.svg#arrow-right"></use></svg></span></a>
+              <a class="nav-panel__item" href="pages/products/autodev.html"><span class="nav-panel__item-icon" aria-hidden="true"><svg class="nav-panel__item-glyph" viewBox="0 0 24 24"><use href="assets/icons/navigation/nav-icons.svg#code-window"></use></svg><span class="nav-panel__item-index">03</span></span><span class="nav-panel__item-body"><strong>AutoDev</strong><small>面向 AI 应用开发</small></span><span class="nav-panel__item-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="assets/icons/navigation/nav-icons.svg#arrow-right"></use></svg></span></a>
             </div>
           </div>
         </details>
         <details class="nav-group" data-nav-group>
-          <summary>解决方案 <span aria-hidden="true">⌄</span></summary>
-          <div class="nav-panel" aria-label="解决方案菜单">
-            <div class="nav-panel__main">
+          <summary>解决方案</summary>
+          <div class="nav-panel nav-panel--single" aria-label="解决方案菜单">
+            <div class="nav-panel__main nav-panel__group">
               <p class="nav-panel__label">场景方案</p>
-              <a class="nav-panel__item" href="pages/solutions/domestic-computing-migration.html"><i aria-hidden="true">01</i><span><strong>国产算力迁移</strong><small>降低迁移、开发与部署复杂度</small></span></a>
-              <a class="nav-panel__item" href="pages/solutions/enterprise-intelligent-computing-center.html"><i aria-hidden="true">02</i><span><strong>企业智算中心</strong><small>统一管理企业异构算力</small></span></a>
-              <a class="nav-panel__item" href="pages/solutions/enterprise-large-model.html"><i aria-hidden="true">03</i><span><strong>企业大模型</strong><small>贯通模型训练、部署与服务</small></span></a>
-              <a class="nav-panel__item" href="pages/solutions/ai-application-development.html"><i aria-hidden="true">04</i><span><strong>AI 应用开发</strong><small>从模型调用走向应用落地</small></span></a>
-            </div>
-            <div class="nav-panel__aside">
-              <p class="nav-panel__label">导览</p>
-              <strong>从基础设施到应用</strong>
-              <span>选择与你当前目标最接近的入口继续了解。</span>
+              <a class="nav-panel__item" href="pages/solutions/domestic-computing-migration.html"><span class="nav-panel__item-icon" aria-hidden="true"><svg class="nav-panel__item-glyph" viewBox="0 0 24 24"><use href="assets/icons/navigation/nav-icons.svg#migration"></use></svg><span class="nav-panel__item-index">01</span></span><span class="nav-panel__item-body"><strong>国产算力迁移</strong><small>降低迁移、开发与部署复杂度</small></span><span class="nav-panel__item-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="assets/icons/navigation/nav-icons.svg#arrow-right"></use></svg></span></a>
+              <a class="nav-panel__item" href="pages/solutions/enterprise-intelligent-computing-center.html"><span class="nav-panel__item-icon" aria-hidden="true"><svg class="nav-panel__item-glyph" viewBox="0 0 24 24"><use href="assets/icons/navigation/nav-icons.svg#datacenter"></use></svg><span class="nav-panel__item-index">02</span></span><span class="nav-panel__item-body"><strong>企业智算中心</strong><small>统一管理企业异构算力</small></span><span class="nav-panel__item-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="assets/icons/navigation/nav-icons.svg#arrow-right"></use></svg></span></a>
+              <a class="nav-panel__item" href="pages/solutions/enterprise-large-model.html"><span class="nav-panel__item-icon" aria-hidden="true"><svg class="nav-panel__item-glyph" viewBox="0 0 24 24"><use href="assets/icons/navigation/nav-icons.svg#model-nodes"></use></svg><span class="nav-panel__item-index">03</span></span><span class="nav-panel__item-body"><strong>企业大模型</strong><small>贯通模型训练、部署与服务</small></span><span class="nav-panel__item-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="assets/icons/navigation/nav-icons.svg#arrow-right"></use></svg></span></a>
+              <a class="nav-panel__item" href="pages/solutions/ai-application-development.html"><span class="nav-panel__item-icon" aria-hidden="true"><svg class="nav-panel__item-glyph" viewBox="0 0 24 24"><use href="assets/icons/navigation/nav-icons.svg#app-flow"></use></svg><span class="nav-panel__item-index">04</span></span><span class="nav-panel__item-body"><strong>AI 应用开发</strong><small>从模型调用走向应用落地</small></span><span class="nav-panel__item-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="assets/icons/navigation/nav-icons.svg#arrow-right"></use></svg></span></a>
             </div>
           </div>
         </details>
         <details class="nav-group" data-nav-group>
-          <summary>专家服务 <span aria-hidden="true">⌄</span></summary>
-          <div class="nav-panel" aria-label="专家服务菜单">
-            <div class="nav-panel__main">
+          <summary>专家服务</summary>
+          <div class="nav-panel nav-panel--single" aria-label="专家服务菜单">
+            <div class="nav-panel__main nav-panel__group">
               <p class="nav-panel__label">专项服务</p>
-              <a class="nav-panel__item" href="pages/services/operator-optimization.html"><i aria-hidden="true">01</i><span><strong>算子优化</strong><small>面向国产芯片的执行性能优化</small></span></a>
-              <a class="nav-panel__item" href="pages/services/data-governance.html"><i aria-hidden="true">02</i><span><strong>数据治理</strong><small>建设适用于 AI 的高质量数据资产</small></span></a>
-              <a class="nav-panel__item" href="pages/services/maas-platform.html"><i aria-hidden="true">03</i><span><strong>MaaS 搭建</strong><small>建设模型管理、部署与 API 服务平台</small></span></a>
-            </div>
-            <div class="nav-panel__aside">
-              <p class="nav-panel__label">导览</p>
-              <strong>围绕关键环节协作</strong>
-              <span>选择与你当前目标最接近的入口继续了解。</span>
+              <a class="nav-panel__item" href="pages/services/operator-optimization.html"><span class="nav-panel__item-icon" aria-hidden="true"><svg class="nav-panel__item-glyph" viewBox="0 0 24 24"><use href="assets/icons/navigation/nav-icons.svg#chip"></use></svg><span class="nav-panel__item-index">01</span></span><span class="nav-panel__item-body"><strong>算子优化</strong><small>面向国产芯片的执行性能优化</small></span><span class="nav-panel__item-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="assets/icons/navigation/nav-icons.svg#arrow-right"></use></svg></span></a>
+              <a class="nav-panel__item" href="pages/services/data-governance.html"><span class="nav-panel__item-icon" aria-hidden="true"><svg class="nav-panel__item-glyph" viewBox="0 0 24 24"><use href="assets/icons/navigation/nav-icons.svg#database"></use></svg><span class="nav-panel__item-index">02</span></span><span class="nav-panel__item-body"><strong>数据治理</strong><small>建设适用于 AI 的高质量数据资产</small></span><span class="nav-panel__item-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="assets/icons/navigation/nav-icons.svg#arrow-right"></use></svg></span></a>
+              <a class="nav-panel__item" href="pages/services/maas-platform.html"><span class="nav-panel__item-icon" aria-hidden="true"><svg class="nav-panel__item-glyph" viewBox="0 0 24 24"><use href="assets/icons/navigation/nav-icons.svg#layers"></use></svg><span class="nav-panel__item-index">03</span></span><span class="nav-panel__item-body"><strong>MaaS 搭建</strong><small>建设模型管理、部署与 API 服务平台</small></span><span class="nav-panel__item-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="assets/icons/navigation/nav-icons.svg#arrow-right"></use></svg></span></a>
             </div>
           </div>
         </details>
         <a class="nav-pricing" href="pages/pricing.html">定价</a>
         <details class="nav-group" data-nav-group>
-          <summary>资源 <span aria-hidden="true">⌄</span></summary>
-          <div class="nav-panel" aria-label="资源菜单">
-            <div class="nav-panel__main">
+          <summary>资源</summary>
+          <div class="nav-panel nav-panel--single" aria-label="资源菜单">
+            <div class="nav-panel__main nav-panel__group">
               <p class="nav-panel__label">技术资源</p>
-              <a class="nav-panel__item" href="pages/resources/product-docs.html"><i aria-hidden="true">01</i><span><strong>产品文档</strong><small>产品使用信息入口</small></span></a>
-              <a class="nav-panel__item" href="pages/resources/api-docs.html"><i aria-hidden="true">02</i><span><strong>API 文档</strong><small>接口说明入口</small></span></a>
-              <a class="nav-panel__item" href="pages/resources/help-center.html"><i aria-hidden="true">03</i><span><strong>帮助中心</strong><small>常见问题与支持路径</small></span></a>
-            </div>
-            <div class="nav-panel__aside">
-              <p class="nav-panel__label">导览</p>
-              <strong>真实地址待接入</strong>
-              <span>现阶段保留本地说明页，不虚构外部文档内容。</span>
+              <a class="nav-panel__item" href="pages/resources/product-docs.html"><span class="nav-panel__item-icon" aria-hidden="true"><svg class="nav-panel__item-glyph" viewBox="0 0 24 24"><use href="assets/icons/navigation/nav-icons.svg#book"></use></svg><span class="nav-panel__item-index">01</span></span><span class="nav-panel__item-body"><strong>产品文档</strong><small>产品使用信息入口</small></span><span class="nav-panel__item-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="assets/icons/navigation/nav-icons.svg#arrow-right"></use></svg></span></a>
+              <a class="nav-panel__item" href="pages/resources/api-docs.html"><span class="nav-panel__item-icon" aria-hidden="true"><svg class="nav-panel__item-glyph" viewBox="0 0 24 24"><use href="assets/icons/navigation/nav-icons.svg#api"></use></svg><span class="nav-panel__item-index">02</span></span><span class="nav-panel__item-body"><strong>API 文档</strong><small>接口说明入口</small></span><span class="nav-panel__item-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="assets/icons/navigation/nav-icons.svg#arrow-right"></use></svg></span></a>
+              <a class="nav-panel__item" href="pages/resources/help-center.html"><span class="nav-panel__item-icon" aria-hidden="true"><svg class="nav-panel__item-glyph" viewBox="0 0 24 24"><use href="assets/icons/navigation/nav-icons.svg#help"></use></svg><span class="nav-panel__item-index">03</span></span><span class="nav-panel__item-body"><strong>帮助中心</strong><small>常见问题与支持路径</small></span><span class="nav-panel__item-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="assets/icons/navigation/nav-icons.svg#arrow-right"></use></svg></span></a>
             </div>
           </div>
         </details>
         <a class="nav-about" href="pages/about.html">关于我们</a>
       </nav>
-      <div class="header-account"><a href="https://zhongkedayun.vercel.app/login">登录</a><a class="header-cta" href="https://zhongkedayun.vercel.app/login">免费体验</a></div>
+      <div class="header-account"><a href="https://zkda-cloud-console.mmmmqian.chatgpt.site">登录</a><a class="header-cta" href="https://zkda-cloud-console.mmmmqian.chatgpt.site">立即体验</a></div>
     </header>
     <main id="main">
-      <section class="content-hero content-hero--home" id="top" data-hero-motion>
+      <section class="content-hero content-hero--home" id="top" data-hero-motion data-header-theme="light">
         <canvas class="hero-webgl-canvas" data-hero-webgl aria-hidden="true"></canvas>
         <canvas class="hero-event-glow" data-hero-event-glow aria-hidden="true"></canvas>
         <canvas class="hero-data-grid" data-hero-grid-canvas aria-hidden="true"></canvas>
         <div class="hero-motion-fallback" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
         <div class="hero-motion-haze" aria-hidden="true"></div>
+        <div class="hero-depth-blur" data-hero-depth-blur aria-hidden="true"></div>
         <canvas class="hero-focus-grid" data-hero-focus-grid aria-hidden="true"></canvas>
         <canvas class="hero-reveal-overlay" data-hero-reveal aria-hidden="true"></canvas>
         <div class="content-container content-hero__inner">
-          <p class="content-kicker">AI 基础设施平台 · 国产多芯</p>
-          <h1><span class="hero-title-line">把国产算力、模型服务</span><span class="hero-title-line">与 AI 应用开发，</span><span class="hero-title-line hero-title-accent">连接成一套基础设施</span></h1>
+          <h1>打造领先的<span class="hero-title-accent">全面 智能</span><br><span class="hero-title-latin">AI</span>基础设施平台</h1>
           <div class="content-hero__lower">
-            <div><p class="content-hero__intro">中科达云以智算云平台为底座，通过 Token Hub 连接模型服务，再由 AutoDev 支撑 AI 应用开发，帮助企业降低异构算力管理与国产化迁移复杂度。</p><p class="content-value-line">一云多芯 · 平滑迁移 · 技术降本</p></div>
-            <div class="content-actions"><a class="content-action content-action--primary" href="https://zhongkedayun.vercel.app/login">免费体验<span aria-hidden="true">→</span></a><a class="content-action content-action--text" href="pages/products/intelligent-computing-cloud.html">了解平台<span aria-hidden="true">→</span></a></div>
+            <div class="home-hero-detail"><p class="home-hero-detail__label">我们是谁：</p><p class="content-hero__intro">中科达云以智算云平台为底座，通过 Token Hub 连接模型服务，再由 AutoDev 支撑 AI 应用开发，帮助企业降低异构算力管理与国产化迁移复杂度。</p></div>
+            <div class="home-hero-detail home-hero-detail--offer"><p class="home-hero-detail__label">联系我们：</p><a class="home-hero-detail__link contact-email email-link--underline-sweep" href="mailto:contact@zhongkedayun.com">contact@zhongkedayun.com</a></div>
           </div>
         </div>
       </section>
-      <section class="chip-brand-loop" aria-label="国产芯片品牌">
+      <section class="chip-brand-loop" aria-label="国产芯片品牌" data-header-theme="light">
         <div class="chip-brand-loop__motion">
-          <input class="chip-brand-loop__toggle" type="checkbox" id="chip-brand-loop-pause">
-          <label class="chip-brand-loop__control" for="chip-brand-loop-pause"><span class="chip-brand-loop__pause-label">暂停循环</span><span class="chip-brand-loop__resume-label">继续循环</span></label>
           <div class="chip-brand-loop__viewport">
             <div class="chip-brand-loop__track">
               <ul class="chip-brand-loop__list" aria-label="国产芯片品牌">
-                <li><img src="assets/brand/chip-vendors/pingtouge.png" width="633" height="177" alt="平头哥"></li>
-                <li><img src="assets/brand/chip-vendors/ascend.svg" width="269" height="59" alt="昇腾 Ascend"></li>
-                <li><img src="assets/brand/chip-vendors/kunlunxin.png" width="1018" height="314" alt="昆仑芯"></li>
-                <li><img src="assets/brand/chip-vendors/hygon.png" width="870" height="177" alt="海光 HYGON"></li>
-                <li><img src="assets/brand/chip-vendors/metax.svg" width="363" height="88" alt="沐曦 MetaX"></li>
-                <li><img src="assets/brand/chip-vendors/biren.svg" width="113" height="28" alt="壁仞 BIREN"></li>
-                <li><img src="assets/brand/chip-vendors/cambricon.svg" width="173" height="59" alt="寒武纪 Cambricon"></li>
-                <li><img src="assets/brand/chip-vendors/enflame.svg" width="99" height="45" alt="燧原"></li>
-                <li><img src="assets/brand/chip-vendors/iluvatar-corex.svg" width="231" height="59" alt="天数智芯"></li>
-                <li><img src="assets/brand/chip-vendors/vaststream.png" width="888" height="285" alt="翰博半导体 Vaststream"></li>
-                <li><img src="assets/brand/chip-vendors/denglin.png" width="291" height="52" alt="登临"></li>
-                <li><img src="assets/brand/chip-vendors/moore-threads.png" width="405" height="124" alt="摩尔线程 Moore Threads"></li>
+                <li><img src="assets/brand/chip-vendors-black/pingtouge.png" width="417" height="105" alt="平头哥"></li>
+                <li><img src="assets/brand/chip-vendors-black/ascend.png" width="477" height="105" alt="昇腾 Ascend"></li>
+                <li><img src="assets/brand/chip-vendors-black/kunlunxin.png" width="339" height="105" alt="昆仑芯"></li>
+                <li><img src="assets/brand/chip-vendors-black/hygon.png" width="642" height="105" alt="海光 HYGON"></li>
+                <li><img src="assets/brand/chip-vendors-black/metax.png" width="435" height="105" alt="沐曦 MetaX"></li>
+                <li><img src="assets/brand/chip-vendors-black/biren.png" width="432" height="105" alt="壁仞 BIREN"></li>
+                <li><img src="assets/brand/chip-vendors-black/cambricon.png" width="309" height="105" alt="寒武纪 Cambricon"></li>
+                <li><img src="assets/brand/chip-vendors-black/enflame.png" width="234" height="105" alt="燧原"></li>
+                <li><img src="assets/brand/chip-vendors-black/iluvatar-corex.png" width="411" height="105" alt="天数智芯"></li>
+                <li><img src="assets/brand/chip-vendors-black/vaststream.png" width="327" height="105" alt="翰博半导体 Vaststream"></li>
+                <li><img src="assets/brand/chip-vendors-black/denglin.png" width="588" height="105" alt="登临"></li>
+                <li><img src="assets/brand/chip-vendors-black/moore-threads.png" width="306" height="105" alt="摩尔线程 Moore Threads"></li>
               </ul>
               <ul class="chip-brand-loop__list chip-brand-loop__list--clone" aria-hidden="true">
-                <li><img src="assets/brand/chip-vendors/pingtouge.png" width="633" height="177" alt=""></li>
-                <li><img src="assets/brand/chip-vendors/ascend.svg" width="269" height="59" alt=""></li>
-                <li><img src="assets/brand/chip-vendors/kunlunxin.png" width="1018" height="314" alt=""></li>
-                <li><img src="assets/brand/chip-vendors/hygon.png" width="870" height="177" alt=""></li>
-                <li><img src="assets/brand/chip-vendors/metax.svg" width="363" height="88" alt=""></li>
-                <li><img src="assets/brand/chip-vendors/biren.svg" width="113" height="28" alt=""></li>
-                <li><img src="assets/brand/chip-vendors/cambricon.svg" width="173" height="59" alt=""></li>
-                <li><img src="assets/brand/chip-vendors/enflame.svg" width="99" height="45" alt=""></li>
-                <li><img src="assets/brand/chip-vendors/iluvatar-corex.svg" width="231" height="59" alt=""></li>
-                <li><img src="assets/brand/chip-vendors/vaststream.png" width="888" height="285" alt=""></li>
-                <li><img src="assets/brand/chip-vendors/denglin.png" width="291" height="52" alt=""></li>
-                <li><img src="assets/brand/chip-vendors/moore-threads.png" width="405" height="124" alt=""></li>
+                <li><img src="assets/brand/chip-vendors-black/pingtouge.png" width="417" height="105" alt=""></li>
+                <li><img src="assets/brand/chip-vendors-black/ascend.png" width="477" height="105" alt=""></li>
+                <li><img src="assets/brand/chip-vendors-black/kunlunxin.png" width="339" height="105" alt=""></li>
+                <li><img src="assets/brand/chip-vendors-black/hygon.png" width="642" height="105" alt=""></li>
+                <li><img src="assets/brand/chip-vendors-black/metax.png" width="435" height="105" alt=""></li>
+                <li><img src="assets/brand/chip-vendors-black/biren.png" width="432" height="105" alt=""></li>
+                <li><img src="assets/brand/chip-vendors-black/cambricon.png" width="309" height="105" alt=""></li>
+                <li><img src="assets/brand/chip-vendors-black/enflame.png" width="234" height="105" alt=""></li>
+                <li><img src="assets/brand/chip-vendors-black/iluvatar-corex.png" width="411" height="105" alt=""></li>
+                <li><img src="assets/brand/chip-vendors-black/vaststream.png" width="327" height="105" alt=""></li>
+                <li><img src="assets/brand/chip-vendors-black/denglin.png" width="588" height="105" alt=""></li>
+                <li><img src="assets/brand/chip-vendors-black/moore-threads.png" width="306" height="105" alt=""></li>
               </ul>
             </div>
           </div>
         </div>
       </section>
-      <section class="content-section" id="proof" aria-labelledby="proof-title"><div class="content-container"><div class="content-heading"><p>已确认公开数据</p><h2 id="proof-title">用可核对的规模与稳定性说话</h2></div><div class="metric-strip"><div><strong>5000+</strong><span>纳管 GPU 卡</span></div><div><strong>20+</strong><span>支持芯片厂商</span></div><div><strong>99.9%</strong><span>系统可用性</span></div><div><strong>100+</strong><span>服务企业</span></div></div></div></section>
-      <section class="content-section content-section--ink" id="products" aria-labelledby="products-title"><div class="content-container"><div class="content-heading"><p>三层产品关系</p><h2 id="products-title">算力是底座，模型服务连接能力，应用开发完成落地</h2><div class="content-intro"><p>智算云平台承接异构算力，Token Hub 把模型能力组织为统一服务，AutoDev 再把这些能力带入应用开发。三项产品前后衔接，共同组成从算力到应用的连续基础设施。</p></div></div><div class="content-links product-relationship"><a href="pages/products/intelligent-computing-cloud.html"><span>01 · 算力底座</span><strong>智算云平台</strong><small>统一纳管多芯算力，为模型训练、推理和服务提供资源基础。</small><i aria-hidden="true">查看详情 →</i></a><a href="pages/products/token-hub.html"><span>02 · 模型服务</span><strong>Token Hub</strong><small>承接底层算力上的模型能力，将其组织为统一 API 与调用入口。</small><i aria-hidden="true">查看详情 →</i></a><a href="pages/products/autodev.html"><span>03 · 应用开发</span><strong>AutoDev</strong><small>调用模型服务，把 AI 能力带入代码生成、调试与应用开发。</small><i aria-hidden="true">查看详情 →</i></a></div></div></section>
-      <section class="content-section content-section--muted" id="multi-chip" aria-labelledby="multi-chip-title"><div class="content-container"><div class="content-heading"><p>核心技术</p><h2 id="multi-chip-title">一云多芯，业务不再绑定单一硬件体系</h2><div class="content-intro"><p>通过统一软件层连接多种国产 AI 芯片，降低异构资源管理和业务适配复杂度。</p></div></div><div class="content-indexed"><article><span>01</span><div><h3>多芯接入</h3><p>面向多种国产 AI 芯片建立统一管理入口。</p></div></article><article><span>02</span><div><h3>统一资源池</h3><p>把不同来源的算力组织为可管理的资源。</p></div></article><article><span>03</span><div><h3>工作负载承接</h3><p>支持训练、推理与模型服务等 AI 工作负载。</p></div></article></div></div></section>
-      <section class="content-section" id="migration" aria-labelledby="migration-title"><div class="content-container"><div class="content-heading"><p>国产算力迁移</p><h2 id="migration-title">迁移不必从头开始</h2><div class="content-intro"><p>围绕现有 AI 应用评估、适配、验证与部署，减少逐厂商重复适配带来的复杂度。</p></div></div><div class="content-flow"><span>现有 AI 应用</span><i>→</i><span>统一迁移与适配</span><i>→</i><span>多种国产算力</span><i>→</i><span>部署验证</span></div><div class="content-actions"><a class="content-action content-action--text" href="pages/solutions/domestic-computing-migration.html">查看迁移方案<span aria-hidden="true">→</span></a></div></div></section>
-      <section class="content-section content-section--ink" id="capabilities" aria-labelledby="capabilities-title"><div class="content-container"><div class="content-heading"><p>平台能力</p><h2 id="capabilities-title">覆盖 AI 工作负载的全生命周期</h2></div><div class="content-indexed"><article><span>01</span><div><h3>异构算力管理</h3><p>统一管理不同类型 GPU 与 AI 芯片资源池。</p></div></article><article><span>02</span><div><h3>数据管理</h3><p>围绕 AI 数据集、治理与生命周期组织数据。</p></div></article><article><span>03</span><div><h3>模型训练</h3><p>承接单机、多卡与分布式训练场景。</p></div></article><article><span>04</span><div><h3>模型推理</h3><p>支持在线、批量与弹性推理服务。</p></div></article><article><span>05</span><div><h3>模型服务</h3><p>覆盖模型管理、部署与 API 服务。</p></div></article><article><span>06</span><div><h3>智能运维</h3><p>通过监控、告警、日志与资源优化保障运行。</p></div></article></div></div></section>
-      <section class="content-section" id="advantages" aria-labelledby="advantages-title"><div class="content-container"><div class="content-heading"><p>为什么选择中科达云</p><h2 id="advantages-title">把技术能力翻译成企业可以判断的价值</h2></div><div class="content-indexed"><article><span>01</span><div><h3>一云多芯</h3><p>降低对单一硬件体系的绑定。</p></div></article><article><span>02</span><div><h3>平滑迁移</h3><p>降低国产化迁移与适配门槛。</p></div></article><article><span>03</span><div><h3>安全可控</h3><p>构建自主可控的 AI 技术底座。</p></div></article><article><span>04</span><div><h3>技术降本</h3><p>通过调度、软件优化与资源管理提升算力效率。</p></div></article><article><span>05</span><div><h3>行业知识</h3><p>依托中科体系专家资源与领域积累。</p></div></article><article><span>06</span><div><h3>智能运维</h3><p>提升系统稳定性并保障服务连续性。</p></div></article></div></div></section>
-      <section class="content-section content-section--muted" id="solutions" aria-labelledby="solutions-title"><div class="content-container"><div class="content-heading"><p>解决方案</p><h2 id="solutions-title">面向企业 AI 建设的四类核心场景</h2><div class="content-intro"><p>从已有工作负载迁移，到智算中心、大模型平台和应用开发，按企业当前阶段进入对应页面。</p></div></div><div class="content-links"><a href="pages/solutions/domestic-computing-migration.html"><span>01</span><strong>国产算力迁移</strong><small>降低迁移、开发与部署复杂度</small><i aria-hidden="true">→</i></a><a href="pages/solutions/enterprise-intelligent-computing-center.html"><span>02</span><strong>企业智算中心</strong><small>统一管理企业异构算力</small><i aria-hidden="true">→</i></a><a href="pages/solutions/enterprise-large-model.html"><span>03</span><strong>企业大模型</strong><small>贯通模型训练、部署与服务</small><i aria-hidden="true">→</i></a><a href="pages/solutions/ai-application-development.html"><span>04</span><strong>AI 应用开发</strong><small>从模型调用走向应用落地</small><i aria-hidden="true">→</i></a></div></div></section>
-      <section class="content-section" id="trust" aria-labelledby="trust-title"><div class="content-container"><div class="content-heading"><p>能力证明边界</p><h2 id="trust-title">服务企业级 AI 生产环境，只使用已获准公开的信息</h2><div class="content-intro"><p>当前可以公开 100+ 服务企业及科研、制造、交通、能源、政企、AI 公司等行业方向；未获得授权前不展示客户名称、Logo、成本下降比例或性能提升数据。</p></div></div><div class="content-tags"><span>科研</span><span>制造</span><span>交通</span><span>能源</span><span>政企</span><span>AI 公司</span></div></div></section>
-      <section class="content-section content-section--ink" id="ecosystem" aria-labelledby="ecosystem-title"><div class="content-container"><div class="content-heading"><p>国产 AI 生态</p><h2 id="ecosystem-title">做生态的连接者，而不是绑定某一家芯片厂商</h2></div><div class="content-flow"><span>国产 AI 芯片</span><i>→</i><span>主流 AI 框架</span><i>→</i><span>国产大模型</span><i>→</i><span>企业 AI 应用</span></div></div></section>
-      <section class="content-section" id="services" aria-labelledby="services-title"><div class="content-container"><div class="content-heading"><p>专家服务</p><h2 id="services-title">平台之外，还有面向关键环节的专家能力</h2></div><div class="content-links"><a href="pages/services/operator-optimization.html"><span>01</span><strong>算子优化</strong><small>面向国产芯片的执行性能优化</small><i aria-hidden="true">→</i></a><a href="pages/services/data-governance.html"><span>02</span><strong>数据治理</strong><small>建设适用于 AI 的高质量数据资产</small><i aria-hidden="true">→</i></a><a href="pages/services/maas-platform.html"><span>03</span><strong>MaaS 搭建</strong><small>建设模型管理、部署与 API 服务平台</small><i aria-hidden="true">→</i></a></div></div></section>
-      <section class="content-section content-section--muted" id="about" aria-labelledby="about-title"><div class="content-container"><div class="content-heading"><p>中科体系 · 技术驱动</p><h2 id="about-title">以专家资源、底层技术与行业知识支撑平台建设</h2><div class="content-intro"><p>中科达云面向企业 AI 基础设施建设，把国产算力、模型服务、应用开发和专项技术协作组织为连续能力。</p></div></div><div class="content-actions"><a class="content-action content-action--text" href="pages/about.html">了解中科达云<span aria-hidden="true">→</span></a></div></div></section>
-      <section class="content-section content-section--ink" id="final" aria-labelledby="final-title"><div class="content-container"><div class="content-heading"><p>开始使用</p><h2 id="final-title">开始构建你的 AI 基础设施</h2><div class="content-intro"><p>从国产算力、模型服务到 AI 应用开发，中科达云提供一站式平台与技术支持。</p></div></div><div class="content-actions"><a class="content-action content-action--primary" href="https://zhongkedayun.vercel.app/login">免费体验<span aria-hidden="true">→</span></a><a class="content-action content-action--text" href="pages/about.html#contact">联系专家<span aria-hidden="true">→</span></a></div></div></section>
+      <section class="home-metrics" id="proof" aria-labelledby="proof-title" data-header-theme="light">
+        <div class="home-metrics__lead">
+          <h2 id="proof-title">可核对的<br><em>规模</em><br>&amp; <em>稳定性</em></h2>
+          <img src="assets/visual/figma-home-20260825/metrics-pixel.jpg?v=20260826" width="970" height="664" alt="" aria-hidden="true">
+        </div>
+        <div class="home-metrics__grid" aria-label="已确认公开数据">
+          <article class="home-metric home-metric--featured is-active" data-metric-panel><button class="home-metric__toggle" type="button" aria-expanded="true" data-metric-toggle><span>01</span><div><strong>5,000+</strong><p>纳管 GPU 卡</p></div></button></article>
+          <article class="home-metric home-metric--blue" data-metric-panel><button class="home-metric__toggle" type="button" aria-expanded="false" data-metric-toggle><span>02</span><div><strong>20+</strong><p>支持芯片厂商</p></div></button></article>
+          <article class="home-metric home-metric--navy" data-metric-panel><button class="home-metric__toggle" type="button" aria-expanded="false" data-metric-toggle><span>03</span><div><strong>99.9%</strong><p>系统可用性</p></div></button></article>
+          <article class="home-metric home-metric--deep" data-metric-panel><button class="home-metric__toggle" type="button" aria-expanded="false" data-metric-toggle><span>04</span><div><strong>100+</strong><p>服务企业</p></div></button></article>
+        </div>
+      </section>
+      <section class="product-system" id="products" aria-labelledby="products-title" data-product-carousel data-header-theme="light">
+        <header class="product-system__intro">
+          <p class="section-label"><strong>AI STACK</strong><span>产品体系</span></p>
+          <h2 id="products-title" class="home-section-heading">从算力、模型到应用，一套完整的 AI 基础设施</h2>
+        </header>
+        <div class="product-system__carousel" aria-roledescription="轮播">
+          <div class="product-system__controls" aria-label="切换产品">
+            <button type="button" data-product-previous aria-label="查看上一个产品"><img src="assets/icons/lucide/arrow-right.svg" alt="" aria-hidden="true"></button>
+            <button type="button" data-product-next aria-label="查看下一个产品"><img src="assets/icons/lucide/arrow-right.svg" alt="" aria-hidden="true"></button>
+          </div>
+          <div class="product-system__slides" aria-live="polite">
+            <article class="product-system__slide is-active" data-product-slide role="group" aria-label="1 / 3，智算云平台">
+              <figure class="product-system__visual">
+                <img src="assets/visual/product-system-figma-20260826/intelligent-computing-cloud.gif?v=20260826" width="480" height="640" alt="智算云平台从算力资源到模型服务的分层架构动图">
+                <figcaption><span>智算云平台</span><strong>一云多芯的国产算力全栈平台</strong></figcaption>
+              </figure>
+              <div class="product-system__body">
+                <p class="product-system__count"><b>01</b><span>/ 03</span></p>
+                <div class="product-system__copy"><p>一云多芯，支持所有主流国产 AI 芯片，通过统一软件层降低异构算力管理和业务适配复杂度。统一管理异构算力，覆盖数据管理、模型训练、推理与 MaaS 全流程。</p><a href="pages/products/intelligent-computing-cloud.html">了解智算云平台 <span aria-hidden="true">→</span></a></div>
+                <ul class="product-system__features" aria-label="智算云平台能力"><li><span>一云多芯</span></li><li><span>全流程 MaaS</span></li><li><span>智能运维</span></li><li><strong>99%</strong><span>可用性</span></li></ul>
+              </div>
+            </article>
+            <article class="product-system__slide" data-product-slide role="group" aria-label="2 / 3，Token Hub">
+              <figure class="product-system__visual">
+                <img src="assets/visual/product-system-figma-20260826/token-hub.gif?v=20260826" width="480" height="640" alt="Token Hub 连接算力、模型 API 与应用的分层架构动图">
+                <figcaption><span>Token Hub</span><strong>AI API市场与密钥管理</strong></figcaption>
+              </figure>
+              <div class="product-system__body">
+                <p class="product-system__count"><b>02</b><span>/ 03</span></p>
+                <div class="product-system__copy"><p>一个入口，连接多个大模型，汇聚主流国产大模型 API，统一管理 API Key，支持按量调用。</p><a href="pages/products/token-hub.html">了解 Token Hub <span aria-hidden="true">→</span></a></div>
+                <ul class="product-system__features" aria-label="Token Hub 能力"><li><span>多模型支持</span></li><li><span>按量计费</span></li><li><span>统一密钥管理</span></li></ul>
+              </div>
+            </article>
+            <article class="product-system__slide" data-product-slide role="group" aria-label="3 / 3，AutoDev">
+              <figure class="product-system__visual">
+                <img src="assets/visual/product-system-figma-20260826/autodev.gif?v=20260826" width="480" height="640" alt="AutoDev 从算力和模型能力到应用开发的分层架构动图">
+                <figcaption><span>AutoDev</span><strong>AI 驱动的自动化开发</strong></figcaption>
+              </figure>
+              <div class="product-system__body">
+                <p class="product-system__count"><b>03</b><span>/ 03</span></p>
+                <div class="product-system__copy"><p>AutoDev 是新一代 AI 驱动开发工具。理解你的项目上下文，从自然语言需求到完整可运行代码，从智能调试到自动化部署。</p><a href="pages/products/autodev.html">了解 AutoDev <span aria-hidden="true">→</span></a></div>
+                <ul class="product-system__features" aria-label="AutoDev 能力"><li><strong>500K+</strong><span>生成代码行数</span></li><li><strong>10K+</strong><span>活跃开发者</span></li><li><strong>23</strong><span>支持语言</span></li><li><strong>99.9%</strong><span>代码准确率</span></li></ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="platform-capabilities" id="capabilities" aria-labelledby="capabilities-title" data-capabilities data-header-theme="light">
+        <header class="platform-capabilities__eyebrow"><p class="section-label"><strong>CAPABILITIES</strong><span>平台能力</span></p></header>
+        <div class="platform-capabilities__scroll">
+          <div class="platform-capabilities__stage">
+            <div class="platform-capabilities__summary">
+              <h2 id="capabilities-title" class="home-section-heading">覆盖 AI<br>全生命周期</h2>
+              <ul aria-label="贯穿平台能力的基础保障"><li><span>Operations</span>智能运维</li><li><span>Security</span>安全</li><li><span>Observability</span>可观测</li></ul>
+            </div>
+            <div class="platform-capabilities__cards" data-capability-cards>
+              <article class="platform-capability-card platform-capability-card--compute is-active" data-capability-card>
+                <h3><button type="button" aria-expanded="true" data-capability-trigger><span>异构算力管理</span><span>01</span></button></h3>
+                <div class="platform-capability-card__body"><p>统一纳管不同国产 GPU / AI 芯片、集群和资源池。</p><img src="assets/visual/platform-capabilities-figma-20260827/compute-management.png" width="402" height="400" alt="" aria-hidden="true"></div>
+              </article>
+              <article class="platform-capability-card platform-capability-card--data" data-capability-card>
+                <h3><button type="button" aria-expanded="false" data-capability-trigger><span>AI 数据管理</span><span>02</span></button></h3>
+                <div class="platform-capability-card__body"><p>服务模型训练、微调、推理与应用开发的数据生命周期。</p><img src="assets/visual/platform-capabilities-figma-20260827/data-management.png" width="401" height="400" alt="" aria-hidden="true"></div>
+              </article>
+              <article class="platform-capability-card platform-capability-card--training" data-capability-card>
+                <h3><button type="button" aria-expanded="false" data-capability-trigger><span>模型训练</span><span>03</span></button></h3>
+                <div class="platform-capability-card__body"><p>支持单机、多卡及分布式训练。</p><img src="assets/visual/platform-capabilities-figma-20260827/model-training.png" width="400" height="400" alt="" aria-hidden="true"></div>
+              </article>
+              <article class="platform-capability-card platform-capability-card--inference" data-capability-card>
+                <h3><button type="button" aria-expanded="false" data-capability-trigger><span>模型推理</span><span>04</span></button></h3>
+                <div class="platform-capability-card__body"><p>支持在线推理、批量推理、弹性服务与推理优化。</p><img src="assets/visual/platform-capabilities-figma-20260827/model-inference.png" width="400" height="400" alt="" aria-hidden="true"></div>
+              </article>
+              <article class="platform-capability-card platform-capability-card--service" data-capability-card>
+                <h3><button type="button" aria-expanded="false" data-capability-trigger><span>模型服务 / Token Hub</span><span>05</span></button></h3>
+                <div class="platform-capability-card__body"><p>通过 Token Hub / MaaS 将多个模型以统一 API 方式提供给企业应用。</p><img src="assets/visual/platform-capabilities-figma-20260827/model-service.png" width="400" height="400" alt="" aria-hidden="true"></div>
+              </article>
+              <article class="platform-capability-card platform-capability-card--autodev" data-capability-card>
+                <h3><button type="button" aria-expanded="false" data-capability-trigger><span>AI 驱动开发 / AutoDev</span><span>06</span></button></h3>
+                <div class="platform-capability-card__body"><p>通过 AutoDev 支持从自然语言需求到代码生成、审查、调试与自动部署。</p><img src="assets/visual/product-system-figma-20260826/autodev.gif?v=20260826" width="480" height="640" alt="" aria-hidden="true"></div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="core-advantages" id="advantages" aria-labelledby="advantages-title" data-core-advantages data-header-theme="light">
+        <header class="core-advantages__header">
+          <p class="section-label core-advantages__eyebrow"><strong>ADVANTAGES</strong><span>核心优势</span></p>
+          <h2 id="advantages-title" class="home-section-heading">为国产AI基础设施而生</h2>
+        </header>
+        <div class="core-advantages__main">
+          <div class="core-advantages__visual" id="advantage-panel" role="tabpanel" aria-labelledby="advantage-tab-1" data-advantage-panel data-active-advantage="1"></div>
+          <div class="core-advantages__tabs" role="tablist" aria-label="核心优势" data-advantage-tabs>
+            <button class="core-advantages__tab is-active" id="advantage-tab-1" type="button" role="tab" aria-selected="true" aria-controls="advantage-panel" tabindex="0" data-advantage-tab>
+              <span class="core-advantages__tab-title">一云多芯，打破算力壁垒</span>
+              <span class="core-advantages__tab-description">不绑定单一芯片厂商 ｜ 提升硬件选择自由度<br>降低异构管理复杂度 ｜ 统一资源调度</span>
+            </button>
+            <button class="core-advantages__tab" id="advantage-tab-2" type="button" role="tab" aria-selected="false" aria-controls="advantage-panel" tabindex="-1" data-advantage-tab>
+              <span class="core-advantages__tab-title">平滑迁移</span>
+              <span class="core-advantages__tab-description">降低迁移复杂度 ｜ 减少重复开发<br>缩短适配周期 ｜ 降低国产化门槛</span>
+            </button>
+            <button class="core-advantages__tab" id="advantage-tab-3" type="button" role="tab" aria-selected="false" aria-controls="advantage-panel" tabindex="-1" data-advantage-tab>
+              <span class="core-advantages__tab-title">技术降本</span>
+              <span class="core-advantages__tab-description">让每一份算力发挥更大价值，通过资源管理、调度和软件优化降低综合算力成本。</span>
+            </button>
+            <button class="core-advantages__tab" id="advantage-tab-4" type="button" role="tab" aria-selected="false" aria-controls="advantage-panel" tabindex="-1" data-advantage-tab>
+              <span class="core-advantages__tab-title">安全可控</span>
+              <span class="core-advantages__tab-description">从硬件到软件，构建自主可控技术底座，保障企业 AI 基础设施和业务连续性。</span>
+            </button>
+            <button class="core-advantages__tab" id="advantage-tab-5" type="button" role="tab" aria-selected="false" aria-controls="advantage-panel" tabindex="-1" data-advantage-tab>
+              <span class="core-advantages__tab-title">智能运维</span>
+              <span class="core-advantages__tab-description">让复杂基础设施稳定运行，降低运维复杂度，提升稳定性并保障 SLA。</span>
+            </button>
+            <button class="core-advantages__tab" id="advantage-tab-6" type="button" role="tab" aria-selected="false" aria-controls="advantage-panel" tabindex="-1" data-advantage-tab>
+              <span class="core-advantages__tab-title">行业知识</span>
+              <span class="core-advantages__tab-description">不只是平台，更懂行业 AI 落地，依托中科体系专家资源和领域知识提供技术支持。</span>
+            </button>
+          </div>
+        </div>
+      </section>
+      <section class="home-solutions" id="solutions" aria-labelledby="solutions-title" data-header-theme="light">
+        <div class="home-solutions__heading-region">
+          <header class="home-solutions__header">
+            <p class="section-label home-solutions__eyebrow"><strong>SOLUTIONS</strong><span>解决方案</span></p>
+            <h2 id="solutions-title" class="home-section-heading">解决AI落地关键问题</h2>
+          </header>
+          <div class="home-solutions__breathing-space" aria-hidden="true"></div>
+        </div>
+        <div class="solution-stack" aria-label="解决方案专家服务">
+          <article class="solution-card" data-index="0">
+            <div class="solution-card__backplate" aria-hidden="true"></div>
+            <div class="solution-card__content">
+              <div class="solution-card__content-layer">
+                <p class="solution-card__number">01</p>
+                <div class="solution-card__copy"><h3>算子优化专家服务</h3><div><p>围绕国产 AI 芯片适配、迁移与性能优化，提供从兼容验证到深度定制开发的分层服务。</p><p>兼容性 ｜ Benchmark ｜ 算子优化 ｜ 国产化适配</p></div></div>
+                <div class="solution-card__visual"><img src="assets/images/solutions-figma-20260922/raw-02.jpg" width="1322" height="1014" alt="算子优化专家服务示意图" loading="lazy" decoding="async"></div>
+              </div>
+            </div>
+          </article>
+          <article class="solution-card" data-index="1">
+            <div class="solution-card__backplate" aria-hidden="true"></div>
+            <div class="solution-card__content">
+              <div class="solution-card__content-layer">
+                <p class="solution-card__number">02</p>
+                <div class="solution-card__copy"><h3>多模态数据治理<br>专家服务</h3><div><p>将企业内部非结构化、多模态数据沉淀为可供模型高效检索与利用的知识资产。</p><p>数据接入 ｜ 数据目录 ｜ 多模态治理 ｜ 任务调度</p></div></div>
+                <div class="solution-card__visual"><img src="assets/images/solutions-figma-20260922/raw-03.jpg" width="1322" height="1014" alt="多模态数据治理专家服务示意图" loading="lazy" decoding="async"></div>
+              </div>
+            </div>
+          </article>
+          <article class="solution-card" data-index="2">
+            <div class="solution-card__backplate" aria-hidden="true"></div>
+            <div class="solution-card__content">
+              <div class="solution-card__content-layer">
+                <p class="solution-card__number">03</p>
+                <div class="solution-card__copy"><h3>MaaS 和 Harness<br>搭建服务</h3><div><p>为企业搭建模型服务平台与 AI 应用开发工具链，覆盖部署、网关、计费到 Prompt、评测、CI/CD。</p><p>MaaS ｜ Harness ｜ 多租户 ｜ 私有化部署</p></div></div>
+                <div class="solution-card__visual"><img src="assets/images/solutions-figma-20260922/raw-06.jpg" width="1322" height="1014" alt="MaaS 和 Harness 搭建服务示意图" loading="lazy" decoding="async"></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="home-final-cta" id="final-cta" aria-labelledby="final-cta-title">
+        <div class="home-final-cta__transition" aria-label="Solutions 与行动区之间的像素化过渡">
+          <div class="home-final-cta__light-zone" data-header-theme="light" aria-hidden="true"></div>
+          <div class="home-final-cta__mosaic-frontier" data-mosaic-transition data-header-theme="light" aria-label="Solutions 与行动区之间的像素化顶部边界">
+            <canvas class="mosaic-transition__canvas" aria-hidden="true"></canvas>
+          </div>
+          <div class="home-final-cta__dark-zone" data-header-theme="dark" aria-hidden="true"></div>
+        </div>
+        <img class="home-final-cta__background" src="assets/images/final-cta-figma-20260923/cta-background-user-20260928.jpg" width="4798" height="3454" alt="" aria-hidden="true" loading="eager" decoding="async">
+        <div class="home-final-cta__texture" aria-hidden="true"></div>
+        <div class="home-final-cta__stage" data-header-theme="dark">
+          <nav class="home-final-cta__nav" aria-label="产品与行动入口">
+            <div class="home-final-cta__products"><span>产品体系</span><div><a class="u-underline-hover" href="pages/products/intelligent-computing-cloud.html">智算云</a><a class="u-underline-hover" href="pages/products/token-hub.html">Token Hub</a><a class="u-underline-hover" href="pages/products/autodev.html">AutoDev</a><a class="u-underline-hover" href="pages/services/operator-optimization.html">专家服务</a></div></div>
+            <div class="home-final-cta__actions"><a class="u-underline-hover" href="https://zkda-cloud-console.mmmmqian.chatgpt.site">免费注册</a><a class="u-underline-hover" href="pages/about.html">了解更多</a></div>
+          </nav>
+          <h2 id="final-cta-title">构建你的AI应用<br><span>体验国产算力的一站式服务</span></h2>
+        </div>
+        <div class="home-final-cta__panels" data-header-theme="dark">
+          <section class="home-final-cta__contact" aria-labelledby="final-contact-title"><p id="final-contact-title">联系我们</p><a class="contact-email email-link--underline-sweep" href="mailto:contact@zhongkedayun.com">contact@zhongkedayun.com</a></section>
+          <section class="home-final-cta__register" aria-labelledby="final-register-title"><p id="final-register-title">立即体验</p><a class="u-underline-sweep" href="https://zkda-cloud-console.mmmmqian.chatgpt.site">立即注册</a></section>
+        </div>
+      </section>
     </main>
-    <footer class="content-footer">
-      <div class="content-footer__lead"><img src="assets/brand/logo-lockup.svg?v=20260820-160823" alt="中科达云 ZKDA Cloud"><p>连接国产算力、模型服务与 AI 应用开发的基础设施平台。</p></div>
-      <div class="content-footer__links"><a href="pages/about.html">关于我们</a><a href="pages/about.html#contact">联系我们</a><a href="mailto:contact@zhongkedayun.com">contact@zhongkedayun.com</a><a href="tel:400-888-0000">400-888-0000</a></div>
-      <div class="content-footer__meta"><span>第 5/8 步 · 页面排版待确认</span><span>© <span data-current-year>2026</span> 中科达云</span></div>
+    <footer class="home-footer" data-header-theme="dark">
+      <div class="home-footer__reveal-stage">
+        <div class="home-footer__brand-backdrop"><img src="assets/brand/logo-lockup-white.svg" width="1579" height="360" alt="中科达云 ZKDA Cloud"></div>
+        <div class="home-footer__content-curtain">
+          <div class="home-footer__top">
+            <p class="home-footer__description">领先的全面、智能AI基础设施平台。一云多芯，打破芯片壁垒，为企业提供安全稳定、灵活高效的云计算基础设施。</p>
+            <div class="home-footer__directory">
+              <section><h2>导航</h2><a class="u-underline-hover" href="index.html">首页</a><a class="u-underline-hover" href="pages/products/intelligent-computing-cloud.html">产品</a><a class="u-underline-hover" href="pages/solutions/domestic-computing-migration.html">解决方案</a><a class="u-underline-hover" href="pages/services/operator-optimization.html">专家服务</a><a class="u-underline-hover" href="pages/pricing.html">定价</a><a class="u-underline-hover" href="pages/resources/product-docs.html">资源</a><a class="u-underline-hover" href="pages/about.html">关于我们</a></section>
+              <section><h2>产品</h2><a class="u-underline-hover" href="pages/products/intelligent-computing-cloud.html">智算云</a><a class="u-underline-hover" href="pages/products/token-hub.html">Token Hub</a><a class="u-underline-hover" href="pages/products/autodev.html">AutoDev</a></section>
+              <section><h2>解决方案</h2><a class="u-underline-hover" href="pages/services/operator-optimization.html">算子优化</a><a class="u-underline-hover" href="pages/services/data-governance.html">数据治理</a><a class="u-underline-hover" href="pages/services/maas-platform.html">MaaS 搭建</a></section>
+              <section class="home-footer__account" aria-label="账户入口"><a href="https://zkda-cloud-console.mmmmqian.chatgpt.site">登录</a><a class="u-underline-hover" href="https://zkda-cloud-console.mmmmqian.chatgpt.site">立即体验</a></section>
+            </div>
+          </div>
+          <section class="home-footer__contact" aria-labelledby="footer-contact-title"><p id="footer-contact-title">联系我们</p><a class="contact-email email-link--underline-sweep" href="mailto:contact@zhongkedayun.com">contact@zhongkedayun.com</a></section>
+        </div>
+      </div>
+      <div class="home-footer__legal"><p>© ZKDACloud · 法律与备案信息以正式上线内容为准</p><nav aria-label="法律链接"><a class="u-underline-hover" href="pages/about.html">使用条款</a><a class="u-underline-hover" href="pages/about.html">隐私政策</a></nav></div>
     </footer>
   </body>
 </html>

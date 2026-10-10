@@ -280,6 +280,15 @@ main > section {
   gap: 2rem;
 }
 
+.visual-stills {
+  grid-template-columns: 1fr;
+  margin-bottom: 2rem;
+}
+
+.visual-stills figcaption strong {
+  color: var(--review-ink);
+}
+
 .review-evidence img {
   display: block;
   width: 100%;

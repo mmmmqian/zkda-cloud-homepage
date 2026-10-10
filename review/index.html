@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="中科达云官网第 5 步电脑与手机页面排版确认页。">
-    <title>中科达云官网｜第 5 步确认</title>
+    <meta name="description" content="中科达云官网第 6 步 B+C 组合视觉审阅页。">
+    <title>中科达云官网｜第 6 步确认</title>
     <link rel="stylesheet" href="review.css">
     <script src="review.js" defer></script>
   </head>
@@ -12,9 +12,9 @@
     <header class="review-hero">
       <div>
         <p>中科达云官网设计进度</p>
-        <h1>确认各类页面在电脑和手机上怎么排</h1>
+        <h1>确认网站整体风格和配色</h1>
       </div>
-      <div class="review-step"><span>第 5/8 步</span><strong>确认页面排版</strong></div>
+      <div class="review-step"><span>第 6/8 步</span><strong>确认整体风格和配色</strong></div>
     </header>
 
     <nav class="review-nav" aria-label="审阅入口">
@@ -24,26 +24,76 @@
       <a href="../pages/about.html">查看新版关于我们</a>
       <a href="#layout">查看排版规则</a>
       <a href="#routes">逐页打开</a>
+      <a href="https://www.figma.com/design/6W3cSUHu3kZvwWmT9kYbmC">打开 Figma 首页视觉</a>
       <button type="button" data-copy-command>复制下一步命令</button>
     </nav>
 
     <main>
       <section class="review-intro" aria-labelledby="summary-title">
-        <div class="review-section-heading"><p>本轮结果</p><h2 id="summary-title">三项产品现在只用一个关系区讲清</h2></div>
-        <p data-review-summary>首页原“AI 基础设施产品架构”和“三大产品总览”已合并：智算云平台作为算力底座，Token Hub 承接模型服务，AutoDev 完成应用开发落地。三行内容均可进入对应产品详情页，具体功能不再在首页重复展开。</p>
+        <div class="review-section-heading"><p>B+C 组合已选定</p><h2 id="summary-title">C 建立全站秩序，B 提供工程插图语言</h2></div>
+        <p data-review-summary>真实网页正在采用暖象牙纸色、编辑式中文大标题、超大蓝色数据、极少绿色信号和原创蓝图线稿。生成效果图仍只用于方向判断；正式页面继续使用真实 HTML、已上传 Logo 和批准数据。</p>
+      </section>
+
+      <section id="visual-preview-route" aria-labelledby="visual-preview-route-title">
+        <div class="review-section-heading"><p>已选视觉方向</p><h2 id="visual-preview-route-title">B 的工程图语言 + C 的精密编辑系统</h2></div>
+        <div class="review-evidence visual-stills">
+          <figure><img src="../docs/evidence/visual-options-20260824/concept-a-light-field.png" width="1672" height="941" alt="方案 A 光纸数据场：首页使用暖白数据光场与深色三层产品关系区"><figcaption><strong>A｜光纸数据场</strong>：最接近现有首屏动效，浅色数字光场与深色关系区形成强对比。</figcaption></figure>
+          <figure><img src="../docs/evidence/visual-options-20260824/concept-b-engineering-blueprint.png" width="1672" height="941" loading="lazy" alt="方案 B 工程蓝图：首页使用品牌蓝工程线稿、公开数据与三层产品关系图"><figcaption><strong>B｜工程蓝图</strong>：基础设施和工程可信度最强，技术线稿成为主要识别。</figcaption></figure>
+          <figure><img src="../docs/evidence/visual-options-20260824/concept-c-editorial-precision.png" width="1672" height="941" loading="lazy" alt="方案 C 精密编辑系统：首页使用暖白底、超大中文标题、公开数据和深色产品索引"><figcaption><strong>C｜精密编辑系统（推荐）</strong>：最克制、最有品牌独特性，也最容易一致扩展到全部页面。</figcaption></figure>
+        </div>
+        <dl class="review-status">
+          <div><dt>基础系统 · C</dt><dd data-status="pass">暖象牙与冷灰纸面、近黑正文、品牌蓝竖向色面、超大数据、非对称留白和开放式列表</dd></div>
+          <div><dt>插图语言 · B</dt><dd data-status="pass">本站原创蓝图 SVG 使用结构线、节点和测量刻度；只作为装饰，不承载产品事实或参数</dd></div>
+          <div><dt>交互参考</dt><dd data-status="pending">Transform9 用于第 7 步过渡、滚动与交互节奏；本轮只实现静态视觉及 Hover / Focus，不复制其代码或完整构图</dd></div>
+          <div><dt>当前预览</dt><dd data-status="pass">首页、产品页、方案页、服务页、定价页、资源页和关于页已共用同一套视觉规则</dd></div>
+          <div><dt>Figma 调整</dt><dd data-status="pass">正式首页首屏已再次按节点 2:53 逐项校准布局、常规字重、行高、近黑 / 品牌蓝色值和双栏对齐；主画板 64:34873 又用于核对纵向节奏：Logo 带桌面高 165px，产品体系与平台能力上方各保留 260px，窄屏按同一规则收敛；产品轮播内容与平台卡片交互未改</dd></div>
+        </dl>
+        <p class="review-note">A / B / C 三张图继续作为选择历史保留。生成图中的 Logo、图标、线稿与排版细节都不是正式资产；官网使用自己的 SVG Logo、原创蓝图线稿、真实 HTML 文字和四组批准数据。</p>
       </section>
 
       <section id="layout" aria-labelledby="layout-title">
         <div class="review-section-heading"><p>排版规则</p><h2 id="layout-title">同一套品牌系统，不把所有页面排成同一个模板</h2></div>
         <dl class="review-status">
-          <div><dt>首页</dt><dd data-status="pass">保留浅色动态首屏；首屏后为同色调品牌循环带与数据单排，三层产品关系集中在一个深色区并链接详情页，深浅内容区交替形成长页节奏</dd></div>
+          <div><dt>首页锁定区</dt><dd data-status="pass">首屏、卡商 Logo 循环、规模与稳定性、产品体系、平台能力五区保持已确认内容与结构，不在本轮改动</dd></div>
+          <div><dt>首页后续叙事</dt><dd data-status="pass">按最新版 v1.1 收敛为核心优势、三类专业服务、开放生态、关于我们、最终 CTA 与完整页脚；重复的一云多芯 / 迁移、能力证明边界和重复专家服务区已移除</dd></div>
           <div><dt>产品页</dt><dd data-status="pass">适用对象电脑端三项单排，能力较多时使用两列开放列表；产品位置与接入路径缩窄阅读</dd></div>
           <div><dt>解决方案</dt><dd data-status="pass">问题背景三项单排、实施路径四步单排，范围边界缩窄；迁移占位图电脑 16:9、手机 4:5</dd></div>
           <div><dt>专家服务</dt><dd data-status="pass">适用条件三项单排，服务范围改为错位纵向列表，协作流程四步单排</dd></div>
           <div><dt>定价与资源</dt><dd data-status="pass">不使用价格卡片；方案构成与状态信息横排，价格边界和帮助说明缩窄阅读</dd></div>
           <div><dt>关于我们</dt><dd data-status="pass">使命与愿景左右展开，发展历程使用纵向时间轴，四位团队成员电脑单排；邮件、电话和地址合并在页面结尾</dd></div>
           <div><dt>手机</dt><dd data-status="pass">900px 以下横向分栏恢复单列，按钮整行，流程转纵向；长标题、邮箱和电话允许自然换行</dd></div>
-          <div><dt>未改变</dt><dd data-status="pass">导航顺序、定价事实边界、首页浅色动效和迁移占位图决定</dd></div>
+          <div><dt>未改变</dt><dd data-status="pass">导航入口顺序与下拉内容、定价事实边界、首页浅色动效和迁移占位图决定</dd></div>
+        </dl>
+      </section>
+
+      <section id="navigation-visual" aria-labelledby="navigation-visual-title">
+        <div class="review-section-heading"><p>全站导航调整</p><h2 id="navigation-visual-title">62px 白色导航，尺寸来自 Figma 节点 2:4</h2></div>
+        <div class="review-evidence">
+          <figure><img src="../docs/evidence/mobile-menu-reference-20260826/closed-reference.png" alt="移动端菜单收起状态参考截图"><figcaption>收起参考：品牌 Logo 与图标按钮构成极简顶栏。</figcaption></figure>
+          <figure><img src="../docs/evidence/mobile-menu-reference-20260826/open-reference.png" alt="移动端菜单展开状态参考截图"><figcaption>展开参考：整屏菜单、顶部留白、分隔式入口与底部双操作栏。</figcaption></figure>
+        </div>
+        <dl class="review-status">
+          <div><dt>桌面尺寸</dt><dd data-status="pass">导航高 62px；Logo 宽约 125px、左距约 36px；文字 16px，菜单项横向内边距约 20px</dd></div>
+          <div><dt>账户动作</dt><dd data-status="pass">“登录 / 立即体验”作为独立按钮组贴右对齐，横向内边距约 24px；立即体验使用品牌蓝，链接目标不变</dd></div>
+          <div><dt>背景</dt><dd data-status="pass">首页和 15 个内页统一使用白色导航背景与底部细分隔线</dd></div>
+          <div><dt>图标来源</dt><dd data-status="pass">下拉箭头、移动菜单和关闭图标均为项目内保存的 Lucide 官方 SVG，不手绘、不依赖运行时 CDN</dd></div>
+          <div><dt>平板菜单修正</dt><dd data-status="pass">顶栏与菜单起点统一为 62px，移除造成首行遮挡的额外上下内边距；关闭按钮焦点轮廓收进按钮内部</dd></div>
+          <div><dt>移动菜单收起</dt><dd data-status="pass">900px 以下仅显示中科达云 Logo 与 Lucide 菜单图标；菜单按钮左侧分割线已移除，点击区域和焦点态保留</dd></div>
+          <div><dt>移动菜单展开</dt><dd data-status="pass">使用白色整屏覆盖层、约 30vh 顶部留白、全宽分隔大行入口，以及底部 1:1 的“登录 / 立即体验”固定操作栏</dd></div>
+          <div><dt>关闭按钮</dt><dd data-status="pass">展开状态下固定在视口右上角并位于菜单层之上，Lucide X 图标显式保持可见；按钮仍支持点击、键盘焦点和 Escape 关闭</dd></div>
+          <div><dt>二级入口</dt><dd data-status="pass">产品、解决方案、专家服务和资源继续在所属一级入口下原位展开，不改变现有中文信息架构与链接</dd></div>
+          <div><dt>无程序回退</dt><dd data-status="pass">无 JavaScript 时不会隐藏账户动作，主导航直接显示，各分组仍可使用原生控件展开</dd></div>
+          <div><dt>响应式</dt><dd data-status="pending">901–1240px 自动收紧字号与间距；900px 以下保留完整移动菜单、原生分组与键盘关闭逻辑。源码尺寸关系已修正，真实浏览器复测等待安全校验恢复</dd></div>
+        </dl>
+      </section>
+
+      <section id="typography" aria-labelledby="typography-title">
+        <div class="review-section-heading"><p>字体系统</p><h2 id="typography-title">英文与数字使用 Roboto，编号使用 Roboto Mono</h2></div>
+        <dl class="review-status">
+          <div><dt>英文与普通数字</dt><dd data-status="pass">导航、标题、正文中的英文，以及 5,000+、20+、99.9%、100+ 等数据统一使用 Roboto</dd></div>
+          <div><dt>编号类数字</dt><dd data-status="pass">导航下拉编号、01–06 内容索引、公开数据 01–04、团队编号与时间轴年份统一使用 Roboto Mono</dd></div>
+          <div><dt>中文</dt><dd data-status="pass">继续使用原有系统中文无衬线回退，不改变中文标题和正文的字形选择</dd></div>
+          <div><dt>加载回退</dt><dd data-status="pending">Google Fonts 官方 CSS 加载失败时自动回退到系统无衬线与系统等宽字体；页面内容和布局保持完整，真实字体渲染等待浏览器安全校验恢复后复测</dd></div>
         </dl>
       </section>
 
@@ -57,14 +107,68 @@
           <div><dt>背景</dt><dd data-status="pass">与首页首屏一致的暖白浅色，不使用参考站黑底</dd></div>
           <div><dt>当前素材</dt><dd data-status="pass">用户提供的 6 个 SVG 与 6 个透明 PNG 已复制到项目素材目录并全部加载；原始文件保持不动</dd></div>
           <div><dt>标题区域</dt><dd data-status="pass">公开首页已完全移除，只在审阅页保留本次变更说明</dd></div>
-          <div><dt>动态处理</dt><dd data-status="pass">约 32 秒连续循环；鼠标停留会暂停，键盘和触屏可使用“暂停循环 / 继续循环”开关；开启减少动画后停止自动移动并允许横向浏览</dd></div>
+          <div><dt>动态处理</dt><dd data-status="pass">约 32 秒连续循环；按最新要求移除“暂停循环”按钮和隐藏复选框，鼠标停留仍会暂停；开启减少动画后停止自动移动并允许横向浏览</dd></div>
           <div><dt>事实边界</dt><dd data-status="pass">只称“国产芯片生态”，不声称这些品牌是客户、投资方或已确认合作伙伴</dd></div>
+        </dl>
+      </section>
+
+      <section id="metrics-interaction" aria-labelledby="metrics-interaction-title">
+        <div class="review-section-heading"><p>公开数据区交互</p><h2 id="metrics-interaction-title">四栏等宽，悬停或聚焦单栏展开</h2></div>
+        <dl class="review-status">
+          <div><dt>电脑默认</dt><dd data-status="pass">四个蓝色面板等宽，仅显示 01–04 索引；不会把某一组数据永久放大</dd></div>
+          <div><dt>鼠标 / 键盘</dt><dd data-status="pass">悬停或键盘聚焦某一栏时，该栏展开并显示数据，其余三栏收窄；移出或失焦后恢复等宽</dd></div>
+          <div><dt>820 与 1920</dt><dd data-status="pending">代码已统一为横向四栏手风琴；820 只调整展开栏与收窄栏比例，不切换成 2×2，等待本地浏览器安全检查恢复后补记实测</dd></div>
+          <div><dt>纵向模式</dt><dd data-status="pass">720px 及以下使用纵向手风琴，布局、折叠样式和 JavaScript 共用同一断点；默认只展开 01，点击 01–04 切换；无 JavaScript 时四组全部展开</dd></div>
+          <div><dt>四张配图</dt><dd data-status="pending">纳管 GPU 卡、支持芯片厂商、系统可用性、服务企业均已使用用户提供的对应图片；展开时以 cover 满版裁剪，不保留上下左右空白。静态检查通过，等待浏览器安全校验恢复后补记实测</dd></div>
+          <div><dt>数据字号</dt><dd data-status="pass">第一张 5,000+ 字号保持不变；20+、99.9%、100+ 已删除单独缩小规则，字号、字重、行高和字距与第一张一致</dd></div>
+          <div><dt>左侧像素插图</dt><dd data-status="pass">已由 metrics-pixel.svg 替换为用户提供的 970×664 metrics-pixel.jpg；仍为不承载信息的装饰图</dd></div>
+          <div><dt>事实边界</dt><dd data-status="pass">只使用 5,000+、20+、99.9%、100+；录屏中的示例数据、英文文案和人物图片未进入网站</dd></div>
+        </dl>
+      </section>
+
+      <section id="product-system-carousel" aria-labelledby="product-system-carousel-title">
+        <div class="review-section-heading"><p>三层产品关系</p><h2 id="product-system-carousel-title">Figma 浅色产品体系轮播</h2></div>
+        <dl class="review-status">
+          <div><dt>Figma 节点</dt><dd data-status="pass">电脑三状态来自 33:30855、38:32066、38:32238；移动布局来自 47:34237</dd></div>
+          <div><dt>电脑交互</dt><dd data-status="pass">右侧上一项 / 下一项箭头循环切换智算云平台、Token Hub 和 AutoDev；键盘左右方向键提供同等切换；按用户 7 秒录屏使用约 520ms 原位交叉淡化，不让标题和网格横向移动</dd></div>
+          <div><dt>响应适配</dt><dd data-status="pass">按用户 31 秒录屏：721px 以上使用约 30% 左图 / 70% 右文并连续收缩，双箭头由 100px 缩到 76px；720px 以下使用标题、62px 控制带、3:4 满宽动图、说明链接和两列能力标签</dd></div>
+          <div><dt>序号位置</dt><dd data-status="pass">电脑 / 平板的 01 / 03 固定在右侧内容栏左上角；移动端移入动图上方控制带左侧，双箭头位于右侧，不再覆盖 GIF</dd></div>
+          <div><dt>卡商 Logo</dt><dd data-status="pending">第二部分主轨道与无缝克隆已整组替换为用户提供的 12 份黑色 PNG；统一高度 35px、宽度保持原比例，等待真实浏览器安全校验恢复后复测连续衔接</dd></div>
+          <div><dt>详情入口</dt><dd data-status="pass">每个状态分别进入现有智算云平台、Token Hub、AutoDev 详情页</dd></div>
+          <div><dt>详情页临时范围</dt><dd data-status="pending">三个产品详情页已按最新要求只保留全站导航和各自第一屏；后续正文与页脚暂时不显示，完整内容仍保留在内部内容源中，等待浏览器复测</dd></div>
+          <div><dt>素材</dt><dd data-status="pass">智算云平台、Token Hub、AutoDev 三张循环 GIF 已按用户文件一一替换并保存到项目，不依赖临时外部 URL</dd></div>
+          <div><dt>文案核对</dt><dd data-status="pass">标题、说明、详情入口和能力栏逐项按三个桌面 Figma 节点回写；500K+、10K+、23、99% 与 99.9% 为用户本轮明确要求使用的设计稿文案，不与首页公开数据区混用</dd></div>
+          <div><dt>无程序回退</dt><dd data-status="pass">无 JavaScript 时隐藏切换按钮并依次完整显示三个产品，不丢失内容与详情链接</dd></div>
+          <div><dt>减少动画</dt><dd data-status="pass">系统启用减少动画时取消交叉淡化，直接更新产品状态</dd></div>
+        </dl>
+      </section>
+
+      <section id="platform-capabilities-review" aria-labelledby="platform-capabilities-review-title">
+        <div class="review-section-heading"><p>平台能力区重构</p><h2 id="platform-capabilities-review-title">Figma 五层基线 + AutoDev 第六层</h2></div>
+        <dl class="review-status">
+          <div><dt>Figma 节点</dt><dd data-status="pass">前五层严格使用文件 6W3cSUHu3kZvwWmT9kYbmC 的节点 60:34731；第六层 AI 驱动开发 / AutoDev 为用户随后明确补充</dd></div>
+          <div><dt>桌面布局</dt><dd data-status="pass">浅色两等分：左侧“覆盖 AI 全生命周期”与智能运维 / 安全 / 可观测固定；右侧六张卡使用相同展开高度，已浏览卡只露出等高标题条</dd></div>
+          <div><dt>桌面交互</dt><dd data-status="pass">未来卡片先位于屏幕下方，滚动时约 620ms 逐张上移覆盖前一张；01–05 下方保留逐步缩小的浅色留白，到 06 出现后堆叠才填满固定区域</dd></div>
+          <div><dt>移动端</dt><dd data-status="pending">六张卡默认完整展开并纵向排列；滚动时后一卡逐张覆盖前一卡正文，只留下约 74px 标题条。06 到达第五条历史标题后的卡位便停止单独移动，继续滚动时完整六层堆叠整体离场；无 JavaScript 或减少动画时取消 sticky，等待 390px 实测</dd></div>
+          <div><dt>回退</dt><dd data-status="pass">无 JavaScript 或开启减少动画时取消长滚动与卡片压缩，六项标题、说明和素材全部按顺序可读</dd></div>
+          <div><dt>浏览器实测</dt><dd data-status="pending">“规模与稳定性”区块上下横线已移除，内部四组数据结构不变；源码、素材和语法检查已完成，1920 / 820 / 390 的真实滚动与控制台复测等待浏览器安全校验恢复</dd></div>
+        </dl>
+      </section>
+
+      <section aria-labelledby="secondary-default-pages-title">
+        <div class="review-section-heading"><p>内页临时范围</p><h2 id="secondary-default-pages-title">12 个内页当前统一显示缺省页</h2></div>
+        <p class="review-note">解决方案、专家服务、定价、资源和关于我们页面的原正文暂时隐藏。页面 URL 与全站导航保持不变，访问后只显示“内容正在准备中”和返回首页入口；这些页面按你的要求暂时不做内容检查或更新。</p>
+        <dl class="review-status">
+          <div><dt>解决方案</dt><dd data-status="pass">4 页已切换为缺省页</dd></div>
+          <div><dt>专家服务</dt><dd data-status="pass">3 页已切换为缺省页</dd></div>
+          <div><dt>定价 / 资源 / 关于</dt><dd data-status="pass">1 + 3 + 1 页已切换为缺省页</dd></div>
+          <div><dt>原内容</dt><dd data-status="pass">内部内容源继续保留，当前不复核、不改写</dd></div>
         </dl>
       </section>
 
       <section aria-labelledby="pricing-revision-title">
         <div class="review-section-heading"><p>页面目录已修订</p><h2 id="pricing-revision-title">联系信息现在属于“关于我们”</h2></div>
-        <p class="review-note">原 <code>/pages/contact.html</code> 已删除，公开页面从 17 个收敛为 16 个。首页、定价、产品、方案、服务、资源和页脚中的联系入口都统一进入 <code>/pages/about.html#contact</code>；“发送邮件”会直接打开系统邮件应用。</p>
+        <p class="review-note">原 <code>/pages/contact.html</code> 已删除，公开页面从 17 个收敛为 16 个。当前关于我们页已按最新要求切换为缺省页；既有 <code>/pages/about.html#contact</code> 链接仍能打开该缺省页，不再展示原联系内容。</p>
         <dl class="review-status">
           <div><dt>关于内容</dt><dd data-status="pass">使命、愿景、四项价值观、五个发展节点和四位核心团队成员已经写入</dd></div>
           <div><dt>页面数量</dt><dd data-status="pass">17 页 → 16 页</dd></div>
@@ -77,14 +181,14 @@
         <ul class="review-list" data-review-changes>
           <li>第 3 步已由 <code>next:content</code> 批准并锁定，Git 恢复点为 <code>167d506</code>。</li>
           <li>首页按“定位—产品关系—差异—能力—方案—信任—行动”填入真实内容。</li>
-          <li>3 个产品、4 个解决方案、3 个专家服务、定价、3 个资源页以及关于我们页都已有可阅读的正式文字。</li>
+          <li>3 个产品详情页当前只显示各自第一屏；解决方案、专家服务、定价、资源和关于我们共 12 页统一显示缺省页。所有原正文继续保存在内部内容源中。</li>
           <li>登录、免费体验、邮件、电话和全部本地页面链接保持真实可用。</li>
           <li>没有添加客户名称、案例结果、价格、接口参数、兼容清单或未经确认的产品截图。</li>
           <li>已观察 Transform9+ 真实首屏的明暗呼吸和鼠标响应；根据你的最终分层，首页现在由 WebGL 渐变 / 噪声 / 轻形变、独立数据格 Canvas 和 GSAP DOM 入场组成；鼠标本身不带圆形光晕。</li>
           <li>首页首屏正方形色块不再绘制边框，覆盖首屏的横纵结构网格线也已删除。</li>
           <li>根据最新反馈，首页首屏从深色改为暖白底、浅蓝 / 浅青 / 浅绿色块与深色文字；品牌蓝用于标题重点和主要按钮，原有呼吸、随机峰值与鼠标扰动继续保留。</li>
           <li>首屏后浅色循环带已改用用户提供的 12 份真实 Logo，并按最新截图反馈移除整块标题与素材说明。</li>
-          <li>首页原产品架构与产品总览已合并为一个“三层产品关系”区；重点说明智算云平台 → Token Hub → AutoDev 的承接关系，三个入口分别进入产品详情页。</li>
+          <li>首页原产品架构与产品总览仍合并为一个区块；当前按 Figma 改为可切换的浅色产品体系轮播，三个状态分别进入智算云平台、Token Hub 与 AutoDev 详情页。</li>
         </ul>
       </section>
 
@@ -101,7 +205,7 @@
           <figure><img src="../docs/evidence/hero-motion-reference-20260821-025355/observed-15s.png" alt="用户提供录屏在 15 秒的只读观察画面"><figcaption>21 秒录屏 00:15：蓝、白、绿色大格错开激活，色块更亮且边缘更清楚。</figcaption></figure>
         </div>
         <dl class="review-status">
-          <div><dt>当前色调</dt><dd data-status="pass">暖白偏灰底色、浅蓝 / 浅青 / 浅绿色块、深色文字；品牌蓝用于标题重点与主要按钮，顶部导航同步改为浅色</dd></div>
+          <div><dt>当前色调</dt><dd data-status="pass">暖白偏灰底色、浅蓝 / 浅青 / 浅绿色块、深色文字；品牌蓝用于标题重点与主要按钮，顶部导航统一为白色</dd></div>
           <div><dt>底层</dt><dd data-status="pass">原生 WebGL：4 个蓝 / 青 / 绿光场在原位附近缓慢漂移，叠加连续 Noise 与轻形变；独立 Ambient Blur 以 31s 呼吸</dd></div>
           <div><dt>数据格</dt><dd data-status="pass">硬边 Canvas 2D 正方形矩阵；Color Pulse、White Spike、Dark Cut 和两类 Chain Event 随机低频发生；约 56% 微闪、37% 普通闪、7% 强闪</dd></div>
           <div><dt>全员呼吸</dt><dd data-status="pass">所有当前亮起的格子都以自己的 1.5–4.6s 周期和相位缓慢抬亮、平滑达峰、缓慢回落；采用 smoothstep 呼吸曲线，不做基础格突然跳亮</dd></div>
@@ -109,11 +213,11 @@
           <div><dt>五类状态</dt><dd data-status="pass">每格在呼吸暗谷重新抽取浅灰压暗、蓝、青、绿与白色短峰；仍保持约 58 / 27 / 8 / 5 / 2 的疏密关系，避免同时亮起过多</dd></div>
           <div><dt>去同色聚类</dt><dd data-status="pass">允许偶发两格同色，但禁止水平 / 垂直连续 3 格、同色 2×2 和 L 形三格，不出现同时大片同色</dd></div>
           <div><dt>事件规模</dt><dd data-status="pass">约 70% 单格、20% 双格、10% 三格；链内以 150–400ms 传播；单次彩色脉冲保持自身色域，基础格只在呼吸暗谷重新抽取五色，黑色不产生 Glow</dd></div>
-          <div><dt>截图校准</dt><dd data-status="pass">最终以约 100px 为实体色块边长上限，页面越宽会自动增加列数；脉冲只改亮度、不放大实体格，高黑色比例继续控制同时激活数量，前景柔焦收紧到 6px</dd></div>
+          <div><dt>截图校准</dt><dd data-status="pass">最新 Figma 节点使用约 120px 实体色块，页面越宽会自动增加列数；脉冲只改亮度、不放大实体格，前景柔焦和右侧扩散模糊继续与实体层分离</dd></div>
           <div><dt>峰值层级</dt><dd data-status="pass">常态多数格子保持浅灰或低亮；少数蓝、青、绿提高饱和度，白色只约 2% 并作为彩色区域中的短促峰值</dd></div>
-          <div><dt>首屏构图</dt><dd data-status="pass">标题拆为三行并上移到首屏中部；正方形色块无描边，覆盖首屏的结构网格线已全部删除</dd></div>
-          <div><dt>鼠标揭示</dt><dd data-status="pass">独立暖白遮罩按单格显隐；桌面半径约 55% 屏宽、限制在 620–1100px，部分格子持续保留浅灰缺口；没有圆形探照灯、鼠标光晕或鼠标换色</dd></div>
-          <div><dt>局部清晰</dt><dd data-status="pass">6px 实体柔焦之上另绘无滤镜数据格；最后指针位置约 1–2 圈矩形边缘更清晰，独立 Glow 仍保持大范围扩散</dd></div>
+          <div><dt>首屏构图</dt><dd data-status="pending">按 Figma 2:53 保持两行标题和底部信息区：电脑端顶部 78px、左右 36px、110px 常规字重与 122px 行高；所有宽度恢复“标题—弹性留白—底部信息区”，两部分贴首屏底边。最底部横线已按最新截图移除，内部顶部横线和双栏竖线保留；等待浏览器安全校验恢复后复测</dd></div>
+          <div><dt>鼠标揭示</dt><dd data-status="pending">已按最新参考图修正遮罩：核心可见格完整打开，约 18% 随机缺口继续保留；单格遮罩不再跨边界重复擦除，并已取消遮罩的 CSS Blur 与整体缩放，避免边缘亮、中间暗和格缝虚边。没有圆形探照灯、鼠标光晕或鼠标换色；等待真实浏览器复测</dd></div>
+          <div><dt>局部清晰</dt><dd data-status="pending">全屏环境柔化已移到实体数据格下方，数据格和无滤镜清晰层保持像素对齐；其上新增受控景深，鼠标中心完全高清，向外先过渡到约 8px、再到约 18px 柔化。宽羽化、随机缺口和逐格清晰层共同打散边界，不显示规则圆形窗口；手机与减少动画模式关闭该层，等待真实浏览器复测</dd></div>
           <div><dt>离开后状态</dt><dd data-status="pass">鼠标离开首屏后保留最后坐标、约 72% 可见强度与约 68% 清晰层，随机事件继续偏向该区域，不会立即退回纯底色</dd></div>
           <div><dt>稀有强调</dt><dd data-status="pass">首轮绿色脉冲后以 240–360ms 延迟触发邻格白色短峰；后续每 9–22s 低频出现，约 66% 绿色、34% 白色</dd></div>
           <div><dt>延迟 Glow</dt><dd data-status="pass">独立 Canvas 在实体变化后 120–220ms 扩散；实体约 0.45s 到峰，Glow 约 0.6–0.75s 到峰，亮度先降而范围继续扩大</dd></div>
@@ -194,7 +298,7 @@
       </section>
 
       <section class="review-next" aria-labelledby="next-title">
-        <div><p>请先查看首页和各类页面在电脑与手机上的排布</p><h2 id="next-title">确认本阶段排版后输入</h2><code data-review-command>next:visual</code><p data-review-command-help>这条命令会固定页面宽度、列表方向、流程排布、占位图比例与手机转换方式，并进入网站整体风格和配色确认。</p></div>
+        <div><p>Figma 首页、数据配图、导航与字体系统已同步</p><h2 id="next-title">等待视觉浏览器复测</h2><code data-review-command>retry:visual-browser-qa</code><p data-review-command-help>四张数据配图、数据手风琴、全站 62px 白色导航、移动端整屏菜单与底部双操作栏，以及 Roboto / Roboto Mono 字体规则均已同步；静态检查通过。浏览器安全校验暂不可用，恢复并完成 1920 / 1180 / 820 / 390 复测后才重新开放 next:animation。</p></div>
         <button type="button" data-copy-command>复制命令</button>
       </section>
     </main>

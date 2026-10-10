@@ -19,17 +19,200 @@ capabilities:
   subagent: available
   git: available
 workflow:
-  current_phase: layout
-  status: in-review
-  allowed_transition: next:visual
-  allowed_action: null
+  current_phase: visual
+  status: core-advantages-figma-implemented-and-browser-verified
+  allowed_transition: null
+  allowed_action: user-review
+deployment:
+  provider: chatgpt-sites
+  status: succeeded
+  url: https://zkda-cloud-homepage.mmmmqian.chatgpt.site
+  access: owner-only
+  deployed_at: 2026-09-03
+hero_pointer_reveal_fix:
+  status: implemented-awaiting-browser-qa
+  reference: /Volumes/mq work/codex/ZKDACloud/web/bg.jpg
+  fixes:
+    - full-core-cutout-for-visible-cells
+    - remove-cross-cell-mask-overscan
+    - place-sharp-entity-layer-above-warm-overlay
+    - increase-local-solid-cell-peak
+    - move-ambient-haze-below-entity-layers
+    - pixel-align-data-focus-and-reveal-canvases
+    - remove-reveal-overlay-css-blur
+    - progressive-depth-blur-above-grid-with-sharp-pointer-core
+    - reuse-inertial-pointer-position-for-depth-focus
+  preserved:
+    - intentional-random-dark-gaps
+    - separate-delayed-glow
+    - no-cursor-centered-halo
+    - pointer-leave-last-area-retention
+    - mobile-and-reduced-motion-no-depth-blur
+
+responsive_system_consolidation:
+  status: v4-aligned-awaiting-browser-qa
+  date: 2026-09-09
+  design_reference: ./docs/source/responsive-system.md
+  principles:
+    - scale-wrap-compress-preserve-reorient-recompose
+    - preserve-composition-grammar-while-usable
+  hero_source_of_truth:
+    figma_node: "64:34956"
+    reference_stage: "1651x863"
+  global_ranges:
+    ultra_wide: ">=2560"
+    large_desktop: "1920-2559"
+    wide_desktop: "1600-1919"
+    standard_desktop: "1280-1599"
+    compact_desktop: "992-1279"
+    tablet: "768-991"
+    mobile_landscape: "480-767"
+    mobile_portrait: "<=479"
+  hero_contract:
+    desktop_grammar: ">=992"
+    tablet_lower_grid: "768-991: 50/50 two-column preserved"
+    mobile_landscape: "480-767: selective single-column reflow"
+    mobile_portrait: "<=479: recompose"
+    divider: "stage-level full-bleed at all widths"
+  component_breakpoint_exceptions:
+    navigation_mobile: "<=900"
+    verified_metrics_mobile: "<=720"
+    product_system_mobile: "<=720"
+    platform_capabilities_desktop_motion: ">=1024"
+  fixes:
+    - retained-single-canonical-home-hero-css-system
+    - moved-home-hero-desktop-grammar-boundary-to-992
+    - preserved-hero-lower-grid-50-50-at-768-991
+    - kept-hero-selective-reflow-below-768-for-long-copy-and-email
+    - aligned-hero-pixel-density-boundary-to-992
+    - removed-product-system-901-1023-single-column-reversal
+    - kept-product-system-two-column-at-721-plus
+    - retained-platform-capabilities-below-1024-document-flow-exception
+    - retained-full-bleed-lower-stage-divider
+    - documented-component-specific-breakpoints
+    - source-to-dist-sync-required
+  qa_targets:
+    - 390
+    - 479
+    - 480
+    - 600
+    - 767
+    - 768
+    - 820
+    - 900
+    - 901
+    - 991
+    - 992
+    - 1023
+    - 1024
+    - 1280
+    - 1651
+    - 1920
+    - 2048
+    - 2560
+
+homepage_framework_revision:
+  version: v1.1
+  status: implemented-awaiting-browser-qa
+  locked_sections:
+    - hero
+    - chip-vendor-loop
+    - verified-metrics
+    - product-system
+    - platform-capabilities
+  revised_sections:
+    - core-advantages
+    - expert-solutions
+    - open-ecosystem
+    - about
+    - final-cta
+    - footer-directory
+  removed_duplicate_sections:
+    - multi-chip
+    - migration
+    - trust-boundary
+    - duplicate-expert-services
+core_advantages_figma_revision:
+  status: implemented-and-browser-verified
+  date: 2026-09-22
+  figma_file_key: 6W3cSUHu3kZvwWmT9kYbmC
+  figma_node: "299:69"
+  implemented_scope:
+    - full-width-editorial-header
+    - six-state-tab-list
+    - figma-exported-visual
+    - keyboard-tab-navigation
+    - responsive-v4-layouts
+  asset: ./assets/images/core-advantages/figma-core-visual.png
+  asset_limitation: "Figma node contains one visual only; reused as the fallback for all six tabs"
+  qa_widths:
+    - 1651
+    - 1280
+    - 1024
+    - 820
+    - 768
+    - 600
+    - 480
+    - 390
+  qa_result: "section overflow 0; click and keyboard states pass; console 0 errors"
+  evidence: ./docs/evidence/core-advantages-20260921/
+  section_label_system:
+    status: shared-and-browser-verified
+    class: section-label
+    consumers:
+      - "AI STACK 产品体系"
+      - "CAPABILITIES 平台能力"
+      - "CORE ADVANTAGES 核心优势"
+    desktop_contract: "18px/25.2px; English 600; Chinese 400; gap 10px; padding 36px; #0A0B0C"
+    evidence: ./docs/evidence/section-label-system-20260922/
+product_detail_temporary_scope:
+  status: implemented-awaiting-browser-qa
+  routes:
+    - ./pages/products/intelligent-computing-cloud.html
+    - ./pages/products/token-hub.html
+    - ./pages/products/autodev.html
+  retained:
+    - global-navigation
+    - first-screen-content-hero
+  temporarily_not_rendered:
+    - audience
+    - relation
+    - capabilities
+    - path
+    - related
+    - footer
+  canonical_content_preserved: true
+  other_routes_changed: false
+secondary_pages_temporary_default_scope:
+  status: implemented-excluded-from-current-qa
+  route_count: 12
+  groups:
+    solutions: 4
+    expert_services: 3
+    pricing: 1
+    resources: 3
+    about: 1
+  retained:
+    - global-navigation
+    - default-status-screen
+    - return-home-link
+  temporarily_not_rendered:
+    - original-main-content
+    - footer
+  default_copy:
+    kicker: 页面暂未开放
+    title: 内容正在准备中
+    description: 该页面内容暂时隐藏，后续完善后再开放。
+  canonical_content_preserved: true
+  content_review_requested: false
+  current_qa_scope: excluded-by-user-request
 documents:
   spec:
     path: ./docs/spec.md
-    source_hash: 3c127295cf8b20ea3b65efc392adba7d293ad76d327a2280d1e3f3b39416563e
+    source_hash: f9eef85cb3f2b9f9fc6bb3c664a31b2604341eccb806805b5d6b861719ed910c
   design:
     path: ./docs/design.md
-    source_hash: 0a32b1d356570fa815a609ce1dd1b0e45d19bc86a9c77e357b5e62288c5baf86
+    source_hash: a2cf6d9920c8aae9fadd6ddc40f495cf9827c463ecec8b51cf237aca3042eec0
 rendered:
   review:
     entrypoint: ./review/index.html
@@ -37,7 +220,42 @@ rendered:
   website:
     entrypoint: ./index.html
     preview_url: http://127.0.0.1:4173/
-    rendered_stage: layout
+    rendered_stage: visual-b-plus-c-review
+  figma:
+    file_key: 6W3cSUHu3kZvwWmT9kYbmC
+    file_url: https://www.figma.com/design/6W3cSUHu3kZvwWmT9kYbmC
+    baseline_node: 2:2
+    exploration_node: 6:2
+    status: homepage-figma-nodes-navigation-and-product-system-synced-to-static-site
+    synced_nodes:
+      navigation: "2:4"
+      hero: "64:34956"
+      chip_brand_loop: "2:99"
+      verified_metrics: "13:21191"
+      product_system_intelligent_computing_cloud: "33:30855"
+      product_system_token_hub: "38:32066"
+      product_system_autodev: "38:32238"
+      product_system_mobile: "47:34237"
+      platform_capabilities: "60:34731"
+      homepage_vertical_spacing_reference: "64:34873"
+      platform_capabilities_spacing_reference: "64:35470"
+platform_capabilities:
+  status: implemented-awaiting-browser-qa
+  figma_node: "60:34731"
+  desktop_evidence: /Users/mmmmqian/Desktop/录屏2026-08-27 12.59.38.mov
+  mobile_evidence: /Users/mmmmqian/Desktop/录屏2026-08-27 13.00.36.mov
+  cards: 6
+  desktop_behavior: sticky-two-column-equal-expanded-height-cards-enter-one-by-one-from-below
+  future_cards: offscreen-until-scroll
+  intermediate_stack: grows-with-light-space-below-active-card
+  completed_stack: five-history-headers-plus-card-06-fill-stage
+  mobile_behavior: full-cards-in-natural-flow-then-sticky-stack-on-scroll
+  mobile_final_card_position: same-sticky-rule-after-five-history-headers
+  mobile_stack_exit: synchronized-parent-boundary-release
+  fallbacks:
+    no_javascript: six-full-cards
+    reduced_motion: six-full-cards
+  browser_qa: pending-security-recheck
 brand_assets:
   symbol:
     path: ./assets/brand/logo-symbol.svg
@@ -46,29 +264,69 @@ brand_assets:
     path: ./assets/brand/logo-lockup.svg
     source_updated_at: 2026-08-20T16:08:23+08:00
     browser_cache_version: 20260820-160823
+visual_options:
+  preview_route: generated-stills
+  trigger: visual:stills
+  batch: V01-homepage-visual-directions
+  status: selected
+  recommended: c-editorial-precision
+  options:
+    a-light-field:
+      path: ./docs/evidence/visual-options-20260824/concept-a-light-field.png
+      dimensions: 1672x941
+      sha256: 73b1e14b9d1772b6973fe3d4f89c2f55a1aad7485e6d39361e743c13b63bd5a9
+    b-engineering-blueprint:
+      path: ./docs/evidence/visual-options-20260824/concept-b-engineering-blueprint.png
+      dimensions: 1672x941
+      sha256: 82d1a5c304123c503f6e4dff7bda4b488f5b0104025d3ec1df44be10a6e9f4e2
+    c-editorial-precision:
+      path: ./docs/evidence/visual-options-20260824/concept-c-editorial-precision.png
+      dimensions: 1672x941
+      sha256: 50665a28b54bb46fe9395ba59928217799152cf0bfa5dab461198b73c7d77e67
+  public_asset: false
+  limitation: generated-stills-do-not-prove-responsive-accessible-or-interactive-behavior
+  copying_boundary: no-client-logos-reference-assets-code-or-complete-composition
+visual_selection:
+  selected: b-engineering-blueprint-plus-c-editorial-precision
+  selected_at: 2026-08-24
+  base_system: c-editorial-precision
+  illustration_language: b-engineering-blueprint
+  motion_reference: https://tr9.webflow.io/
+  motion_reference_browser_result: timed-out-public-page-content-fetched
+  motion_scope: recorded-for-stage-7-not-yet-implemented
+  implementation:
+    - warm-ivory-and-cool-gray-paper-surfaces
+    - editorial-chinese-typography-and-asymmetric-space
+    - ultramarine-vertical-planes-and-large-data
+    - sparse-signal-green-on-dark-sections
+    - original-blueprint-svg-on-detail-heroes-and-media-placeholder
+    - high-contrast-row-and-button-states
 approved:
   - requirements
   - reference
   - sitemap
   - content
+  - layout
 locked:
   - requirements
   - reference
   - sitemap
   - content
-editable:
   - layout
+editable:
+  - design-token
+  - components
 pending_decisions:
-  - confirm-homepage-layout-rhythm
-  - confirm-page-family-layout-differences
-  - confirm-desktop-and-mobile-transformations
-  - confirm-about-page-consolidated-content-and-layout
-  - confirm-home-chip-brand-loop-layout
-  - confirm-home-product-relationship-merged-layout
+  - user-confirms-figma-synced-homepage-sections-and-navigation
+  - browser-security-check-recovers-for-navigation-responsive-qa
 review:
   mode: standard-review
-  status: pending-user-layout-approval
-  must_fix: []
+  status: pending-navigation-browser-recheck-and-user-visual-confirmation
+  must_fix:
+    - rerun-home-hero-progressive-depth-blur-pointer-core-brightness-solid-cell-hard-edge-and-edge-center-parity-after-browser-admin-policy-recovers
+    - rerun-navigation-and-home-metrics-render-interaction-crop-font-and-overflow-checks-after-browser-admin-policy-recovers
+    - rerun-platform-capabilities-equal-height-offscreen-entry-and-final-stack-browser-check-after-browser-admin-policy-recovers
+    - rerun-platform-capabilities-mobile-full-card-sticky-stack-browser-check-after-browser-admin-policy-recovers
   viewport_checks:
     2560x1440: pass
     1920x1080: pass
@@ -85,10 +343,10 @@ review:
     hero-pointer-response: pass
     hero-wide-per-cell-non-circular-reveal: pass
     hero-pointer-leave-retains-last-area: pass
-    hero-local-focus-grid: pass
+    hero-local-focus-grid: pending-browser-recheck-after-core-mask-fix
     hero-rare-green-and-white-events: pass
     hero-no-image-dependency: pass
-    hero-final-reference-calibration: pass
+    hero-final-reference-calibration: pending-browser-recheck-after-bg-jpg-calibration
     hero-no-cell-outline-or-structural-grid: pass
     hero-light-tone-with-readable-text: pass
     pricing-navigation-order: pass
@@ -103,9 +361,111 @@ review:
     home-chip-brand-loop-pause-resume-control: pass-native-checkbox-click-and-focus-browser-verified
     home-chip-brand-loop-user-logo-assets: pass-twelve-main-plus-twelve-hidden-clone-images-loaded
     home-chip-brand-loop-title-area-removed: pass
+    home-chip-brand-loop-pause-control-removed-by-user: pass-no-hidden-focus-control
+    home-chip-brand-loop-165px-figma-desktop-height-with-responsive-contraction: pass-browser-computed-geometry-1651-820-390
     home-product-architecture-and-overview-merged: pass
     home-three-product-detail-links: pass
+    home-product-system-figma-four-nodes-synced: pass-static-source-and-local-assets-check
+    home-product-system-arrow-controls-loop-three-slides: pass-static-javascript-check
+    home-product-system-keyboard-left-right-controls: pass-static-javascript-check
+    home-product-system-mobile-stacked-layout: pass-static-css-source-check
+    home-product-system-no-js-all-three-visible: pass-css-js-gating
+    home-product-system-figma-copy-and-capability-values-synced-after-user-explicit-request: pass-static-node-text-check
+    home-product-system-three-user-gifs-mapped-and-localized: pass-static-path-dimensions-and-sha-check
+    home-product-system-user-recording-crossfade-reference: pass-seven-second-quicktime-frame-observation
+    home-product-system-crossfade-without-layout-translation: pass-static-css-check
+    home-product-system-reduced-motion-instant-switch: pass-static-css-check
+    home-product-system-user-recording-responsive-reference: pass-thirty-one-second-quicktime-frame-observation
+    home-product-system-index-position-desktop-tablet-and-mobile: pass-static-css-control-row-and-mobile-overlay-check
+    home-product-system-260px-desktop-top-spacing: pass-browser-computed-geometry-1651-820-390
+    home-platform-capabilities-260px-desktop-top-spacing: pass-browser-computed-geometry-1651-820-390
+    visual-b-plus-c-applied-to-all-public-routes: pass
+    original-blueprint-svg-load-and-fallback: pass
+    visual-row-hover-and-focus-contrast: pass
+    transform9-motion-reference-deferred-to-stage-7: pass
+    figma-home-hero-node-64-34956-synced: pass-static-layout-typography-color-and-copy-check
+    figma-home-hero-1651x863-desktop-geometry: pass-static-css-reference-check
+    figma-home-hero-regular-weight-and-exact-color-tokens: pass-static-css-check
+    figma-home-hero-two-line-title-and-356px-lower-grid: pass-static-html-css-check
+    figma-home-hero-width-derived-stage-model: pass-static-single-model-check
+    figma-home-chip-loop-node-2-99-synced: pass
+    figma-home-verified-metrics-node-13-21191-synced: pass-approved-four-values-only
+    figma-unspecified-home-sections-unchanged: pass
+    home-metrics-equal-panels-pointer-expand: pass
+    home-metrics-keyboard-focus-expand: pass
+    home-metrics-820-horizontal-accordion-like-1920: pending-browser-recheck
+    home-metrics-mobile-click-accordion: pass
+    home-metrics-vertical-layout-and-js-breakpoint-aligned-at-720: pass-static-source-check
+    home-metrics-mobile-default-only-first-panel-expanded: pass-static-initial-state-and-js-sync-check
+    home-metrics-no-javascript-all-visible: pass-by-css-gating
+    home-metrics-first-image-full-bleed-crop: pass-no-white-bars
+    home-metrics-vertical-image-full-bleed-crop: pending-browser-recheck
+    home-metrics-recording-placeholder-data-excluded: pass
+    home-metrics-four-user-images-copied-with-original-bytes: pass
+    home-metrics-four-images-mapped-to-correct-data-panels: pass-static-css-source-check
+    home-metrics-all-images-full-bleed-cover: pass-static-css-source-check
+    home-metrics-last-three-number-typography-matches-first: pass-no-desktop-override
+    home-metrics-four-image-render-and-crop: pending-browser-security-recheck
+    home-metrics-left-pixel-illustration-jpg-replacement: pass-static-path-dimensions-and-decorative-semantics
+    home-metrics-section-top-and-bottom-dividers-removed: pass-static-css-source-check
+    home-hero-bottom-divider-removed: pass-static-css-source-check
+    figma-navigation-node-2-4-layout-synced: pass-static-source-check
+    navigation-white-surface-all-sixteen-pages: pass-static-source-check
+    navigation-account-group-right-aligned: pass-static-source-check
+    navigation-login-and-immediate-experience-labels: pass-sixteen-pages
+    navigation-lucide-chevron-menu-close-assets: pass-four-local-official-svg-files
+    navigation-responsive-render: pending-browser-security-recheck
+    navigation-mobile-header-and-overlay-shared-62px-baseline: pass-static-css-source-check
+    navigation-mobile-first-row-not-covered-by-header: pass-static-geometry-check
+    navigation-menu-toggle-focus-ring-contained: pass-static-css-source-check
+    navigation-mobile-collapsed-logo-and-icon-only: pass-static-css-source-check
+    navigation-mobile-menu-button-divider-removed: pass-static-css-source-check
+    navigation-mobile-close-button-fixed-above-overlay: pass-static-css-source-check
+    navigation-mobile-full-viewport-overlay-with-top-breathing-space: pass-static-css-source-check
+    navigation-mobile-full-width-top-level-rows: pass-static-css-source-check
+    navigation-mobile-bottom-login-and-experience-actions: pass-static-css-source-check
+    navigation-mobile-native-details-in-place: pass-existing-semantic-html
+    navigation-mobile-no-js-account-and-native-navigation-visible: pass-css-js-gating
+    navigation-mobile-open-header-transform-cleared-for-fixed-layout: pass-static-css-source-check
+    typography-english-and-ordinary-numbers-roboto: pass-css-rule
+    typography-numbered-indices-roboto-mono: pass-css-rule-tabular-numerals
+    typography-chinese-system-fallback-preserved: pass
+    typography-google-fonts-render: pending-browser-security-recheck
   console_errors: 0
+visual_qa:
+  home_product_system_1920_820_390_render: pending-browser-security-recheck
+  home_product_system_arrow_and_keyboard_switching: pending-browser-security-recheck
+  all_sixteen_routes_1920x1080: pass
+  all_sixteen_routes_390x844: pass
+  representative_page_families_2560x1440: pass
+  representative_page_families_1180x820: pass
+  representative_page_families_820x1180: pass
+  review_1180x820_and_390x844: pass
+  horizontal_overflow: 0
+  browser_console_errors: 0
+  missing_local_targets: 0
+  blueprint_svg_xml: pass
+  navigation_static_routes_icons_and-headers: pass-sixteen-pages-zero-missing-targets
+  navigation_browser_render: pending-admin-policy-verification
+  navigation_820_open-menu-render-after-header-fix: pending-admin-policy-verification
+  navigation_390_and_820_reference_layout_render: pending-admin-policy-verification
+  home_metrics_user_image_source_count: 4
+  home_metrics_public_image_copy_count: 4
+  home_metrics_image_dimensions: 2020x1410
+  home_metrics_image_byte_comparison: pass
+  home_metrics_four_card_visual_render: pending-admin-policy-verification
+  typography_css_selectors_and_fallbacks: pass
+  typography_browser_font_resolution: pending-admin-policy-verification
+typography:
+  primary_latin_and_numeric: Roboto
+  numbered_indices_and_years: Roboto Mono
+  chinese_fallback: system-sans-preserved
+  source: https://fonts.googleapis.com/css2
+  loading: official-google-fonts-css-with-display-swap
+  fallback:
+    - system-sans-for-english-and-ordinary-numbers
+    - system-monospace-for-numbered-indices
+    - content-and-layout-remain-readable-when-font-network-fails
 reference_research:
   evidence_mode: fetched-plus-user-recording-observed
   researched_at: 2026-08-20
@@ -153,7 +513,8 @@ reference_research:
       - outside-click-close
       - no-javascript-native-details
       - prefers-reduced-motion
-blockers: []
+blockers:
+  - browser-admin-policy-verification-unavailable-for-navigation-and-home-metrics-render-qa
 sitemap:
   route_count: 16
   page_family_count: 7
@@ -220,8 +581,10 @@ layout:
     home-chip-brand-loop-1920x1080-and-390x844: pass
     home-chip-brand-loop-horizontal-overflow: 0
     home-chip-brand-loop-console-errors: 0
-    home-chip-brand-loop-user-assets-1920x1080-and-390x844: pass
+    home-chip-brand-loop-user-assets-1920x1080-and-390x844: pending-browser-security-recheck-after-black-logo-replacement
     home-product-relationship-1920x1080-and-390x844: pass
+    home-hero-bottom-panels-aligned-to-viewport-bottom: pending-browser-security-recheck
+    home-hero-flexible-title-to-panel-whitespace: pending-browser-security-recheck
     home-chip-brand-loop-missing-images: 0
     review-chip-brand-evidence-1180x820: pass
 brand_loop:
@@ -246,15 +609,16 @@ brand_loop:
     - 翰博半导体
     - 登临
     - 摩尔线程
-  asset_status: user-provided-six-svg-six-png-copied-into-public-assets
-  public_asset_dir: ./assets/brand/chip-vendors/
+  asset_status: user-provided-twelve-black-png-copied-into-public-assets
+  public_asset_dir: ./assets/brand/chip-vendors-black/
   title_area: removed-by-user-request
-  source_dir: ../卡商logo/
+  source_dir: ../卡商logo/卡商logo黑色/
   source_asset_count: 12
   public_asset_count: 12
   formats:
-    svg: 6
-    png: 6
+    png: 12
+  display_height: 35px
+  aspect_ratio: preserved-from-source-files
   original_files_preserved: true
   claim_boundary: ecosystem-list-not-client-or-partnership-proof
   fallbacks:
@@ -262,8 +626,7 @@ brand_loop:
     - prefers-reduced-motion-static-single-list-with-horizontal-scroll
   controls:
     - mouse-hover-pauses
-    - native-checkbox-pause-resume-for-keyboard-and-touch
-    - visible-focus-outline
+    - visible-pause-control-removed-by-user-request
 media_generation:
   batch: B01-home-infrastructure-and-domestic-migration
   status: generated-both-candidates-internal-only-user-selected-placeholder
@@ -330,6 +693,7 @@ hero_motion:
     - structural-grid-lines-must-recede-behind-light-blocks
     - square-matrix-has-no-cell-outline-and-no-structural-grid-lines
     - latest-home-hero-tone-is-light
+    - latest-figma-node-two-fifty-three-overrides-hero-layout-weight-color-and-one-hundred-pixel-grid-cap
   independent_implementation:
     - webgl-gradient-field-continuous-noise-and-light-deformation
     - regular-square-cell-grid-with-slow-opacity-breathing
@@ -339,8 +703,8 @@ hero_motion:
     - independently-breathing-ambient-webgl-composite
     - event-intensity-tiers-56-percent-micro-37-percent-normal-7-percent-strong
     - chain-length-ratio-70-percent-single-20-percent-double-10-percent-triple
-    - responsive-columns-use-ceiling-of-width-divided-by-one-hundred-with-six-nine-twelve-minimums
-    - entity-cell-edge-never-exceeds-approximately-one-hundred-pixels
+    - responsive-columns-use-ceiling-of-width-divided-by-one-hundred-twenty-with-six-nine-twelve-minimums
+    - entity-cell-edge-never-exceeds-approximately-one-hundred-twenty-pixels
     - pulse-events-change-entity-brightness-without-scaling-entity-blocks
     - wide-per-cell-irregular-reveal-mask-with-eighteen-percent-black-gaps
     - desktop-reveal-radius-fifty-five-percent-width-clamped-six-hundred-twenty-to-eleven-hundred-pixels
@@ -355,7 +719,8 @@ hero_motion:
     - weighted-five-color-selection-at-each-cell-breathing-trough
     - final-five-color-weights-fifty-eight-dark-twenty-seven-blue-eight-cyan-five-green-two-white
     - rare-white-near-pure-peak-and-stronger-white-glow
-    - three-line-vertically-centered-hero-heading
+    - figma-two-line-hero-heading-starts-seventy-eight-pixels-from-top-on-desktop
+    - figma-three-hundred-fifty-six-pixel-equal-column-lower-grid
     - removed-cell-outlines-and-structural-grid-overlay
     - warm-light-base-dark-copy-brand-blue-accent-and-pale-color-fields
     - dark-cut-role-remapped-to-muted-gray-local-dimming
@@ -425,8 +790,8 @@ final_acceptance:
     - docs/evidence/
 git_checkpoint:
   status: complete
-  stage: content-approval
-  commit: c8b2b13
+  stage: layout-approval
+  commit: 36db15e
 transition_history:
   - from: setup
     to: requirements
@@ -452,3 +817,770 @@ transition_history:
     to: layout
     date: 2026-08-24
     trigger: next:layout
+  - from: layout
+    to: visual
+    date: 2026-08-24
+    trigger: next:visual
+core_advantages_interaction:
+  revised: 2026-09-22
+  state_owner: setActiveAdvantage
+  default_active: 1
+  fine_pointer: mouseenter
+  touch_pointer: click
+  keyboard: native-button-enter-space-plus-arrow-home-end
+  hover_capability_query: "(hover: hover) and (pointer: fine)"
+  persistence: pointer-leave-keeps-last-active-item
+  row_transition: background-and-color-240ms
+  visual_transition: stacked-opacity-crossfade-300ms-ease-out
+  preload: six-eager-image-layers
+  asset_boundary: figma-provided-single-visual-reused-for-all-six-states
+  qa: hover-click-keyboard-preload-geometry-console-pass
+core_advantages_label:
+  revised: 2026-09-22
+  english: ADVANTAGES
+  chinese: 核心优势
+  typography_owner: section-label
+home_solutions_figma_revision:
+  revised: 2026-09-22
+  figma_node: "259:182"
+  label_owner: section-label
+  assets:
+    - ./assets/images/solutions-figma-20260922/raw-02.png
+    - ./assets/images/solutions-figma-20260922/raw-03.png
+    - ./assets/images/solutions-figma-20260922/raw-06.png
+  desktop: native-css-sticky-three-card-stack
+  tablet: compressed-three-column-sticky-stack
+  mobile_landscape: natural-reading-then-shared-continuous-sticky-stage
+  mobile_portrait: natural-reading-then-shared-continuous-sticky-stage
+  motion: no-scroll-jacking-no-scroll-position-writes-no-gsap
+  qa: 1651-geometry-assets-overflow-console-pass; 820-structure-overflow-pass
+  runtime_sticky_proof:
+    revised: 2026-09-22
+    root_cause: stale-document-css-v1-plus-visible-ordinary-flow-runway
+    current_css_version: solutions-sticky-proof-v3
+    runtime_url: http://127.0.0.1:8000/?stickyproof=20260922v3#solutions
+    viewport: 1651x1000
+    computed: position-sticky; tops-88-101-114px; z-index-1-2-3; margin-bottom-0px
+    stack: relative-2263px-parent-with-1682px-card-travel
+    evidence: ./docs/evidence/solutions-sticky-runtime-20260922/
+  final_backplate_stack:
+    revised: 2026-09-22
+    visual_source: Transform9-user-screenshot
+    desktop_state_owner: updateSolutionStack
+    current_card: full-figma-dark-content-at-114px
+    containment: single-sticky-stage-with-no-fixed-solutions-elements
+    motion_owner: rAF-cached-measurements-to-css-variables
+    previous_layers: outgoing-card-self-retreating-surface-with-full-content-layer-scale-and-fade
+    stack_geometry: rear-translate-y--48px-inset-56px; near-translate-y--24px-inset-28px; step-y-24px
+    palette: outgoing-card-surface-#020801-to-#BDBDC3-to-#E0E0E2; current-#020801
+    track: stage-height-plus-entry-hold-plus-two-460px-transitions-plus-holds
+    motion_variables: --solution-y; --solution-inset; --solution-surface; --solution-content-opacity; --solution-content-scale
+    content_depth: current-scale-1-opacity-1; previous-1-scale-.965-opacity-.52; previous-2-scale-.93-opacity-.28
+    qa: desktop-midpoint-full-content-layer-scale-forward-reverse-release-and-v17-console-pass; mobile-v18-runtime-matrix-pending
+    evidence: ./docs/evidence/solutions-full-card-depth-20260923/
+  mobile_motion_v18:
+    revised: 2026-09-23
+    root_cause: min-width-992-js-guard-plus-768-and-below-css-relative-flow-resets
+    state_owner: shared-measureSolutionMotion-and-renderSolutionMotion
+    trigger: measured-card-bottom-and-available-viewport
+    phone_depth: 12px-to-14px
+    phone_takeover: 285px-to-320px
+    phone_final_hold: 26svh-to-30svh
+    fallback: prefers-reduced-motion-static-reading-flow
+    runtime_qa: pending-430-390-375-and-820-768
+  solutions_approach_gap_v48:
+    revised: 2026-09-29
+    scope: pre-takeover-card-separation-only
+    root_cause: absolute-cards-in-a-single-sticky-stage-initialized-card-02-at-exactly-card-01-height
+    token_owner: home-solutions
+    token: --solutions-card-gap
+    values: desktop-64px-tablet-48px-mobile-36px
+    implementation: solution-stack-motion-y-adds-card-gap-before-takeover-without-card-margin
+    preservation: current-card-scale-opacity-retreat-curve-13px-depth-edge-illustration-opacity-mosaic-and-cta-unchanged
+    static_qa: passed-source-dist-sync-js-syntax-and-approach-gap-contract
+    runtime_qa: initial-1651-state-a-screenshot-confirms-64px-gap; continuous-state-b-c-source-formula-reviewed; further-user-visual-review-pending
+  solutions_unified_first_approach_v49:
+    revised: 2026-09-29
+    scope: first-solution-approach-and-trigger-timing-only
+    root_cause: card-02-approach-excluded-future-depth-while-card-03-included-it
+    prior_approach: card-02-645px-card-03-905px-at-1651
+    current_approach: card-02-and-card-03-both-905px-via-card-height-plus-gap-plus-future-depth
+    local_track_per_handoff: 170px-sticky-read-hold-plus-460px-continuous-takeover-travel
+    full_stack_track_1651: 1981px
+    first_child_rule: none
+    js_cache: 20260929-solutions-unified-approach-v41
+    preserved: approach-gap-token-card-size-scale-opacity-13px-depth-illustration-opacity-solutions-to-cta-and-cta
+    static_qa: passed-source-dist-sync-js-syntax-and-unified-approach-contract
+    runtime_qa: 1651-computed-initial-card-02-and-card-03-both-below-viewport; user-visual-review-pending
+homepage_final_cta_footer:
+  revised: 2026-09-23
+  figma_nodes:
+    final_cta: "212:832"
+    footer: "212:686"
+  removed_homepage_sections:
+    - ecosystem
+    - about
+    - legacy-final-cta
+    - legacy-light-footer
+  retained_about_route: ./pages/about.html
+  final_cta:
+    structure: dark-1314px-stage-with-products-row-editorial-headline-and-50-50-contact-register-panels
+    background_asset: ./assets/images/final-cta-figma-20260923/cta-background-01.jpeg
+    texture_asset: ./assets/images/final-cta-figma-20260923/cta-background-03.png
+    contact: mailto:contact@zhongkedayun.com
+    register: https://zkda-cloud-console.mmmmqian.chatgpt.site
+  footer:
+    structure: top-navigation-then-dedicated-left-contact-then-large-lockup-then-single-line-legal-bar
+    texture_asset: ./assets/images/final-cta-figma-20260923/footer-texture.png
+    lockup_assets:
+      - ./assets/brand/logo-lockup-white.svg
+  static_qa: node-check-and-source-dist-sync-pass; runtime-1651-820-390-pending
+  contact_legal_calibration_v21:
+    revised: 2026-09-23
+    figma_nodes:
+      footer: "212:686"
+      contact: "212:783"
+      legal: "212:824"
+    desktop_contract:
+      contact: left-36px-517x209px-label-16px-email-34.39px-3px-underline
+      lockup: follows-contact-with-433px-stage
+      legal: 69px-single-line-copyright-left-links-right
+    static_qa: source-dist-sync-pass; runtime-viewport-matrix-pending
+  legal_sticky_motion_v22:
+    revised: 2026-09-23
+    model: normal-document-flow-plus-footer-bounded-css-sticky-legal-bar
+    normal_flow:
+      - footer-navigation-and-brand-copy
+      - contact
+      - giant-brand-lockup
+    legal_bar: sticky-bottom-0-z-index-3-opaque-020801-within-home-footer
+    dividers: brand-lockup-top-and-legal-top-use-final-divider
+    mobile: <=479px-legal-bar-returns-to-normal-flow-for-two-line-usability
+    prohibited: gsap-scrolltrigger-scroll-listener-requestanimationframe-intersectionobserver-logo-reveal
+    static_qa: node-check-source-dist-sync-and-css-contract-check-pass
+    runtime_qa: pending-sticky-partial-full-and-reverse-proof
+  natural_flow_boundary_fix_v23:
+    revised: 2026-09-24
+    top_gap_root_cause: home-footer-top-first-child-margin-top-264px-collapsed-outside-footer
+    top_gap_fix: footer-root-padding-top-264px-with-top-child-margin-removed
+    trailing_black_root_cause: footer-min-height-1299px-exceeded-its-1033px-content-flow-after-collapsed-top-margin
+    trailing_black_fix: remove-footer-min-height-so-legal-normal-flow-bottom-is-footer-physical-bottom
+    sticky_owner: home-footer-direct-last-layout-child
+    static_qa: source-dist-sync-js-check-and-footer-geometry-contract-pass
+    runtime_qa: blocked-browser-cannot-reach-local-service-from-current-network-namespace
+  layered_brand_canvas_v24:
+    revised: 2026-09-24
+    architecture: footer-reveal-stage-with-sticky-brand-backdrop-and-opaque-content-curtain
+    brand_backdrop: grid-layer-0-sticky-to-viewport-bottom-aligned-to-stage-end
+    content_curtain: grid-layer-1-dark-opaque-normal-scroll-with-brand-canvas-bottom-padding
+    legal: final-normal-flow-footer-child-not-the-reveal-controller
+    scroll_model: curtain-bottom-sweeps-upward-across-stationary-brand-backdrop
+    reduced_motion: curtain-then-brand-normal-flow-order
+    static_qa: source-dist-sync-js-check-and-layer-contract-pass
+    runtime_qa: blocked-browser-policy-refuses-file-url-read-for-current-local-preview
+  brand_visibility_baseline_v25:
+    revised: 2026-09-24
+    regression_root_cause: opaque-content-curtain-padding-bottom-consumed-the-full-brand-canvas-height
+    stage_space_owner: home-footer-reveal-stage-padding-bottom-footer-brand-height
+    brand_backdrop: absolute-bottom-z-index-0-with-433px-reserved-stage-space
+    curtain: z-index-2-natural-content-height-only-no-brand-height-padding
+    asset: ./assets/brand/logo-lockup-white.svg
+    asset_static_qa: xml-parse-and-nonempty-pass
+    static_qa: source-dist-sync-js-check-and-brand-asset-check-pass
+    runtime_qa: user-visible-file-preview-reload-required-for-static-brand-proof
+  curtain_sweep_geometry_v26:
+    revised: 2026-09-24
+    architecture: two-row-grid-stage-with-underlapping-sticky-brand-canvas-and-natural-flow-opaque-curtain
+    stage_space_owner: grid-template-rows-auto-plus-footer-brand-height
+    brand_backdrop: grid-row-1-through-3-sticky-viewport-bottom-aligned-z-index-0
+    curtain: grid-row-1-only-z-index-2-natural-content-height-no-brand-padding
+    legal: final-normal-flow-z-index-3-closure
+    scroll_model: curtain-bottom-edge-naturally-sweeps-upward-over-stationary-brand-canvas
+    prohibited: logo-transform-logo-opacity-curtain-opacity-js-scroll-controller
+    reduced_motion: curtain-then-brand-static-reading-order
+    static_qa: pending-source-dist-sync-js-check-and-css-contract
+    runtime_qa: pending-user-file-preview-reload-and-initial-partial-full-reverse-proof
+  solutions_to_cta_mosaic_v27:
+    revised: 2026-09-24
+    structure: full-bleed-sticky-mosaic-stage-between-solutions-and-final-cta
+    progress_owner: independent-rAF-scroll-progress-not-coupled-to-solution-stack
+    geometry: 0.72svh-desktop-runway-with-viewport-stage-and-3-to-5-row-frontier-band
+    tiles: canvas-only-under-180-deterministic-fixed-seed-threshold-colour-and-variation-pattern
+    palette: light-home-paper-dark-020801-green-A2FA8E-blue-1B58F4
+    behavior: reversible-scroll-scrub-with-no-timeout-intersectionobserver-or-per-scroll-randomness
+    reduced_motion: static-mosaic-divider-retained
+    static_qa: node-check-source-dist-sync-and-fixed-seed-contract-pass
+    runtime_qa: pending-A-light-B-signal-C-frontier-D-dark-takeover-E-cta-and-reverse-proof
+  mosaic_chunkiness_v28:
+    revised: 2026-09-28
+    scope: cell-size-column-count-row-density-and-accent-density-only
+    desktop: 72px-to-110px-target-cell-12-to-24-columns-4-rows
+    tablet: 56px-to-80px-target-cell-10-to-16-columns-4-rows
+    mobile: 36px-to-56px-target-cell-7-to-14-columns-3-rows
+    accent_density: green-8-percent-blue-4-percent-full-cell-only
+    preserved: scroll-progress-fixed-seed-solutions-cta-footer
+    static_qa: node-check-source-dist-sync-and-1651-1280-820-390-density-contract-pass
+  mosaic_cluster_grammar_v29:
+    revised: 2026-09-28
+    scope: frontier-composition-black-white-blue-green-cluster-grammar-only
+    replaces: single-column-ridge-as-the-only-frontier-grammar
+    surface: continuous-dark-base-with-light-insets-dark-protrusions-and-signal-clusters
+    clusters: deterministic-fixed-seed-1x2-2x1-2x2-and-L-shapes-with-fixed-activation-windows
+    colors: dark-020801-light-f7f7f5-blue-1B58F4-green-A2FA8E
+    preserved: cell-scale-row-density-scroll-progress-transition-position-solutions-cta-footer
+    static_qa: node-check-source-dist-sync-and-no-random-scroll-contract-pass
+    runtime_qa: pending-25-50-75-cluster-composition-and-reverse-proof
+  mosaic_regular_grid_v30:
+    revised: 2026-09-28
+    scope: frontier-geometry-and-tile-state-grammar-only
+    model: full-regular-square-grid-with-fixed-coordinates-and-per-cell-deterministic-state
+    cell_states: light-dark-white-blue-green
+    frontier: irregular-activation-threshold-distribution-without-ridge-cluster-or-freeform-geometry
+    active_band: approximately-four-rows-via-0.21-progress-state-window
+    preserved: large-cell-sizing-scroll-progress-transition-position-solutions-cta-footer
+    static_qa: node-check-source-dist-sync-and-no-legacy-geometry-contract-pass
+    runtime_qa: pending-25-50-75-aligned-grid-and-reverse-proof
+  mosaic_compact_runway_v31:
+    revised: 2026-09-28
+    scope: mosaic-section-spacing-stage-height-and-scroll-runway-only
+    desktop: stage-70svh-max-720px-plus-runway-45svh-max-500px
+    tablet: stage-58svh-max-560px-plus-runway-34svh-max-340px
+    mobile: stage-40svh-max-360px-plus-runway-24svh-max-190px
+    progress: unchanged-single-scroll-progress-now-normalized-by-actual-track-minus-stage-height
+    preserved: cell-size-regular-grid-colors-header-cta-content-footer
+    static_qa: node-check-source-dist-sync-and-667-844-mobile-track-contract-pass
+    runtime_qa: pending-mobile-solutions-tail-mosaic-midpoint-and-cta-takeover-proof
+  mosaic_cta_seam_v32:
+    revised: 2026-09-28
+    scope: structural-solutions-to-cta-handoff-and-vertical-compression
+    architecture: home-transition-to-cta-owns-the-compact-mosaic-seam-and-the-real-final-cta-surface
+    root_causes:
+      - solution-stack-final-hold-distance-inherited-a-large-exit-runway
+      - mosaic-transition-was-a-standalone-sticky-track-adjacent-to-the-cta
+    removed: standalone-mosaic-to-cta-sibling-boundary
+    solution_tail: desktop-90px-to-180px-tablet-80px-to-140px-mobile-56px-to-88px
+    mosaic_track:
+      desktop: stage-300px-to-440px-plus-runway-90px-to-180px
+      tablet: stage-280px-to-380px-plus-runway-80px-to-140px
+      mobile: stage-200px-to-260px-plus-runway-56px-to-88px
+    preserved: regular-grid-cell-geometry-fixed-seed-tile-states-colors-scroll-scrub-cta-content-footer
+    static_qa: pending-source-dist-sync-js-check-and-layout-contract
+    runtime_qa: pending-user-browser-review-at-390-768-1280-1651
+  mosaic_cta_boundary_proof_v33:
+    revised: 2026-09-28
+    scope: transition-architecture-proof-only
+    architecture: final-cta-owns-its-absolute-top-mosaic-frontier-no-standalone-mosaic-section-or-sticky-stage
+    frontier: extends-upward-from-the-cta-dark-surface-with-3-to-5-regular-grid-rows
+    progress: starts-on-frontier-viewport-entry-and-completes-within-two-frontier-heights-while-grid-is-visible
+    removed:
+      - home-transition-to-cta-wrapper
+      - mosaic-transition-section-height
+      - mosaic-transition-sticky-stage
+      - mosaic-runway
+    diagnostic: query-mosaicproof-red-renders-all-grid-cells-red-family-and-publishes-data-mosaic-progress
+    preserved: cell-size-regular-grid-fixed-seed-default-pattern-cta-content-footer
+    static_qa: pending-source-dist-sync-js-check-and-no-legacy-track-contract
+    runtime_qa: pending-red-proof-and-normal-palette-review
+  mosaic_visibility_timing_proof_v34:
+    revised: 2026-09-28
+    scope: visibility-progress-timing-and-section-handoff-proof-only
+    frontier_geometry: normal-flow-first-child-of-final-cta-no-negative-offset-no-overlap-with-solutions-release
+    cta_content_timing: dark-surface-reserve-is-65-percent-of-frontier-height-content-enters-near-82-point-5-percent-progress
+    runtime_debug: mosaicproof-red-shows-pale-red-unclaimed-and-solid-red-claimed-cells-plus-live-layer-rect-and-style-hud
+    telemetry:
+      - solutionsReleaseProgress
+      - mosaicProgress
+      - ctaTop
+      - mosaicTop
+      - mosaicBottom
+      - viewportHeight
+    preserved: cell-size-pattern-colors-grid-row-system-final-cta-content-footer
+    static_qa: pending-source-dist-sync-js-check-and-handoff-timing-contract
+    runtime_qa: pending-red-proof-A-through-E-user-review
+  mosaic_timing_band_calibration_v35:
+    revised: 2026-09-28
+    scope: trigger-start-trigger-end-band-height-and-cta-content-timing-only
+    architecture: preserved-final-cta-normal-flow-frontier-and-cta-surface
+    start: short-light-breathing-before-final-cta-56px-to-100px-desktop-40px-to-56px-mobile
+    band_height: desktop-216px-to-250px-tablet-184px-to-220px-mobile-132px-to-164px
+    progress_travel: 1-point-6-frontier-heights-20-percent-shorter-than-v34
+    content_timing: 0-point-5-frontier-height-surface-reserve-content-enters-at-roughly-0-point-94-progress
+    preserved: dom-cell-size-grid-alignment-pattern-seed-solutions-motion-cta-design-footer
+    static_qa: pending-source-dist-sync-js-check-and-timing-contract
+    runtime_qa: pending-normal-palette-25-50-75-user-review
+  mosaic_symmetric_progress_v36:
+    revised: 2026-09-28
+    scope: scroll-progress-mapping-cta-surface-coverage-and-forward-reverse-symmetry-only
+    mapping: raw-progress-equals-scrollY-minus-fixed-mosaicStart-divided-by-fixed-mosaicEnd-minus-mosaicStart
+    travel: explicit-320px-to-520px-desktop-360px-to-480px-tablet-300px-to-420px-mobile-independent-of-band-height
+    content_timing: explicit-content-reserve-keeps-cta-content-after-roughly-0-point-84-to-0-point-90-progress
+    telemetry: scrollY-mosaicStart-mosaicEnd-rawProgress-clampedProgress-plus-existing-layer-hud
+    prohibited: direction-conditional-state-or-layer-logic
+    preserved: dom-band-cell-size-grid-pattern-seed-solutions-motion-cta-footer
+    static_qa: pending-source-dist-sync-js-check-and-symmetry-contract
+    runtime_qa: pending-forward-and-reverse-normal-palette-review
+  mosaic_cta_moving_edge_v37:
+    revised: 2026-09-28
+    scope: cta-owned-normal-flow-frontier-travel-and-content-flow
+    architecture: final-cta-first-layout-row-is-the-moving-mosaic-top-edge-dark-surface-and-content-follow-directly
+    mapping: progress-zero-when-frontier-top-reaches-viewport-bottom-progress-one-near-viewport-upper-18-percent
+    travel: desktop-clamp-520px-82svh-860px-tablet-clamp-480px-80svh-760px-mobile-clamp-420px-78svh-660px
+    content_timing: no-progress-gate-or-reserve-natural-document-flow-directly-after-frontier
+    activation_distribution: deterministic-thresholds-span-approximately-0-point-08-through-0-point-98
+    prohibited: standalone-mosaic-stage-pin-fixed-direction-branches-cta-content-reveal
+    preserved: cell-size-band-height-regular-grid-palette-seed-solutions-motion-cta-design-footer
+    static_qa: pending-source-dist-sync-js-check-and-flow-contract
+    runtime_qa: pending-normal-palette-forward-reverse-and-25-50-75-user-review
+  mosaic_moving_active_band_v38:
+    revised: 2026-09-28
+    scope: mosaic-cell-state-algorithm-and-active-band-density-only
+    model: deterministic-frontier-relative-distance-with-fixed-seed-offset-and-occupancy-map
+    band_depth: canvas-owned-3-to-4-rows-capped-at-four-rows
+    occupancy: dark-50-percent-light-and-white-30-percent-green-10-percent-blue-10-percent
+    relative_layers: light-above-active-mixed-band-dark-below
+    prohibited: global-threshold-to-dark-model-per-frame-random-dom-travel-content-or-grid-changes
+    preserved: solutions-cta-architecture-frontier-y-travel-cta-content-flow-cell-size-grid-alignment-section-height-header-footer
+    static_qa: passed-node-check-source-dist-sync-and-active-band-contract
+    runtime_qa: pending-forward-frontier-bottom-20-40-60-80-percent-and-reverse-user-review
+  mosaic_transition_corridor_v39:
+    revised: 2026-09-28
+    scope: transition-corridor-length-light-mosaic-dark-stages-and-progress-driven-cell-timelines
+    architecture: final-cta-internal-normal-flow-light-zone-mosaic-zone-dark-zone-then-cta-content
+    desktop: light-clamp-104px-15svh-160px-mosaic-travel-clamp-380px-52svh-620px-dark-clamp-104px-15svh-160px
+    mobile: light-clamp-56px-9svh-80px-mosaic-travel-clamp-260px-40svh-360px-dark-clamp-56px-9svh-80px
+    state_model: fixed-seed-per-cell-activation-start-and-span-evaluated-from-single-mosaic-progress-each-render
+    reverse: same-progress-mapping-no-direction-specific-state
+    prohibited: static-occupancy-only-model-standalone-page-mosaic-large-empty-spacer-grid-or-palette-changes
+    preserved: solutions-motion-cell-size-grid-alignment-palette-cta-figma-design-header-footer
+    static_qa: passed-node-check-source-dist-sync-and-corridor-motion-contract
+    runtime_qa: pending-forward-and-reverse-25-50-75-user-review
+  mosaic_full_visible_travel_v40:
+    revised: 2026-09-28
+    scope: mosaic-animation-end-condition-and-progress-mapping-only
+    mapping_start: frontier-top-equals-viewport-bottom
+    mapping_end: frontier-bottom-is-at-or-above-live-sticky-header-bottom
+    effective_viewport_top: read-from-data-site-header-getBoundingClientRect-bottom-each-render
+    travel: viewport-bottom-plus-frontier-height-minus-effective-viewport-top
+    independence: cta-surface-and-content-do-not-end-mosaic-tile-evolution
+    reverse: same-geometry-progress-mapping-1-to-0-without-direction-branch
+    telemetry: mosaic-travel-and-effective-viewport-top-added-to-proof-hud
+    preserved: light-zone-dark-zone-grid-cell-size-palette-solutions-cta-layout-header-footer
+    static_qa: passed-node-check-source-dist-sync-and-full-visible-travel-contract
+    runtime_qa: pending-bottom-middle-upper-25-percent-final-rows-and-reverse-user-review
+  final_cta_user_background_v41:
+    revised: 2026-09-28
+    scope: final-cta-background-asset-replacement-only
+    source: workspace-配图-CTA-bg-jpg
+    project_asset: assets-images-final-cta-figma-20260923-cta-background-user-20260928-jpg
+    dimensions: 4798x3454
+    preserved: final-cta-background-container-crop-layout-mosaic-motion-and-all-other-sections
+    static_qa: passed-source-project-dist-byte-comparison-and-html-asset-contract
+    runtime_qa: pending-user-visual-review
+  final_cta_background_anchor_v42:
+    revised: 2026-09-28
+    scope: desktop-final-cta-background-position-crop-and-anchor-only
+    prior: right-0-bottom-0-width-min-57vw-840px-height-min-78vw-1150px-object-position-right-bottom
+    current: right-clamp-24px-4vw-72px-bottom-negative-48px-width-min-58vw-960px-height-min-62vw-960px-object-position-70-percent-52-percent
+    visual_effect: shifted-left-24px-to-72px-shifted-down-48px-wider-lower-crop-window-more-blue-subject-visible
+    preserved: cta-structure-copy-typography-contact-mosaic-solutions-footer-and-mobile-background-rule
+    static_qa: passed-source-dist-sync-and-background-anchor-contract
+    runtime_qa: pending-desktop-user-visual-review
+  final_cta_content_divider_v43:
+    revised: 2026-09-29
+    scope: final-cta-content-layer-top-divider-only
+    mount: home-final-cta-stage
+    implementation: border-top-1px-solid-var-final-divider
+    color: rgba-255-255-255-0-point-2-via-existing-final-divider-token
+    layer_protection: position-relative-z-index-1-above-background-and-texture
+    preserved: spacing-cta-copy-buttons-background-contact-mosaic-footer
+    static_qa: passed-source-dist-sync-and-content-divider-contract
+    runtime_qa: pending-user-visual-review
+  final_cta_background_geometry_v44:
+    revised: 2026-09-29
+    scope: desktop-final-cta-background-wrapper-geometry-and-crop-only
+    prior: bottom-negative-48px-right-clamp-24px-4vw-72px-width-min-58vw-960px-height-min-62vw-960px-object-position-70-percent-52-percent
+    current: top-21-percent-right-clamp-40px-4-point-5vw-80px-bottom-auto-width-min-60vw-1024px-height-min-72vw-1100px-object-position-70-percent-42-percent
+    relative_change: top-earlier-by-removing-bottom-negative-48px-anchor-max-width-plus-64px-max-height-plus-140px-crop-y-minus-10-percent
+    preserved: cta-copy-contact-register-mosaic-footer-mobile-background-rule
+    static_qa: passed-source-dist-sync-and-background-geometry-contract
+    runtime_qa: pending-user-desktop-review-playwright-unavailable-for-1651-1280-1024-captures
+  final_cta_absolute_media_layer_v45:
+    revised: 2026-09-29
+    scope: final-cta-media-layer-geometry-and-stacking-only
+    root: position-relative-existing-overflow-hidden
+    media: position-absolute-z-0-top-0-right-0-bottom-0-width-60-percent-height-100-percent-object-fit-cover-object-position-70-percent-42-percent
+    stack: media-z0-texture-z1-stage-z2-panels-z2-mosaic-transition-z4
+    mobile: full-height-right-side-absolute-media-width-68-percent
+    preserved: cta-copy-typography-actions-contact-register-footer-mosaic-logic
+    static_qa: passed-source-dist-sync-and-absolute-media-layer-contract
+    runtime_qa: passed-in-app-browser-1651-1440-1280-full-bleed-composition-screenshots-user-visual-review-pending
+  final_cta_full_bleed_background_v46:
+    revised: 2026-09-29
+    scope: final-cta-background-composition-and-stacking-only
+    prior: right-side-absolute-media-width-60-percent-with-right-only-crop
+    root: position-relative-overflow-hidden-existing-border-radius-owner
+    background: position-absolute-z-0-inset-0-width-100-percent-height-100-percent-object-fit-cover-object-position-54-percent-50-percent
+    stack: background-z0-texture-z1-stage-z2-panels-z2-mosaic-transition-z4
+    mobile: same-full-bleed-root-background-geometry-without-right-side-width-or-opacity-override
+    preserved: cta-copy-typography-actions-contact-register-footer-mosaic-logic-and-divider
+    static_qa: passed-source-dist-sync-node-syntax-and-full-bleed-background-contract
+    runtime_qa: pending-user-1651-1440-1280-desktop-review
+  homepage_major_section_breathing_v50:
+    revised: 2026-09-29
+    scope: homepage-major-section-vertical-spacing-only
+    figma_source: homepage-node-212-10-at-1651px
+    token: --home-major-section-gap-clamp-160px-15-point-75vw-260px
+    desktop_baseline: 260px-at-1651px
+    application: home-metrics-to-product-system-margin-product-system-to-platform-capabilities-padding-platform-capabilities-to-core-advantages-margin-core-advantages-to-solutions-margin
+    responsive: tablet-clamp-120px-15vw-144px-mobile-clamp-80px-24vw-112px
+    preserved: product-capabilities-core-advantages-internal-layout-solutions-165px-header-breathing-solutions-stack-mosaic-cta-footer
+    root_cause: platform-capabilities-later-rule-overrode-its-earlier-major-padding-to-4px-while-core-and-solutions-had-no-outer-major-gap-owner
+    runtime_selector_correction: home-content-is-body-and-sections-are-main-children-not-direct-home-content-children
+    static_qa: passed-source-dist-sync-js-syntax-and-selector-contract
+    runtime_qa: passed-current-1053px-runtime-all-four-visual-gaps-165-point-84px-solutions-internal-breathing-165px-preserved
+  solutions_heading_open_boundary_v51:
+    revised: 2026-09-29
+    scope: solutions-heading-bottom-boundary-and-heading-to-card-one-spacing-only
+    figma_source: homepage-node-259-182-259-183-259-192-at-1651px
+    removed: header-border-bottom-and-breathing-spacer-vertical-pseudo-divider
+    heading_height: 271px
+    heading_card_gap: clamp-120px-11vw-165px-desktop-tablet-clamp-96px-12vw-112px-mobile-clamp-64px-20vw-88px
+    preserved: solutions-root-top-border-home-major-section-gap-card-width-stack-track-card-approach-takeover-mosaic-cta-footer
+    static_qa: passed-source-dist-sync-js-syntax-and-no-heading-bottom-divider-contract
+    runtime_qa: passed-current-1053px-heading-bottom-border-0px-spacer-before-none-heading-to-card-one-120px-card-top-border-1px-major-gap-165-point-84px
+  solutions_heading_continuous_split_v52:
+    revised: 2026-09-29
+    scope: solutions-heading-to-card-one-vertical-divider-continuity-only
+    figma_source: homepage-node-259-183-and-259-193-at-1651px
+    owner: home-solutions-heading-region-single-pseudo-divider
+    geometry: desktop-split-26-point-735-percent-approximately-441px-at-1651-and-full-heading-plus-spacer-height
+    preserved: no-heading-bottom-horizontal-divider-heading-card-gap-major-section-gap-card-one-top-border-and-all-stack-motion
+    static_qa: passed-source-dist-sync-js-syntax-and-single-split-owner-contract
+    runtime_qa: passed-current-1053px-split-x-281-point-516px-region-height-391px-region-bottom-equals-card-one-top-heading-bottom-none-heading-card-gap-120px
+  solutions_stack_anchor_v53:
+    revised: 2026-09-29
+    scope: stacked-cards-group-vertical-anchor-only
+    owner: solution-stack-stage-sticky-top-via-solution-current-top
+    desktop: base-114px-plus-40px-anchor-shift-equals-154px
+    tablet: base-106px-plus-32px-anchor-shift-equals-138px
+    preserved: card-size-card-insets-card-y-curves-stack-depth-content-scale-opacity-takeover-and-release-logic-solutions-heading-major-gap-mosaic-cta-footer
+    static_qa: passed-source-dist-sync-js-syntax-and-single-anchor-contract
+    runtime_qa: passed-current-1053px-sticky-stage-top-154px-card-height-581px-stack-height-1959-point-4375px-and-card-level-properties-unchanged
+  solutions_stack_visual_offset_v54:
+    revised: 2026-09-29
+    scope: rollback-sticky-anchor-regression-and-visual-group-offset-only
+    sticky_geometry: restored-desktop-114px-tablet-106px-unchanged-mobile-runtime-owner
+    visual_owner: solution-stack-visual-wrapper-translate-y-40px-desktop-32px-tablet-0px-mobile
+    excluded_from: sticky-top-track-height-scroll-progress-takeover-trigger-and-card-approach-distance
+    preserved: card-size-card-relative-y-depth-scale-opacity-insets-solutions-heading-major-gap-mosaic-cta-footer
+    static_qa: passed-source-dist-sync-js-syntax-and-wrapper-contract
+    runtime_qa: passed-current-1053px-active-solution-0-to-1-to-2-stage-sticky-top-114px-visual-transform-y-40px-and-receded-layer-y-minus-13-point-677px
+  solutions_card_jpg_assets_v55:
+    revised: 2026-09-29
+    scope: solutions-card-illustration-asset-references-only
+    assets: raw-02-jpg-for-card-01-raw-03-jpg-for-card-02-raw-06-jpg-for-card-03-and-raw-03-jpg-inset
+    dimensions: 1322x1014-each
+    preserved: image-wrapper-crop-layout-card-copy-stack-motion-depth-and-all-other-homepage-sections
+    static_qa: passed-source-dist-sync-and-no-legacy-png-callsite
+    runtime_qa: passed-local-http-200-for-raw-02-raw-03-and-raw-06-jpg-lazy-images-await-card-viewport
+  solutions_grid_spine_v56:
+    revised: 2026-09-29
+    scope: solutions-vertical-divider-owner-and-continuity-only
+    owner: home-solutions-before
+    geometry: top-0-bottom-0-left-solutions-heading-split-width-1px
+    layering: root-spine-z4-above-sticky-stage-z3-and-card-visuals
+    preserved: card-position-size-stack-motion-sticky-geometry-horizontal-dividers-and-heading-card-spacing
+    static_qa: passed-source-dist-sync-js-syntax-and-single-root-spine-contract
+    runtime_qa: passed-current-1053px-spine-x-281-point-516px-root-height-2351px-stack-bottom-equals-root-bottom-spine-z4-stage-z3
+  solutions_card03_single_visual_v57:
+    revised: 2026-09-29
+    scope: card-03-secondary-inset-removal-only
+    asset: raw-06-jpg-only-1322x1014
+    removed: solution-card-visual-composite-class-solution-card-visual-inset-node-raw-03-inset-and-dead-composite-css
+    preserved: cards-01-and-02-image-wrappers-card-03-main-image-crop-card-layout-stack-motion-depth-and-all-other-sections
+    static_qa: passed-source-dist-sync-js-syntax-and-no-composite-inset-selectors
+    runtime_qa: passed-local-http-card-03-has-one-raw-06-image-no-composite-nodes-and-fresh-v57-stylesheet
+  solutions_grid_spine_end_v58:
+    revised: 2026-09-29
+    scope: solutions-vertical-divider-end-boundary-only
+    owner: home-solutions-heading-region-after
+    geometry: top-0-through-heading-and-breathing-plus-only-the-visual-group-offset-to-card-one-left-solutions-heading-split-width-1px
+    end_boundary: intro-zone-bottom-equals-card-01-top-within-one-pixel
+    removed: home-solutions-root-before-full-section-spine
+    preserved: heading-bottom-divider-removal-heading-card-gap-card-stack-sticky-geometry-card-motion-major-section-gap-mosaic-and-cta
+    static_qa: passed-source-dist-sync-js-syntax-and-no-root-spine-selector
+    runtime_qa: passed-current-1053px-intro-spine-end-doc-y-8838-point-859375-equals-card-one-doc-top-within-0px-root-pseudo-none
+  solutions_final_card_release_v59:
+    revised: 2026-09-29
+    scope: card-03-final-release-clipping-and-section-handoff-only
+    card03_contract: scale-1-opacity-1-full-card-height-and-width-y-release-only-no-receded-state
+    root_layering: home-solutions-is-final-release-z-index-1-from-first-cta-card-overlap-release-start-minus-visual-offset-until-stack-reset
+    progress_fix: release-progress-maps-to-native-sticky-release-start-through-full-card-bottom-clearance-using-resolved-track-height
+    preserved: card-03-design-size-01-to-02-and-02-to-03-motion-stack-depth-visual-offset-heading-spacing-divider-mosaic-and-cta
+    static_qa: passed-source-dist-sync-js-syntax-and-final-release-layer-contract
+    runtime_qa: passed-current-1651x1000-card-03-rect-is-1579x581-at-release-0-0-point-252-0-point-503-0-point-754-and-1-with-constant-scale-1-opacity-1-clip-inset-0-and-reverse-0-point-507-restores-the-identical-1579x581-rect-geometry
+    evidence: docs/evidence/solutions-final-release-20260929/solutions-card03-final-release-forward.mp4
+  contact_email_nowrap_v61:
+    revised: 2026-09-29
+    scope: final-cta-and-footer-contact-email-single-line-responsive-sizing-only
+    implementation: semantic-contact-email-class-with-nowrap-normal-word-break-normal-overflow-wrap-and-fit-content-width
+    type_scale: final-cta-clamp-20px-5-point-2vw-57px-footer-clamp-20px-5-point-2vw-34-point-39px
+    preserved: contact-layout-green-register-area-footer-motion-background-and-copy
+    runtime_qa: passed-390-430-768-1024px-both-contact-emails-single-line-fit-viewport-no-document-horizontal-overflow
+  cta_contact_email_fit_v63:
+    revised: 2026-10-08
+    scope: final-cta-contact-email-single-line-within-left-grid-column-only
+    root_cause: prior-5-point-2vw-curve-exceeded-the-two-column-contact-content-width-from-768px-through-1280px
+    implementation: cta-contact-email-nowrap-important-plus-clamp-20px-calc-3-point-85vw-minus-6px-57px-and-max-content-intrinsic-width
+    preserved: cta-structure-black-green-columns-actions-copy-background-and-footer-motion
+    runtime_qa: passed-390-430-768-1024-1280-1600px-single-line-within-parent-and-viewport-no-horizontal-overflow
+  capabilities_tablet_stage_v64:
+    revised: 2026-10-08
+    scope: platform-capabilities-responsive-layout-and-active-state-consistency-only
+    root_cause: 768-to-1023-css-reverted-stage-to-single-column-flex-relative-flow-while-js-enabled-staged-active-state-only-from-1024px
+    implementation: shared-js-interactive-breakpoint-min-721px-plus-tablet-stage-two-column-and-summary-divider-override
+    mobile_boundary: max-720px-retains-existing-sticky-mobile-reading-composition
+    preserved: capabilities-copy-blue-system-summary-card-content-icons-other-sections-and-mobile-interaction
+    runtime_qa: passed-1600-1440-1280-1180-1024-900-768-interactive-absolute-stage-and-720-430-390-mobile-sticky-with-no-horizontal-overflow-plus-430-to-1024-to-1600-return-resize
+    evidence: docs/evidence/capabilities-responsive-20261008/after-tablet-stage-1024.png
+  mosaic_grid_geometry_v65:
+    revised: 2026-10-08
+    scope: solutions-to-final-cta-mosaic-responsive-last-row-geometry-only
+    root_cause: width-derived-cell-size-was-combined-with-independent-svh-frontier-height-plus-an-extra-row-and-frontier-overflow-clip
+    implementation: three-complete-rows-with-grid-height-equal-to-rows-times-cell-and-resizeobserver-recalculation-of-columns-cell-canvas-and-boundary
+    resize_behavior: preserves-current-mosaic-progress-through-the-responsive-layout-settle-window
+    preserved: colors-pattern-cell-size-strategy-scroll-linked-forward-reverse-path-cta-and-solutions-motion
+    runtime_qa: passed-1651-1440-1280-1024-900-768-430-390-full-square-rows-zero-pixel-dark-seam-and-no-horizontal-overflow
+    evidence: docs/evidence/mosaic-grid-geometry-20261008/mosaic-1280-progress-47.png
+  mosaic_raster_seams_v66:
+    revised: 2026-10-08
+    scope: mosaic-grid-lines-and-subpixel-raster-seams-only
+    root_cause: forced-1-point-5-canvas-backing-scale-plus-fractional-logical-fillrect-edges-created-resampling-seams
+    implementation: device-pixel-ratio-backing-store-with-adjacent-shared-rounded-backing-pixel-boundaries-and-no-cell-overdraw
+    verified_absent: border-outline-box-shadow-background-grid-pseudo-elements-and-debug-overlays
+    preserved: mosaic-geometry-pattern-colors-cell-size-scroll-path-forward-reverse-and-cta-seam
+    runtime_qa: passed-1651-1280-1024-768-430-no-grid-style-sources-no-horizontal-overflow-and-zero-pixel-dark-seam
+    evidence: docs/evidence/mosaic-raster-seams-20261008/after-1280-progress-47.png
+  hero_fullscreen_lightsout_v67:
+    revised: 2026-10-08
+    scope: homepage-hero-viewport-height-and-scroll-linked-pixel-lights-out-only
+    implementation: hero-height-is-max-of-live-header-subtracted-100svh-and-existing-content-minimum-with-scroll-progress-derived-from-header-bottom-to-hero-top
+    lights_out: deterministic-reversible-highlights-and-reveal-strength-follow-one-minus-progress-powered-1-point-35-with-new-events-paused-near-complete-exit
+    preserved: hero-copy-title-scale-bottom-two-column-structure-pixel-grid-size-distribution-brand-colors-and-all-other-sections
+    runtime_qa: passed-1920x1080-1651x1000-1440x900-1280x800-1024x768-hero-bottom-aligns-viewport-bottom-and-scroll-progress-forward-reverse-0-25-50-75-100
+    evidence: docs/evidence/hero-fullscreen-lightsout-20261008/
+  global_underline_motion_v68:
+    revised: 2026-10-08
+    scope: sitewide-text-link-underline-motion-only
+    implementation: css-pseudo-element-utilities-for-always-visible-two-phase-sweep-and-hover-draw-remove-with-shared-duration-ease-and-thickness-tokens
+    accessibility: hover-focus-visible-and-prefers-reduced-motion-supported-without-js-or-text-geometry-changes
+    preserved: filled-buttons-cards-tabs-structural-dividers-email-nowrap-and-existing-link-targets
+    runtime_qa: passed-1651-1280-1024-768-390-default-pseudo-states-email-nowrap-and-no-horizontal-overflow
+    evidence: docs/evidence/underline-motion-20261008/
+  email_underline_motion_v69:
+    revised: 2026-10-08
+    scope: homepage-hero-final-cta-and-footer-contact-email-underline-only
+    root_cause: hero-contact-email-omitted-the-shared-sweep-class-while-cta-and-footer-inherited-the-generic-500ms-token
+    implementation: reusable-email-link-underline-sweep-class-with-nowrap-contract-and-850ms-two-pass-transform-sweep
+    preserved: existing-underline-vertical-positioning-hero-cta-footer-layouts-email-typography-and-generic-link-motion-duration
+    runtime_qa: passed-focus-trigger-reads-0-point-85s-and-default-single-line-no-overflow-at-1651-1280-1024-768-390
+    evidence: docs/evidence/email-underline-motion-20261008/
+  hero_email_color_state_v70:
+    revised: 2026-10-08
+    scope: homepage-hero-contact-email-color-state-only
+    root_cause: prior-email-unification-assigned-the-hero-email-brand-blue-instead-of-its-light-surface-text-color
+    implementation: explicit-black-color-contract-across-link-visited-hover-focus-visible-and-active-with-pseudo-underline-inheriting-currentColor
+    preserved: email-sweep-duration-850ms-underline-position-font-layout-nowrap-and-mailto-behavior
+    runtime_qa: passed-1280-hero-link-and-pseudo-both-rgb-17-17-15-nowrap-and-no-horizontal-overflow
+    evidence: docs/evidence/email-underline-motion-20261008/hero-email-black-v70-1280.png
+  underline_motion_v2_v71:
+    revised: 2026-10-08
+    scope: default-visible-text-link-underline-keyframes-only
+    root_cause: prior-0-to-48-percent-hold-compressed-the-erase-into-the-final-2-percent-of-the-first-half
+    implementation: continuous-0-to-50-percent-right-origin-erase-zero-width-origin-switch-and-50-to-100-percent-left-origin-redraw
+    preserved: email-duration-850ms-normal-link-duration-colors-offsets-nowrap-mailto-hover-draw-links-and-reduced-motion
+    runtime_qa: passed-footer-keyboard-focus-triggers-underline-sweep-at-0-point-85s-with-text-and-line-currentColor
+    reference: /Users/mmmmqian/Desktop/录屏2026-10-08 15.48.36.mov
+  capabilities_card_05_06_color_swap_v72:
+    revised: 2026-10-08
+    scope: capabilities-card-05-and-card-06-background-mapping-only
+    implementation: swapped-existing-capability-autodev-and-capability-black-token-references-on-service-and-autodev-selectors
+    final_backgrounds: card-05-model-service-token-hub=#071326; card-06-ai-driven-development-autodev=#020801
+    preserved: copy-number-icon-illustration-sizing-layout-scroll-staging-and-other-card-colors
+    runtime_qa: passed-1600-1024-768-390-with-identical-computed-colors-and-no-active-state-background-override
+  section_heading_typography_v73:
+    revised: 2026-10-08
+    scope: homepage-ai-stack-capabilities-advantages-and-solutions-primary-heading-typography-only
+    root_cause: four-peer-headings-owned-independent-clamp-formulas-font-stacks-line-heights-and-tablet-overrides
+    implementation: semantic-home-section-heading-class-with-shared-font-family-font-size-line-height-and-letter-spacing-tokens
+    typography: font-size=clamp(42px,4.846vw,80px); line-height=1.125; letter-spacing=-0.055em; font-weight=400
+    preserved: section-grids-labels-dividers-product-content-images-carousel-section-gaps-and-motion
+    qa: cascade-and-responsive-formula-verified-at-1920-1651-1440-1280-1024-900-768-390; browser-capture-pending-browser-automation-recovery
+  capabilities_scroll_interaction_v74_rollback:
+    revised: 2026-10-08
+    scope: precise-rollback-of-the-immediately-prior-capabilities-scroll-interaction-v2-only
+    implementation: restored-rounded-scroll-index-sticky-offsets-620ms-top-transition-and-original-card-height-calculation
+    preserved: tablet-staged-mode-at-721px-background-swap-05-06-home-section-heading-system-and-all-non-capabilities-sections
+    qa: node-syntax-and-source-dist-sync-passed; runtime-browser-capture-pending-browser-automation-recovery
+  capabilities_fullscreen_sticky_stage_v75:
+    revised: 2026-10-09
+    scope: capabilities-stage-card-geometry-and-responsive-two-column-layout-only
+    root_cause: stage-height-was-capped-at-818px-tablet-used-36-64-columns-and-every-card-used-the-card06-height-formula
+    implementation: live-header-height-token-plus-stage-height-100dvh-minus-header-plus-50-50-columns-plus-active-height-stage-minus-index-times-76px
+    preserved: rounded-scroll-index-620ms-top-transition-card-order-colors-content-reverse-scroll-tablet-staged-mode-and-mobile-sticky-mode
+    runtime_qa: passed-1920x1080-1600x900-1440x900-1280x800-1024x768-900x768-768x1024-1280x720-1280x1000-with-zero-horizontal-overflow; forward-01-03-05-06-and-reverse-06-05-03-01-path-verified
+    evidence: docs/evidence/capabilities-fullscreen-20261009/runtime-qa.md
+    superseded_geometry: capabilities_fixed_expanded_geometry_v77
+  capabilities_minimum_height_v76:
+    revised: 2026-10-09
+    scope: capabilities-stage-minimum-height-short-viewport-and-resize-geometry-only
+    minimum_stage_height: five-collapsed-headers-plus-runtime-measured-minimum-expanded-height
+    measured_values: 1920px=646px; 1440px=640px; 1280px=638px; 1024px-and-below-interactive=590px
+    implementation: stage-height-max-of-available-height-and-content-minimum-with-header-anchored-sticky-top-and-left-summary-viewport-bottom-compensation
+    preserved: 50-50-columns-rounded-scroll-index-620ms-transition-card-order-colors-copy-icons-reverse-scroll-and-mobile-mode
+    runtime_qa: passed-normal-threshold-low-height-modes-at-1920-1440-1280-widths-with-no-internal-scroll-no-horizontal-overflow-and-card03-state-preserved-through-900-to-600-to-900-resize
+    evidence: docs/evidence/capabilities-min-height-20261009/runtime-qa.md
+  capabilities_fixed_expanded_geometry_v77:
+    revised: 2026-10-09
+    scope: capabilities-stable-expanded-card-height-and-responsive-minimum-height-formula-only
+    root_cause: prior-height-stage-minus-each-card-offset-made-later-cards-progressively-shorter-and-forced-every-active-bottom-to-stage-bottom
+    implementation: shared-expanded-height-stage-minus-card-count-minus-one-times-collapsed-height-with-index-only-controlling-top
+    geometry_1920x900: stage=836.5px; collapsed=76px; expanded=456.5px; bottom-remaining=380-304-228-152-76-0px
+    minimum_height: minimum-expanded=266px; minimum-stage=5-times-76-plus-266=646px
+    preserved: fullscreen-stage-50-50-columns-rounded-scroll-index-620ms-transition-card-order-colors-copy-icons-forward-reverse-and-mobile-mode
+    runtime_qa: card02-top-76-bottom-remaining-304-and-card06-top-380-bottom-remaining-0; resize-1280x800-to-1280x600-to-1920x900-preserved-card02; forward-02-to-05-and-reverse-05-to-02; console-zero-errors-warnings
+    evidence: docs/evidence/capabilities-fixed-expanded-20261009/runtime-qa.md
+  capabilities_scroll_step_v78:
+    revised: 2026-10-09
+    scope: capabilities-scroll-distance-and-progress-mapping-geometry-only
+    root_cause: fullscreen-and-fixed-expanded-card-geometry-used-the-legacy-fixed-430svh-track-leaving-only-about-0-point-73-stage-per-takeover
+    implementation: scroll-step-equals-1-point-05-times-stage-height-and-track-height-equals-stage-plus-five-equal-scroll-steps
+    before_per_card_px: 1600x900=606.7; 1280x800=540.7; 1024x768=519.5
+    after_per_card_px: 1600x900=878.325; 1280x800=773.325; 1024x768=740.25
+    preserved: fullscreen-stage-50-50-columns-six-equal-expanded-heights-card06-bottom-alignment-minimum-stage-height-colors-copy-icons-rounded-index-transition-and-mobile-mode
+    runtime_qa: standard-page-scroll-advanced-one-card-and-reverse-returned-one-card-at-1600x900-1280x800-1024x768; resize-preserved-card04; card06-release-passed; zero-console-errors-warnings
+    evidence: docs/evidence/capabilities-scroll-step-20261009/runtime-qa.md
+  capabilities_progress_mapping_v79:
+    revised: 2026-10-09
+    scope: capabilities-card-y-position-progress-mapping-only
+    root_cause: active-index-followed-scroll-progress-but-card-top-followed-an-independent-620ms-css-clock-so-inertial-input-crossed-the-next-threshold-before-card04-or-card05-settled
+    classification: progress-rendering-clock-conflict-exposed-by-inertial-input-not-an-index-or-segment-length-error
+    implementation: five-identical-segments-keep-their-existing-step-and-midpoint-threshold-while-card-top-is-rendered-deterministically-from-virtual-index-with-smoothstep
+    before_fast_sample: t70ms-card04-active-top668.8px; t140ms-card05-active-card04-top471.6px-card05-top672.9px
+    after_fast_sample: t70ms-card04-active-top291.5px-card05-future; t140ms-card05-active-top367.6px-card04-stable
+    preserved: scroll-step-1.05-stage-track-height-fullscreen-stage-minimum-height-50-50-six-equal-expanded-heights-card06-alignment-colors-copy-icons-and-mobile-mode
+    runtime_qa: slow-03-to-04-to-05-to-06-keyframes-fast-burst-and-reverse-06-to-03-passed-at-1600x900; page-step-forward-reverse-passed-at-1280x800-and-1024x768; zero-horizontal-overflow-and-console-errors-warnings
+    evidence: docs/evidence/capabilities-progress-mapping-20261009/runtime-qa.md
+  core_advantages_svg_illustrations_v80:
+    revised: 2026-10-09
+    scope: homepage-advantages-left-illustration-assets-only
+    asset_mapping: 01-multi-chip; 02-smooth-migration; 03-cost-optimization; 04-security-control; 05-intelligent-operations; 06-industry-knowledge
+    implementation: six-independent-441x818-svg-resources-with-active-layer-remount-to-replay-intrinsic-css-smil-line-motion
+    preserved: illustration-container-size-position-background-crop-responsive-layout-right-list-copy-color-dividers-hover-click-keyboard-state-machine-and-all-other-sections
+    runtime_qa: passed-1651-768-390-with-correct-one-to-one-src-natural-size-441x818-zero-horizontal-overflow-and-console-zero-errors-warnings
+    evidence: docs/evidence/core-advantages-svg-20261009/runtime-qa.md
+  core_advantages_svg_render_fix_v81:
+    revised: 2026-10-09
+    scope: homepage-advantages-svg-rendering-only
+    root_cause: css-scaling-the-svg-drawing-canvas-caused-pathLength-one-and-stroke-dasharray-traces-to-render-incompletely
+    implementation: shadow-dom-inline-svg-at-native-441x818-with-responsive-transform-on-the-outer-native-wrapper-and-generation-guarded-switching
+    fit: contain-to-preserve-complete-peripheral-cubes-connections-central-subject-and-bottom-perspective-structure
+    preserved: advantages-panel-geometry-background-crop-responsive-layout-right-list-copy-colors-dividers-and-existing-hover-click-keyboard-state-machine
+    runtime_qa: six-of-six-desktop-trace-sets-finished-with-zero-nonzero-dash-offsets; tablet-and-mobile-kept-native-svg-441x818-and-scaled-only-wrapper; rapid-switch-left-one-correct-svg; zero-horizontal-overflow-and-console-errors-warnings
+    evidence: docs/evidence/core-advantages-svg-render-fix-20261009/runtime-qa.md
+  core_advantages_svg_transparent_background_v82:
+    revised: 2026-10-09
+    scope: homepage-advantages-illustration-background-transparency-only
+    root_cause: each-svg-root-painted-f9fafc-and-the-illustration-panel-painted-f1f3f3-over-the-section-home-paper
+    implementation: svg-root-and-core-advantages-visual-are-transparent-so-the-existing-section-surface-is-the-only-background-owner
+    preserved: six-svg-geometry-fills-grid-lines-intrinsic-motion-native-441x818-canvas-wrapper-scale-panel-layout-right-list-and-switching-state-machine
+    runtime_qa: all-six-start-and-complete-states-transparent; passed-1651-768-390-with-zero-unfinished-traces-horizontal-overflow-and-console-errors-warnings
+    evidence: docs/evidence/core-advantages-svg-transparent-20261009/runtime-qa.md
+  core_advantages_isometric_geometry_v83:
+    revised: 2026-10-09
+    scope: core-advantages-six-svg-perspective-geometry-and-project-local-figma-preview-only
+    root_cause: center-cube-carrier-planes-auxiliary-diamonds-outer-frames-and-network-routes-used-independent-rise-run-ratios
+    implementation: shared-plus-minus-0-point-54-isometric-axis-plus-vertical-spine-across-all-planes-cubes-frames-network-bends-and-reference-grid
+    preview: ZKDACloud_CoreAdvantages_FigmaPreview.html
+    preserved: native-441x818-shadow-dom-wrapper-scale-transparent-background-colors-pathlength-css-smil-motion-layout-copy-dividers-and-existing-switch-state-machine
+    runtime_qa: six-preview-states-and-production-switching-passed-with-zero-console-errors-warnings-no-new-clipping-background-block-or-horizontal-overflow
+    evidence: docs/evidence/core-advantages-isometric-v83-20261009/runtime-qa.md
+  header_navigation_vertical_alignment_v84:
+    revised: 2026-10-09
+    scope: desktop-header-navigation-text-and-dropdown-trigger-vertical-alignment-only
+    root_cause: later-global-underline-selector-overrode-plain-header-anchors-from-inline-flex-to-inline-block-while-summary-remained-flex-centered
+    implementation: shared-62px-flex-row-zero-block-padding-line-height-one-nowrap-and-nonshrinking-chevron-at-min-width-901px
+    preserved: header-height-logo-horizontal-spacing-colors-underline-motion-dropdown-motion-dom-links-mobile-menu-and-all-page-sections
+    runtime_qa: passed-1600x900-1280x800-1024x768-with-eight-identical-text-centers-zero-overflow-and-stable-open-dropdown-header-height
+    evidence: docs/evidence/header-vertical-alignment-v84-20261009/runtime-qa.md
+  final_cta_contact_label_alignment_v85:
+    revised: 2026-10-09
+    scope: final-cta-contact-and-register-top-label-alignment-only
+    root_cause: register-panel-aligned-all-children-to-flex-end-while-contact-label-retained-default-flex-start
+    implementation: shared-panel-label-align-self-flex-end-text-align-right-nowrap-and-identical-line-height
+    preserved: email-position-typography-underline-motion-register-link-position-interaction-50-50-panels-height-colors-dividers-and-all-other-sections
+    runtime_qa: labels-have-identical-top-bottom-font-weight-line-height-and-24px-panel-relative-right-inset-with-zero-horizontal-overflow-and-console-errors-warnings
+    evidence: docs/evidence/cta-contact-label-alignment-v85-20261009/runtime-qa.md
+    superseded_by: final_cta_contact_label_left_alignment_v86
+  final_cta_contact_label_left_alignment_v86:
+    revised: 2026-10-09
+    scope: final-cta-green-panel-top-label-left-alignment-and-shared-label-baseline-only
+    correction: user-restored-contact-label-left-and-moved-experience-label-left
+    implementation: shared-panel-label-align-self-flex-start-text-align-left-nowrap-and-identical-line-height
+    preserved: email-position-typography-underline-motion-register-link-right-alignment-interaction-50-50-panels-height-colors-dividers-and-all-other-sections
+    runtime_qa: labels-have-identical-top-bottom-font-weight-line-height-and-24px-panel-relative-left-inset-with-zero-horizontal-overflow-and-console-errors-warnings
+    evidence: docs/evidence/cta-contact-label-left-v86-20261009/runtime-qa.md
+  header_product_menu_v87:
+    revised: 2026-10-10
+    scope: shared-header-product-dropdown-structure-and-product-navigation-states-only
+    root_cause: product-dropdown-retained-a-generic-two-column-panel-and-unrelated-preview-aside-so-the-menu-was-oversized-and-product-current-state-was-not-expressed-at-the-primary-level
+    implementation: single-column-352px-product-panel-three-existing-routes-black-semantic-trigger-underline-open-chevron-and-current-item-arrow
+    preserved: header-height-logo-navigation-order-horizontal-spacing-primary-cta-native-details-interaction-keyboard-behavior-other-dropdowns-and-all-page-sections
+    runtime_qa: passed-1600-1280-1024-with-header-63px-panel-352px-one-column-zero-asides-zero-horizontal-overflow-enter-open-escape-close-and-zero-console-errors-warnings
+    evidence: docs/evidence/header-product-menu-v87-20261010/runtime-qa.md
+  header_modal_hover_v89:
+    revised: 2026-10-10
+    scope: shared-header-primary-navigation-hover-open-state-and-dropdown-triggering-only
+    reference: modal-navigation-interaction-principle-without-copying-brand-assets-layout-or-code
+    implementation: zero-chevrons-stable-40px-gray-pill-controls-desktop-pointer-and-focus-open-180ms-delayed-close-200ms-panel-rise-and-mobile-click-details
+    accessibility: synchronized-aria-expanded-focus-open-escape-close-and-focus-return
+    preserved: header-63px-height-logo-navigation-order-routes-horizontal-spacing-blue-primary-cta-simplified-three-item-product-menu-mobile-fullscreen-menu-and-all-page-sections
+    runtime_qa: passed-1600-1280-1024-with-identical-control-centers-zero-wrap-zero-chevron-zero-underline-and-zero-horizontal-overflow; product-to-solution-switch-product-to-pricing-close-focus-open-escape-close-and-768-mobile-click-passed; zero-console-errors-warnings
+    evidence: docs/evidence/header-modal-hover-v89-20261010/runtime-qa.md
+  header_adaptive_theme_v91:
+    revised: 2026-10-10
+    scope: homepage-shared-header-light-dark-theme-and-section-boundary-detection-only
+    reference: transform9-section-aware-header-theme-principle-without-copying-assets-layout-or-code
+    implementation: explicit-data-header-theme-zones-header-bottom-plus-one-pixel-probe-request-animation-frame-state-owner-and-fixed-box-dual-logo-crossfade
+    mosaic_rule: light-frontier-remains-light-and-dark-switch-occurs-only-when-final-cta-dark-zone-crosses-the-probe
+    preserved: header-63px-layout-logo-box-navigation-order-modal-hover-v3-dropdown-state-mobile-click-menu-blue-primary-cta-and-all-section-motion
+    accessibility: 240ms-color-transition-reduced-motion-static-state-and-all-verified-text-pairs-wcag-aa
+    runtime_qa: passed-1600-1280-1024-and-768-mobile-with-forward-reverse-hash-load-resize-open-dropdown-state-zero-horizontal-overflow-and-console-zero-errors-warnings
+    evidence: docs/evidence/header-adaptive-theme-v91-20261010/runtime-qa.md
+  header_dropdown_theme_v92_v93:
+    revised: 2026-10-10
+    scope: dropdown-mega-menu-structure-theme-inheritance-and-v4-point-1-visual-calibration-only
+    root_cause: dropdown-theme-was-split-between-site-and-content-styles-while-panel-top-used-a-negative-overlap-and-dark-tokens-reused-green-black-header-colors
+    implementation: grouped-semantic-icon-items-header-owned-theme-tokens-single-column-product-menu-top-100-percent-anchor-square-panel-four-pixel-item-icon-radius-and-neutral-dark-palette
+    dark_tokens: bg=#0B0C0F; icon=#191B20; hover=#22252B; border=#2B2E34; text=#F5F6F8; muted=#ACB1BA; label=#8B929C
+    preserved: primary-nav-layout-pill-hover-header-height-logo-routes-dropdown-state-machine-mobile-click-menu-and-all-page-sections
+    runtime_qa: passed-light-dark-hover-focus-escape-mobile-768-390-and-1600-1280-1024-with-zero-horizontal-overflow-console-errors-and-warnings
+    evidence: docs/evidence/header-dropdown-theme-v93-20261010/runtime-qa.md
+capabilities_content_visibility_v94:
+  status: implemented-and-runtime-verified
+  date: 2026-10-10
+  root_cause: discrete-is-active-body-visibility-gate-conflicted-with-continuous-progress-position
+  change:
+    - removed-non-active-body-visibility-hidden
+    - removed-delayed-body-opacity-transition
+  preserved:
+    - progress-v79-position-mapping
+    - scroll-step-1.05-stage-height
+    - fullscreen-stage-and-minimum-height
+    - equal-card-heights
+    - card-colors-content-and-z-index
+  qa_widths:
+    - 1600
+    - 1280
+    - 1024
+  evidence: docs/evidence/capabilities-content-visibility-v94-20261010/runtime-qa.md

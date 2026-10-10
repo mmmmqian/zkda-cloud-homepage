@@ -61,11 +61,23 @@
   if (capabilities) {
     const capabilityScroll = capabilities.querySelector(".platform-capabilities__scroll");
     const capabilityStage = capabilities.querySelector(".platform-capabilities__stage");
+    const capabilityHeader = document.querySelector("[data-site-header]") || document.querySelector(".site-header");
     const capabilityCards = Array.from(capabilities.querySelectorAll("[data-capability-card]"));
+    // Desktop and tablet share the same staged capability interaction. Mobile
+    // keeps its separate sticky reading composition below the component cutoff.
     const capabilityDesktop = window.matchMedia("(min-width: 721px)");
     const capabilityReduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     let capabilityIndex = 0;
     let capabilityFrame = 0;
+    let capabilityHeaderHeight = 62;
+    let capabilityMinimumStageHeight = 646;
+    let capabilityStickyTop = 62;
+    let capabilityStageOverflow = 0;
+    let capabilityProgress = 0;
+    let capabilityCollapsedHeight = 76;
+    let capabilityGeometryKey = "";
+    let capabilityWasDesktop = capabilityDesktop.matches;
+    const capabilityScrollStepRatio = 1.05;
 
     const showCapability = (index) => {
       capabilityIndex = Math.max(0, Math.min(capabilityCards.length - 1, index));
@@ -83,6 +95,23 @@
       });
     };
 
+    const renderCapabilityPositions = (virtualIndex) => {
+      if (!capabilityStage) return;
+      const stageHeight = capabilityStage.getBoundingClientRect().height;
+      capabilityCards.forEach((card, cardIndex) => {
+        if (cardIndex === 0) {
+          card.style.setProperty("--capability-top", "0px");
+          return;
+        }
+        const transitionStart = cardIndex - 0.5;
+        const transitionProgress = Math.max(0, Math.min(1, (virtualIndex - transitionStart) * 2));
+        const easedProgress = transitionProgress * transitionProgress * (3 - 2 * transitionProgress);
+        const settledTop = cardIndex * capabilityCollapsedHeight;
+        const top = stageHeight + (settledTop - stageHeight) * easedProgress;
+        card.style.setProperty("--capability-top", `${top}px`);
+      });
+    };
+
     const updateCapabilityFromScroll = () => {
       capabilityFrame = 0;
       if (!capabilityDesktop.matches || capabilityReduceMotion.matches || !capabilityScroll || !capabilityStage) {
@@ -91,29 +120,622 @@
       }
       const bounds = capabilityScroll.getBoundingClientRect();
       const scrollRange = Math.max(1, bounds.height - capabilityStage.getBoundingClientRect().height);
-      const progress = Math.max(0, Math.min(1, (62 - bounds.top) / scrollRange));
-      showCapability(Math.round(progress * (capabilityCards.length - 1)));
+      capabilityProgress = Math.max(0, Math.min(1, (capabilityStickyTop - bounds.top) / scrollRange));
+      const virtualIndex = capabilityProgress * (capabilityCards.length - 1);
+      renderCapabilityPositions(virtualIndex);
+      showCapability(Math.round(virtualIndex));
     };
 
     const queueCapabilityUpdate = () => {
       if (!capabilityFrame) capabilityFrame = window.requestAnimationFrame(updateCapabilityFromScroll);
     };
 
+    const syncCapabilityGeometry = () => {
+      const number = (value) => Number.parseFloat(value) || 0;
+      const measuredHeaderHeight = capabilityHeader?.getBoundingClientRect().height;
+      if (measuredHeaderHeight) capabilityHeaderHeight = measuredHeaderHeight;
+
+      const capabilityStyle = window.getComputedStyle(capabilities);
+      const collapsedHeight = number(capabilityStyle.getPropertyValue("--capability-collapsed-height")) || 76;
+      capabilityCollapsedHeight = collapsedHeight;
+      const summary = capabilities.querySelector(".platform-capabilities__summary");
+      const summaryStyle = summary ? window.getComputedStyle(summary) : null;
+      const summaryHeading = summary?.querySelector("h2");
+      const summaryList = summary?.querySelector("ul");
+      const leftRequiredHeight = summaryStyle
+        ? number(summaryStyle.paddingTop)
+          + (summaryHeading?.scrollHeight || 0)
+          + (summaryList?.scrollHeight || 0)
+          + number(summaryStyle.paddingBottom)
+        : 0;
+      const minimumExpandedHeight = capabilityCards.reduce((requiredHeight, card) => {
+        const trigger = card.querySelector("[data-capability-trigger]");
+        const body = card.querySelector(".platform-capability-card__body");
+        const copy = body?.querySelector("p");
+        const visual = body?.querySelector("img");
+        const bodyStyle = body ? window.getComputedStyle(body) : null;
+        const headerHeight = Math.max(collapsedHeight, trigger?.scrollHeight || 0);
+        const bodyHeight = bodyStyle
+          ? Math.max(copy?.scrollHeight || 0, visual?.getBoundingClientRect().height || 0)
+            + number(bodyStyle.paddingTop)
+            + number(bodyStyle.paddingBottom)
+          : 0;
+        return Math.max(requiredHeight, headerHeight + bodyHeight);
+      }, 0);
+      const collapsedStackHeight = Math.max(0, capabilityCards.length - 1) * collapsedHeight;
+      const cardRequiredHeight = Math.max(
+        0,
+        collapsedStackHeight + minimumExpandedHeight
+      );
+
+      capabilityMinimumStageHeight = Math.ceil(Math.max(leftRequiredHeight, cardRequiredHeight));
+      capabilityStickyTop = capabilityHeaderHeight;
+      const availableStageHeight = Math.max(0, window.innerHeight - capabilityHeaderHeight);
+      const capabilityStageHeight = Math.max(availableStageHeight, capabilityMinimumStageHeight);
+      const capabilityScrollStep = capabilityStageHeight * capabilityScrollStepRatio;
+      const capabilityScrollTrackHeight = capabilityStageHeight
+        + Math.max(0, capabilityCards.length - 1) * capabilityScrollStep;
+      capabilityStageOverflow = Math.max(
+        0,
+        capabilityMinimumStageHeight - availableStageHeight
+      );
+
+      const nextGeometryKey = [
+        window.innerWidth,
+        window.innerHeight,
+        capabilityHeaderHeight,
+        capabilityMinimumStageHeight,
+        capabilityStickyTop,
+        capabilityStageOverflow,
+        capabilityScrollStep,
+        capabilityScrollTrackHeight,
+      ].join(":");
+      const geometryChanged = capabilityGeometryKey !== nextGeometryKey;
+      const preserveProgress = geometryChanged
+        && Boolean(capabilityGeometryKey)
+        && capabilityWasDesktop
+        && capabilityDesktop.matches
+        && capabilityProgress > 0
+        && capabilityProgress < 1;
+      capabilityGeometryKey = nextGeometryKey;
+      capabilityWasDesktop = capabilityDesktop.matches;
+
+      capabilities.style.setProperty("--capabilities-header-height", `${capabilityHeaderHeight}px`);
+      capabilities.style.setProperty("--capabilities-stage-min-height", `${capabilityMinimumStageHeight}px`);
+      capabilities.style.setProperty("--capabilities-sticky-top", `${capabilityStickyTop}px`);
+      capabilities.style.setProperty("--capabilities-stage-overflow", `${capabilityStageOverflow}px`);
+      capabilities.style.setProperty("--capabilities-scroll-step", `${capabilityScrollStep}px`);
+      capabilities.style.setProperty("--capabilities-scroll-track-height", `${capabilityScrollTrackHeight}px`);
+      capabilities.style.setProperty(
+        "--capability-expanded-height",
+        `calc(100% - ${collapsedStackHeight}px)`
+      );
+
+      if (preserveProgress && capabilityScroll && capabilityStage) {
+        window.requestAnimationFrame(() => {
+          const scrollRange = Math.max(1, capabilityScroll.offsetHeight - capabilityStage.offsetHeight);
+          const destination = window.scrollY + capabilityScroll.getBoundingClientRect().top
+            - capabilityStickyTop
+            + (scrollRange * capabilityProgress);
+          window.scrollTo({ top: destination, behavior: "auto" });
+          queueCapabilityUpdate();
+        });
+        return;
+      }
+      queueCapabilityUpdate();
+    };
+
     capabilityCards.forEach((card, cardIndex) => {
       card.querySelector("[data-capability-trigger]")?.addEventListener("click", () => {
         if (!capabilityDesktop.matches || capabilityReduceMotion.matches || !capabilityScroll || !capabilityStage) return;
         const scrollRange = capabilityScroll.offsetHeight - capabilityStage.offsetHeight;
-        const destination = window.scrollY + capabilityScroll.getBoundingClientRect().top - 62
+        const destination = window.scrollY + capabilityScroll.getBoundingClientRect().top - capabilityStickyTop
           + (scrollRange * cardIndex) / Math.max(1, capabilityCards.length - 1);
         window.scrollTo({ top: destination, behavior: "smooth" });
       });
     });
 
     window.addEventListener("scroll", queueCapabilityUpdate, { passive: true });
-    window.addEventListener("resize", queueCapabilityUpdate, { passive: true });
+    window.addEventListener("resize", syncCapabilityGeometry, { passive: true });
     capabilityDesktop.addEventListener?.("change", queueCapabilityUpdate);
     capabilityReduceMotion.addEventListener?.("change", queueCapabilityUpdate);
-    updateCapabilityFromScroll();
+    const capabilityResizeObserver = typeof ResizeObserver === "function"
+      ? new ResizeObserver(syncCapabilityGeometry)
+      : null;
+    if (capabilityHeader) capabilityResizeObserver?.observe(capabilityHeader);
+    capabilityResizeObserver?.observe(capabilityStage);
+    syncCapabilityGeometry();
+  }
+
+  const coreAdvantages = document.querySelector("[data-core-advantages]");
+  if (coreAdvantages) {
+    const tabs = Array.from(coreAdvantages.querySelectorAll("[data-advantage-tab]"));
+    const panel = coreAdvantages.querySelector("[data-advantage-panel]");
+    const advantageHover = window.matchMedia("(hover: hover) and (pointer: fine)");
+    const advantageIllustrations = [
+      "assets/images/core-advantages-20261009/01_multi_chip.svg?v=20261009-isometric-v83",
+      "assets/images/core-advantages-20261009/02_smooth_migration.svg?v=20261009-isometric-v83",
+      "assets/images/core-advantages-20261009/03_cost_optimization.svg?v=20261009-isometric-v83",
+      "assets/images/core-advantages-20261009/04_security_control.svg?v=20261009-isometric-v83",
+      "assets/images/core-advantages-20261009/05_intelligent_operations.svg?v=20261009-isometric-v83",
+      "assets/images/core-advantages-20261009/06_industry_knowledge.svg?v=20261009-isometric-v83",
+    ];
+    let activeAdvantage = -1;
+    let advantageRenderer = null;
+    let requestedAdvantage = 0;
+
+    const showAdvantageIllustration = (index) => {
+      requestedAdvantage = index;
+      advantageRenderer?.show(index).catch((error) => console.error("ADVANTAGES illustration:", error));
+    };
+
+    import("./safe-advantage-svg.js?v=20261009-advantages-transparent-v82")
+      .then(({ createAdvantageSVGRenderer }) => {
+        advantageRenderer = createAdvantageSVGRenderer(panel, advantageIllustrations, { fit: "contain" });
+        return advantageRenderer.show(requestedAdvantage);
+      })
+      .catch((error) => console.error("ADVANTAGES renderer:", error));
+
+    const setActiveAdvantage = (index, moveFocus = false) => {
+      const nextIndex = (index + tabs.length) % tabs.length;
+      if (nextIndex === activeAdvantage) {
+        if (moveFocus) tabs[nextIndex].focus();
+        return;
+      }
+      activeAdvantage = nextIndex;
+      tabs.forEach((tab, tabIndex) => {
+        const active = tabIndex === nextIndex;
+        tab.classList.toggle("is-active", active);
+        tab.setAttribute("aria-selected", String(active));
+        tab.tabIndex = active ? 0 : -1;
+      });
+      showAdvantageIllustration(nextIndex);
+      if (panel) {
+        panel.setAttribute("aria-labelledby", tabs[nextIndex].id);
+        panel.dataset.activeAdvantage = String(nextIndex + 1);
+      }
+      if (moveFocus) tabs[nextIndex].focus();
+    };
+
+    tabs.forEach((tab, tabIndex) => {
+      tab.addEventListener("mouseenter", () => {
+        if (advantageHover.matches) setActiveAdvantage(tabIndex);
+      });
+      tab.addEventListener("click", () => setActiveAdvantage(tabIndex));
+      tab.addEventListener("keydown", (event) => {
+        if (!["ArrowDown", "ArrowRight", "ArrowUp", "ArrowLeft", "Home", "End"].includes(event.key)) return;
+        event.preventDefault();
+        if (event.key === "Home") setActiveAdvantage(0, true);
+        else if (event.key === "End") setActiveAdvantage(tabs.length - 1, true);
+        else setActiveAdvantage(tabIndex + (["ArrowDown", "ArrowRight"].includes(event.key) ? 1 : -1), true);
+      });
+    });
+    setActiveAdvantage(Math.max(0, tabs.findIndex((tab) => tab.classList.contains("is-active"))));
+  }
+
+  const solutionStack = document.querySelector(".solution-stack");
+  if (solutionStack) {
+    const solutionRoot = solutionStack.closest(".home-solutions");
+    const solutionCards = Array.from(solutionStack.querySelectorAll(".solution-card"));
+    const solutionStage = document.createElement("div");
+    const solutionVisual = document.createElement("div");
+    solutionStage.className = "solution-stack__stage";
+    solutionVisual.className = "solution-stack__visual";
+    solutionCards.forEach((card) => solutionVisual.appendChild(card));
+    solutionStage.appendChild(solutionVisual);
+    solutionStack.appendChild(solutionStage);
+    const solutionPhone = window.matchMedia("(max-width: 767px)");
+    const solutionReduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let solutionFrame = 0;
+    let solutionMetrics = null;
+
+    const clamp01 = (value) => Math.min(1, Math.max(0, value));
+    const readSolutionDistance = (styles, name) => Number.parseFloat(styles.getPropertyValue(name));
+    const mixNeutral = (from, to, progress) => `rgb(${from.map((value, index) => Math.round(value + ((to[index] - value) * progress))).join(" ")})`;
+    const setSolutionLayer = (card, y, inset, surface, contentOpacity, contentScale) => {
+      card.style.setProperty("--solution-y", `${y.toFixed(3)}px`);
+      card.style.setProperty("--solution-inset", `${inset.toFixed(3)}px`);
+      card.style.setProperty("--solution-surface", surface);
+      card.style.setProperty("--solution-content-opacity", contentOpacity.toFixed(3));
+      card.style.setProperty("--solution-content-scale", contentScale.toFixed(4));
+    };
+
+    const resetSolutionMotion = () => {
+      solutionMetrics = null;
+      solutionStack.classList.remove("has-continuous-motion");
+      solutionStack.removeAttribute("data-active-solution");
+      solutionStack.removeAttribute("data-release-progress");
+      solutionRoot?.classList.remove("is-final-release");
+      solutionCards.forEach((card) => {
+        card.removeAttribute("style");
+        card.classList.remove("is-current", "is-previous-1", "is-previous-2");
+      });
+    };
+
+    const measurePhoneCardHeight = () => {
+      // Phone cards start in their natural reading layout. Capture the tallest
+      // complete card before pinning, so the sticky handoff happens only after
+      // its bottom can meet the available viewport rather than at an arbitrary
+      // fixed top offset.
+      solutionStack.classList.remove("has-continuous-motion");
+      solutionCards.forEach((card) => card.removeAttribute("style"));
+      return Math.ceil(Math.max(...solutionCards.map((card) => card.getBoundingClientRect().height)));
+    };
+
+    const renderSolutionMotion = () => {
+      solutionFrame = 0;
+      if (!solutionMetrics) return;
+      const distance = Math.max(0, window.scrollY - solutionMetrics.start);
+      const transitionA = clamp01((distance - solutionMetrics.entryHold) / solutionMetrics.transition);
+      const transitionB = clamp01((distance - solutionMetrics.entryHold - solutionMetrics.transition - solutionMetrics.betweenHold) / solutionMetrics.transition);
+      const { cardHeight, cardGap, futureDepth, stepX, stepY } = solutionMetrics;
+
+      // The outgoing card itself retreats: surface, number, copy, tags and
+      // Figma visual are driven by the same continuous scroll state. No
+      // substitute shadow or backplate is introduced during either takeover.
+      const dark = [2, 8, 1];
+      const near = [189, 189, 195];
+      const far = [224, 224, 226];
+      // Ease the surface colour in, so the outgoing card is still legible as
+      // one retreating surface at mid-scroll rather than a replacement plate.
+      // Its child content layer also scales down: 1 → .965 at the first
+      // previous level and .965 → .93 at the rear level. The active card is
+      // always scale 1 / opacity 1.
+      const retreatA = transitionA * transitionA;
+      const retreatB = transitionB * transitionB;
+      const firstSurface = transitionB > 0
+        ? mixNeutral(near, far, retreatB)
+        : mixNeutral(dark, near, retreatA);
+      const secondSurface = mixNeutral(dark, near, retreatB);
+      const contentOpacityA = 1 - (transitionA * 0.48) - (transitionB * 0.24);
+      const contentOpacityB = 1 - (transitionB * 0.48);
+      const contentScaleA = 1 - (transitionA * 0.035) - (transitionB * 0.035);
+      const contentScaleB = 1 - (transitionB * 0.035);
+      setSolutionLayer(solutionCards[0], -stepY * (transitionA + transitionB), stepX * (transitionA + transitionB), firstSurface, contentOpacityA, contentScaleA);
+      // The next card begins below a tokenized approach gap. Its Y position
+      // continuously resolves to zero during takeover, so the gap is visible
+      // in reading flow but naturally disappears in the final stack.
+      // 01 → 02 must use the same approach runway as 02 → 03. Previously
+      // only card 03 included futureDepth, letting card 02 enter the viewport
+      // while card 01 was still arriving at its sticky reading position.
+      const nextCardApproach = cardHeight + cardGap + futureDepth;
+      setSolutionLayer(solutionCards[1], (nextCardApproach * (1 - transitionA)) - (stepY * transitionB), stepX * transitionB, secondSurface, contentOpacityB, contentScaleB);
+      setSolutionLayer(solutionCards[2], nextCardApproach * (1 - transitionB), 0, "#020801", 1, 1);
+      setSolutionLayer(solutionCards[2], (cardHeight + cardGap + futureDepth) * (1 - transitionB), 0, "#020801", 1, 1);
+      solutionStack.dataset.activeSolution = transitionB > 0 ? "2" : transitionA > 0 ? "1" : "0";
+      // Native sticky release starts only once the stage reaches the end of
+      // its track. Map progress to that actual Y-only departure, not to the
+      // earlier logical final-hold segment. It completes when Card 03's full
+      // visible bottom has cleared the viewport (including visual offset).
+      const releaseStart = solutionMetrics.trackHeight - cardHeight;
+      const releaseTravel = cardHeight + solutionMetrics.currentTop + solutionMetrics.visualOffset;
+      const releaseProgress = clamp01((distance - releaseStart) / Math.max(1, releaseTravel));
+      solutionStack.dataset.releaseProgress = releaseProgress.toFixed(4);
+      // The visual group is offset below the sticky stage. The following
+      // surface therefore reaches Card 03's bottom by exactly that offset
+      // before native sticky release. Raise Solutions at first overlap, not
+      // one frame later, so the full rectangle remains visible throughout.
+      const handoffLayerStart = releaseStart - solutionMetrics.visualOffset;
+      solutionRoot?.classList.toggle("is-final-release", distance >= handoffLayerStart);
+    };
+
+    const measureSolutionMotion = () => {
+      solutionFrame = 0;
+      if (solutionReduceMotion.matches) {
+        resetSolutionMotion();
+        return;
+      }
+      if (solutionPhone.matches) {
+        const cardHeight = measurePhoneCardHeight();
+        const headerHeight = document.querySelector(".site-header")?.getBoundingClientRect().height || 64;
+        const bottomGap = 16;
+        const availableHeight = window.innerHeight - headerHeight - bottomGap;
+        // A shorter card pins beneath the header. A taller card receives a
+        // negative sticky offset, so readers scroll through it naturally until
+        // its lower edge reaches the viewport before the stack takes over.
+        const currentTop = cardHeight <= availableHeight
+          ? headerHeight + 16
+          : window.innerHeight - cardHeight - bottomGap;
+        solutionStack.style.setProperty("--solution-card-height", `${cardHeight}px`);
+        solutionStack.style.setProperty("--solution-current-top", `${Math.round(currentTop)}px`);
+      } else {
+        solutionStack.style.removeProperty("--solution-card-height");
+        solutionStack.style.removeProperty("--solution-current-top");
+      }
+      const styles = getComputedStyle(solutionStack);
+      const stackRect = solutionStack.getBoundingClientRect();
+      const cardHeight = readSolutionDistance(styles, "--solution-card-height");
+      const entryHold = readSolutionDistance(styles, "--solution-entry-hold-distance");
+      const transition = readSolutionDistance(styles, "--solution-transition-distance");
+      const betweenHold = readSolutionDistance(styles, "--solution-between-hold-distance");
+      solutionMetrics = {
+        cardHeight,
+        cardGap: readSolutionDistance(styles, "--solutions-card-gap"),
+        futureDepth: readSolutionDistance(styles, "--solution-future-card-depth"),
+        stepX: readSolutionDistance(styles, "--solution-stack-step-x"),
+        stepY: readSolutionDistance(styles, "--solution-stack-step-y"),
+        entryHold,
+        transition,
+        betweenHold,
+        trackHeight: stackRect.height,
+        currentTop: readSolutionDistance(styles, "--solution-current-top"),
+        visualOffset: readSolutionDistance(styles, "--solutions-stack-visual-offset-y"),
+        start: window.scrollY + stackRect.top - readSolutionDistance(styles, "--solution-current-top"),
+      };
+      solutionStack.classList.add("has-continuous-motion");
+      renderSolutionMotion();
+    };
+
+    const queueSolutionRender = () => {
+      if (!solutionFrame) solutionFrame = window.requestAnimationFrame(renderSolutionMotion);
+    };
+
+    window.addEventListener("scroll", queueSolutionRender, { passive: true });
+    window.addEventListener("resize", measureSolutionMotion, { passive: true });
+    solutionPhone.addEventListener?.("change", measureSolutionMotion);
+    solutionReduceMotion.addEventListener?.("change", measureSolutionMotion);
+    measureSolutionMotion();
+  }
+
+  // Solutions → CTA is a single continuous handoff: the compact mosaic seam
+  // sits directly above the real dark CTA surface. One scroll progress drives
+  // its fixed-seed canvas frontier, so it can stop at any tile state and
+  // retrace exactly when scrolling upward.
+  const mosaicTransition = document.querySelector("[data-mosaic-transition]");
+  if (mosaicTransition) {
+    const mosaicCanvas = mosaicTransition.querySelector(".mosaic-transition__canvas");
+    const mosaicHost = mosaicTransition.closest(".home-final-cta");
+    const mosaicHeader = document.querySelector("[data-site-header]");
+    const mosaicReduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const mosaicProofRed = new URLSearchParams(window.location.search).get("mosaicproof") === "red";
+    const mosaicDebugPanel = mosaicProofRed ? document.createElement("output") : null;
+    let mosaicContext = null;
+    let mosaicFrame = 0;
+    let mosaicWidth = 0;
+    let mosaicHeight = 0;
+    let mosaicPixelRatio = 1;
+    let mosaicCell = 40;
+    let mosaicColumns = 1;
+    let mosaicRows = 3;
+    let mosaicPattern = [];
+    let mosaicResizeFrame = 0;
+    let mosaicResizeReleaseTimer = 0;
+    let mosaicProgressBeforeResize = null;
+    let mosaicResizeInProgress = false;
+    let mosaicLastProgress = 0;
+
+    if (mosaicDebugPanel) {
+      mosaicDebugPanel.className = "mosaic-runtime-debug";
+      mosaicDebugPanel.setAttribute("aria-live", "off");
+      document.body.append(mosaicDebugPanel);
+    }
+
+    try {
+      mosaicContext = mosaicCanvas?.getContext("2d", { alpha: false }) || null;
+    } catch (_error) {
+      mosaicContext = null;
+    }
+
+    const clampMosaic = (value) => Math.min(1, Math.max(0, value));
+    const createMosaicRandom = (seed) => () => {
+      seed = (seed * 48271) % 2147483647;
+      return (seed - 1) / 2147483646;
+    };
+
+    const buildMosaicPattern = () => {
+      const random = createMosaicRandom(24092026);
+      // Every tile owns a fixed square coordinate and a deterministic state
+      // timeline. The grid stays regular; only its cell states evolve.
+      mosaicPattern = Array.from({ length: mosaicColumns * mosaicRows }, (_, index) => {
+        const row = Math.floor(index / mosaicColumns);
+        const column = index % mosaicColumns;
+        const colourRoll = random();
+        return {
+          row,
+          column,
+          // Bottom cells generally turn first, while the fixed seed offsets
+          // preserve light notches and dark protrusions in the aligned grid.
+          activationStart: clampMosaic(0.07 + ((1 - (row / Math.max(1, mosaicRows - 1))) * 0.36) + (random() * 0.26)),
+          activationSpan: 0.34 + (random() * 0.15),
+          // Active-state occupancy: dark 50%, light/white 30%, green 10%,
+          // blue 10%. Accents are generated by this state map, not overlaid.
+          role: colourRoll < 0.15 ? "white" : colourRoll < 0.25 ? "green" : colourRoll < 0.35 ? "blue" : colourRoll < 0.5 ? "light" : "dark",
+        };
+      });
+    };
+
+    const resizeMosaic = () => {
+      if (!mosaicCanvas || !mosaicContext) return;
+      const bounds = mosaicTransition.getBoundingClientRect();
+      mosaicWidth = Math.max(1, Math.round(bounds.width));
+      const narrow = mosaicWidth < 768;
+      const tablet = mosaicWidth >= 768 && mosaicWidth < 992;
+      const targetCell = narrow
+        ? Math.min(56, Math.max(36, mosaicWidth * 0.12))
+        : tablet
+          ? Math.min(80, Math.max(56, mosaicWidth * 0.075))
+          : Math.min(110, Math.max(72, mosaicWidth * 0.05));
+      // Large, graphic cells: at the 1651px desktop reference this resolves
+      // to roughly 20 columns rather than the prior 35+ fine zig-zag.
+      const requestedColumns = Math.floor(mosaicWidth / targetCell);
+      mosaicColumns = narrow
+        ? Math.min(14, Math.max(7, requestedColumns))
+        : tablet
+          ? Math.min(16, Math.max(10, requestedColumns))
+          : Math.min(24, Math.max(12, requestedColumns));
+      mosaicCell = mosaicWidth / mosaicColumns;
+      // The CTA seam is exactly three complete square rows at every width.
+      // Its height comes only from the shared cell geometry, never from a
+      // separate vh/clamp container measurement.
+      mosaicRows = 3;
+      mosaicHeight = mosaicRows * mosaicCell;
+      mosaicTransition.style.setProperty("--mosaic-grid-height", `${mosaicHeight}px`);
+      mosaicTransition.dataset.mosaicColumns = String(mosaicColumns);
+      mosaicTransition.dataset.mosaicRows = String(mosaicRows);
+      mosaicTransition.dataset.mosaicCell = mosaicCell.toFixed(4);
+      mosaicTransition.dataset.mosaicGridWidth = mosaicWidth.toFixed(2);
+      mosaicTransition.dataset.mosaicGridHeight = mosaicHeight.toFixed(4);
+      mosaicPixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+      mosaicCanvas.width = Math.round(mosaicWidth * mosaicPixelRatio);
+      mosaicCanvas.height = Math.round(mosaicHeight * mosaicPixelRatio);
+      mosaicContext.setTransform(1, 0, 0, 1, 0, 0);
+      mosaicContext.imageSmoothingEnabled = false;
+      buildMosaicPattern();
+    };
+
+    const drawMosaic = (progress) => {
+      if (!mosaicContext || !mosaicWidth || !mosaicHeight) return;
+      const context = mosaicContext;
+      const light = "#f7f7f5";
+      const white = "#ffffff";
+      const dark = "#020801";
+      const green = "#a2fa8e";
+      const blue = "#1b58f4";
+      const canvasWidth = mosaicCanvas.width;
+      const canvasHeight = mosaicCanvas.height;
+      context.clearRect(0, 0, canvasWidth, canvasHeight);
+      // A compact 3–4 row grid travels with the CTA while every cell computes
+      // its visual state from the same scroll progress. No state is stored per
+      // frame, so the exact 0→1 path reverses as 1→0.
+      mosaicPattern.forEach((tile) => {
+        const state = clampMosaic((progress - tile.activationStart) / tile.activationSpan);
+        let fill = light;
+        if (mosaicProofRed) {
+          // Proof mode deliberately makes every aligned cell unmistakable.
+          fill = "#ff3b30";
+        } else if (state <= 0) {
+          fill = light;
+        } else if (state >= 1) {
+          fill = dark;
+        } else if (tile.role === "white") {
+          fill = state > 0.18 && state < 0.88 ? white : light;
+        } else if (tile.role === "green") {
+          fill = state < 0.82 ? green : dark;
+        } else if (tile.role === "blue") {
+          fill = state < 0.82 ? blue : dark;
+        } else if (tile.role === "light") {
+          fill = light;
+        } else {
+          fill = dark;
+        }
+        // Adjacent rectangles share the exact same rounded backing-pixel
+        // boundary. This preserves the CSS square geometry while preventing
+        // fractional Canvas raster seams from revealing the light surface.
+        const left = Math.round((tile.column * canvasWidth) / mosaicColumns);
+        const right = Math.round(((tile.column + 1) * canvasWidth) / mosaicColumns);
+        const top = Math.round((tile.row * canvasHeight) / mosaicRows);
+        const bottom = Math.round(((tile.row + 1) * canvasHeight) / mosaicRows);
+        context.fillStyle = fill;
+        context.fillRect(left, top, right - left, bottom - top);
+      });
+    };
+
+    const inspectMosaicLayer = (label, element) => {
+      if (!element) return `${label}: unavailable`;
+      const styles = getComputedStyle(element);
+      const rect = element.getBoundingClientRect();
+      return `${label}: position=${styles.position}; z=${styles.zIndex}; overflow=${styles.overflow}; opacity=${styles.opacity}; visibility=${styles.visibility}; transform=${styles.transform}; rect=${rect.top.toFixed(1)},${rect.bottom.toFixed(1)},${rect.height.toFixed(1)}`;
+    };
+
+    const renderMosaicDebug = (progress, rawProgress, bounds, mosaicStart, mosaicEnd, visibleTop, mosaicTravel) => {
+      if (!mosaicDebugPanel) return;
+      const releaseProgress = solutionStack?.dataset.releaseProgress || "0.0000";
+      const ctaBounds = mosaicHost?.getBoundingClientRect();
+      const content = mosaicHost?.querySelector(".home-final-cta__stage");
+      mosaicDebugPanel.textContent = [
+        "MOSAIC RUNTIME PROOF",
+        `scrollY: ${window.scrollY.toFixed(1)}`,
+        `solutionsReleaseProgress: ${releaseProgress}`,
+        `mosaicStart: ${mosaicStart.toFixed(1)}`,
+        `mosaicEnd: ${mosaicEnd.toFixed(1)}`,
+        `mosaicTravel: ${mosaicTravel.toFixed(1)}`,
+        `rawProgress: ${rawProgress.toFixed(4)}`,
+        `mosaicProgress: ${progress.toFixed(4)}`,
+        `ctaTop: ${ctaBounds?.top.toFixed(1) ?? "n/a"}`,
+        `mosaicTop: ${bounds.top.toFixed(1)}`,
+        `mosaicBottom: ${bounds.bottom.toFixed(1)}`,
+        `effectiveViewportTop: ${visibleTop.toFixed(1)}`,
+        `viewportHeight: ${window.innerHeight}`,
+        "",
+        inspectMosaicLayer("Solutions stack", solutionStack),
+        inspectMosaicLayer("CTA surface", mosaicHost),
+        inspectMosaicLayer("Mosaic frontier", mosaicTransition),
+        inspectMosaicLayer("CTA content", content),
+      ].join("\n");
+    };
+
+    const renderMosaic = () => {
+      mosaicFrame = 0;
+      // The CTA-owned frontier has one direction-agnostic, normal-flow mapping:
+      // 0 when its top touches viewport bottom, 1 only when its last row goes
+      // behind the live sticky-header boundary. Every visible cell can thus
+      // remain scroll-driven all the way through the viewport.
+      const bounds = mosaicTransition.getBoundingClientRect();
+      const headerBounds = mosaicHeader?.getBoundingClientRect();
+      const visibleTop = headerBounds
+        ? Math.max(0, Math.min(window.innerHeight, headerBounds.bottom))
+        : 0;
+      const mosaicStart = window.scrollY + bounds.top - window.innerHeight;
+      const mosaicEnd = window.scrollY + bounds.bottom - visibleTop;
+      const mosaicTravel = Math.max(1, mosaicEnd - mosaicStart);
+      const rawProgress = (window.scrollY - mosaicStart) / mosaicTravel;
+      const computedProgress = clampMosaic(rawProgress);
+      const mosaicProgress = mosaicReduceMotion.matches
+        ? 0.82
+        : mosaicProgressBeforeResize ?? computedProgress;
+      if (!mosaicResizeInProgress) mosaicProgressBeforeResize = null;
+      mosaicLastProgress = mosaicProgress;
+      mosaicTransition.style.setProperty("--mosaic-progress", mosaicProgress.toFixed(4));
+      mosaicTransition.dataset.mosaicProgress = mosaicProgress.toFixed(4);
+      if (mosaicHost) mosaicHost.dataset.mosaicProgress = mosaicProgress.toFixed(4);
+      drawMosaic(mosaicProgress);
+      renderMosaicDebug(mosaicProgress, rawProgress, bounds, mosaicStart, mosaicEnd, visibleTop, mosaicTravel);
+    };
+
+    const queueMosaicRender = () => {
+      if (!mosaicFrame) mosaicFrame = window.requestAnimationFrame(renderMosaic);
+    };
+
+    const queueMosaicResize = ({ preserveProgress = false } = {}) => {
+      if (preserveProgress && mosaicProgressBeforeResize === null) {
+        mosaicProgressBeforeResize = mosaicLastProgress;
+      }
+      if (preserveProgress) {
+        mosaicResizeInProgress = true;
+        window.clearTimeout(mosaicResizeReleaseTimer);
+        mosaicResizeReleaseTimer = window.setTimeout(() => {
+          mosaicResizeReleaseTimer = 0;
+          mosaicResizeInProgress = false;
+          mosaicProgressBeforeResize = null;
+          queueMosaicRender();
+        }, 480);
+      }
+      if (mosaicResizeFrame) return;
+      mosaicResizeFrame = window.requestAnimationFrame(() => {
+        mosaicResizeFrame = 0;
+        resizeMosaic();
+        if (!mosaicResizeReleaseTimer) mosaicResizeInProgress = false;
+        queueMosaicRender();
+      });
+    };
+
+    if (mosaicContext) {
+      window.addEventListener("scroll", queueMosaicRender, { passive: true });
+      if ("ResizeObserver" in window) {
+        const mosaicResizeObserver = new ResizeObserver(queueMosaicResize);
+        mosaicResizeObserver.observe(mosaicTransition);
+      }
+      // Capture progress at the start of a viewport resize. ResizeObserver then
+      // supplies the settled width/height without allowing browser anchoring to
+      // reset the visible scroll-linked state in between.
+      window.addEventListener("resize", () => queueMosaicResize({ preserveProgress: true }), { passive: true });
+      mosaicReduceMotion.addEventListener?.("change", queueMosaicRender);
+      resizeMosaic();
+      renderMosaic();
+    } else if (mosaicCanvas) {
+      mosaicCanvas.hidden = true;
+      mosaicTransition.classList.add("is-mosaic-fallback");
+    }
   }
 
   const heroMotion = document.querySelector("[data-hero-motion]");
@@ -127,6 +749,7 @@
   if (heroMotion && heroWebGLCanvas && heroEventGlowCanvas && heroGridCanvas) {
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
+    const heroHeader = document.querySelector("[data-site-header]") || document.querySelector(".site-header");
     const fullTurn = Math.PI * 2;
     const palette = {
       dark: [249, 250, 252],
@@ -155,6 +778,7 @@
     let pixelRatio = 1;
     let frame = 0;
     let previousTime = 0;
+    let heroLightsOutProgress = 0;
     const eventRandom = () => {
       eventSeed = (eventSeed * 48271) % 2147483647;
       return (eventSeed - 1) / 2147483646;
@@ -325,8 +949,14 @@
         seed = (seed * 16807) % 2147483647;
         return (seed - 1) / 2147483646;
       };
-      const minimumColumns = width < 640 ? 6 : width < 1000 ? 9 : 12;
-      const columns = Math.max(minimumColumns, Math.ceil(width / 120));
+      // Keep the pixel field on the same responsive scale as the Hero stage.
+      // Figma 64:34956 uses a 120px cell at a 1651px-wide reference stage.
+      // Let cells grow with large screens, but cap them so ultra-wide layouts do
+      // not become sparse. Component-specific minimum column counts preserve
+      // the existing tablet/mobile density.
+      const targetCellSize = Math.min(160, Math.max(88, width * (120 / 1651)));
+      const minimumColumns = width < 768 ? 6 : width < 992 ? 9 : 12;
+      const columns = Math.max(minimumColumns, Math.round(width / targetCellSize));
       gridColumns = columns;
       const size = width / columns;
       const rows = Math.ceil(height / size) + 1;
@@ -403,6 +1033,24 @@
         heroRevealCanvas.height = Math.round(height * pixelRatio);
         revealContext.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
       }
+    };
+
+    const syncHeroLayout = () => {
+      const headerHeight = heroHeader?.getBoundingClientRect().height;
+      if (headerHeight) heroMotion.style.setProperty("--hero-header-height", `${headerHeight}px`);
+    };
+
+    const syncHeroLightsOut = () => {
+      if (reduceMotion.matches) {
+        heroLightsOutProgress = 0;
+        heroMotion.dataset.lightsOutProgress = "0.0000";
+        return;
+      }
+      const bounds = heroMotion.getBoundingClientRect();
+      const headerBottom = heroHeader?.getBoundingClientRect().bottom || 0;
+      const rawProgress = bounds.height > 0 ? (headerBottom - bounds.top) / bounds.height : 1;
+      heroLightsOutProgress = Math.min(1, Math.max(0, rawProgress));
+      heroMotion.dataset.lightsOutProgress = heroLightsOutProgress.toFixed(4);
     };
 
     const drawWebGL = (time) => {
@@ -664,6 +1312,7 @@
 
     const drawEventGlow = (time) => {
       if (!glowContext) return;
+      const lightsOn = Math.pow(1 - heroLightsOutProgress, 1.35);
       glowContext.filter = "none";
       glowContext.shadowBlur = 0;
       glowContext.shadowColor = "transparent";
@@ -671,7 +1320,7 @@
       glowContext.globalCompositeOperation = "screen";
       activeEvents.forEach((event) => {
         const glow = glowEnvelope(event, time);
-        if (!glow || glow.opacity <= 0) return;
+        if (!glow || glow.opacity <= 0 || lightsOn <= 0.002) return;
         const cell = cells[event.cellIndex];
         if (!cell) return;
         const color = event.kind === "white" ? eventPalette.white : eventPalette[event.colorName];
@@ -689,9 +1338,9 @@
           centerY,
           outerRadius,
         );
-        eventGlowGradient.addColorStop(0, `rgba(${color[0]}, ${color[1]}, ${color[2]}, ${glow.opacity * 0.92})`);
-        eventGlowGradient.addColorStop(0.3, `rgba(${color[0]}, ${color[1]}, ${color[2]}, ${glow.opacity * 0.48})`);
-        eventGlowGradient.addColorStop(0.68, `rgba(${color[0]}, ${color[1]}, ${color[2]}, ${glow.opacity * 0.14})`);
+        eventGlowGradient.addColorStop(0, `rgba(${color[0]}, ${color[1]}, ${color[2]}, ${glow.opacity * lightsOn * 0.92})`);
+        eventGlowGradient.addColorStop(0.3, `rgba(${color[0]}, ${color[1]}, ${color[2]}, ${glow.opacity * lightsOn * 0.48})`);
+        eventGlowGradient.addColorStop(0.68, `rgba(${color[0]}, ${color[1]}, ${color[2]}, ${glow.opacity * lightsOn * 0.14})`);
         eventGlowGradient.addColorStop(1, `rgba(${color[0]}, ${color[1]}, ${color[2]}, 0)`);
         glowContext.fillStyle = eventGlowGradient;
         glowContext.fillRect(
@@ -709,6 +1358,7 @@
 
     const drawGrid = (time, elapsed) => {
       if (!gridContext) return;
+      const lightsOn = Math.pow(1 - heroLightsOutProgress, 1.35);
       gridContext.clearRect(0, 0, width, height);
       const pointerEase = 1 - Math.exp(-elapsed / 210);
       pointer.x += (pointer.targetX - pointer.x) * pointerEase;
@@ -755,7 +1405,7 @@
         const alpha = Math.min(
           alphaCap,
           (cycleBase + waveLift + pointerBoost) * flickerGain,
-        );
+        ) * lightsOn;
         const [baseRed, baseGreen, baseBlue] = cycleState.color;
         const red = baseRed;
         const green = baseGreen;
@@ -765,7 +1415,7 @@
 
         activeEvents.forEach((event) => {
           if (event.cellIndex !== index) return;
-          const strength = eventEnvelope(event, time) * event.intensity;
+          const strength = eventEnvelope(event, time) * event.intensity * lightsOn;
           if (strength <= 0) return;
           if (event.kind === "dark") {
             gridContext.fillStyle = `rgba(71, 82, 76, ${strength * 0.42})`;
@@ -781,6 +1431,7 @@
 
     const drawFocusGrid = (time) => {
       if (!focusGridContext || !heroFocusGridCanvas) return;
+      const lightsOn = Math.pow(1 - heroLightsOutProgress, 1.35);
       focusGridContext.clearRect(0, 0, width, height);
       if (!finePointer.matches || !pointer.hasEntered || !cells.length) return;
 
@@ -820,7 +1471,7 @@
               ? 0.5 + cell.contrastTier * 0.018
               : 0.22 + cell.contrastTier * 0.012;
         const eventGain = isWhitePeak ? 0.86 : 0.48;
-        const opacity = Math.min(opacityCap, proximity * (baseOpacity + eventOpacity * eventGain));
+        const opacity = Math.min(opacityCap, proximity * (baseOpacity + eventOpacity * eventGain)) * lightsOn;
         if (opacity <= 0.008) return;
 
         focusGridContext.fillStyle = `rgba(${color[0]}, ${color[1]}, ${color[2]}, ${opacity})`;
@@ -846,7 +1497,7 @@
             ? 0.72
             : 0
         : 0.58;
-      revealStrength += (revealTarget - revealStrength) * revealEase;
+      revealStrength += ((revealTarget * (1 - heroLightsOutProgress)) - revealStrength) * revealEase;
 
       revealContext.globalCompositeOperation = "source-over";
       revealContext.clearRect(0, 0, width, height);
@@ -920,8 +1571,8 @@
       if (!heroInView) return;
       const elapsed = previousTime ? Math.min(50, time - previousTime) : 16.67;
       previousTime = time;
-      if (!reduceMotion.matches && time >= nextEventAt) spawnGridEvent(time);
-      if (!reduceMotion.matches && time >= nextAccentAt) spawnRareAccent(time);
+      if (!reduceMotion.matches && heroLightsOutProgress < 0.9 && time >= nextEventAt) spawnGridEvent(time);
+      if (!reduceMotion.matches && heroLightsOutProgress < 0.9 && time >= nextAccentAt) spawnRareAccent(time);
       activeEvents = activeEvents.filter((event) => time < event.start + event.duration + event.glowDelay + event.glowTail + 80);
       drawWebGL(time);
       drawEventGlow(time);
@@ -942,6 +1593,7 @@
       heroObserver.observe(heroMotion);
     }
     const syncHeroViewportState = () => {
+      syncHeroLightsOut();
       const bounds = heroMotion.getBoundingClientRect();
       const visible = bounds.bottom > 0 && bounds.top < window.innerHeight && bounds.height > 0
         && Math.min(bounds.bottom, window.innerHeight) - Math.max(bounds.top, 0) > bounds.height * 0.04;
@@ -961,6 +1613,7 @@
       activeEvents = [];
       hasOpeningPulse = false;
       rareAccentCount = 0;
+      syncHeroLayout();
       resizeHeroCanvases();
       nextEventAt = reduceMotion.matches ? Number.POSITIVE_INFINITY : performance.now() + 650 + eventRandom() * 250;
       nextAccentAt = reduceMotion.matches ? Number.POSITIVE_INFINITY : performance.now() + 1400 + eventRandom() * 1400;
@@ -981,7 +1634,11 @@
       pointer.active = false;
     });
 
-    window.addEventListener("resize", resizeHeroCanvases, { passive: true });
+    window.addEventListener("resize", () => {
+      syncHeroLayout();
+      resizeHeroCanvases();
+      syncHeroViewportState();
+    }, { passive: true });
     document.addEventListener("visibilitychange", () => {
       window.cancelAnimationFrame(frame);
       if (!document.hidden) drawHero(reduceMotion.matches ? 0 : performance.now());
@@ -1004,31 +1661,78 @@
   const menuToggle = document.querySelector("[data-menu-toggle]");
   const primaryNav = document.querySelector("[data-primary-nav]");
 
+  if (header) {
+    const headerThemeZones = Array.from(document.querySelectorAll("[data-header-theme]"));
+    let headerThemeFrame = 0;
+
+    const applyHeaderTheme = (theme) => {
+      const nextTheme = theme === "dark" ? "dark" : "light";
+      if (header.dataset.headerTheme === nextTheme) return;
+      header.dataset.headerTheme = nextTheme;
+      document.documentElement.dataset.headerTheme = nextTheme;
+    };
+
+    const syncHeaderTheme = () => {
+      headerThemeFrame = 0;
+      const probeY = Math.min(window.innerHeight - 1, Math.ceil(header.getBoundingClientRect().bottom) + 1);
+      let activeZone = null;
+
+      headerThemeZones.forEach((zone) => {
+        const rect = zone.getBoundingClientRect();
+        if (rect.top <= probeY && rect.bottom > probeY) activeZone = zone;
+      });
+
+      applyHeaderTheme(activeZone?.dataset.headerTheme || "light");
+    };
+
+    const scheduleHeaderThemeSync = () => {
+      if (headerThemeFrame) return;
+      headerThemeFrame = window.requestAnimationFrame(syncHeaderTheme);
+    };
+
+    window.addEventListener("scroll", scheduleHeaderThemeSync, { passive: true });
+    window.addEventListener("resize", scheduleHeaderThemeSync, { passive: true });
+    window.addEventListener("hashchange", scheduleHeaderThemeSync);
+    window.addEventListener("load", scheduleHeaderThemeSync, { once: true });
+    window.visualViewport?.addEventListener("resize", scheduleHeaderThemeSync, { passive: true });
+    syncHeaderTheme();
+  }
+
   if (header && menuToggle && primaryNav) {
     const navGroups = Array.from(primaryNav.querySelectorAll("details"));
+    const plainNavItems = [
+      ...primaryNav.querySelectorAll(":scope > a"),
+      ...header.querySelectorAll(".header-account > a")
+    ];
+    const desktopNav = window.matchMedia("(min-width: 901px)");
     const desktopHover = window.matchMedia("(min-width: 901px) and (hover: hover) and (pointer: fine)");
     let closeTimer = 0;
+
+    const setGroupOpen = (item, open) => {
+      item.toggleAttribute("open", open);
+      item.querySelector("summary")?.setAttribute("aria-expanded", String(open));
+    };
 
     const closeGroups = (except = null) => {
       window.clearTimeout(closeTimer);
       navGroups.forEach((item) => {
-        if (item !== except) item.removeAttribute("open");
+        if (item !== except) setGroupOpen(item, false);
       });
     };
 
     const openGroup = (item) => {
       window.clearTimeout(closeTimer);
       closeGroups(item);
-      item.setAttribute("open", "");
+      setGroupOpen(item, true);
     };
 
     const queueClose = (item) => {
       window.clearTimeout(closeTimer);
       closeTimer = window.setTimeout(() => {
         if (!item.matches(":hover") && !item.contains(document.activeElement)) {
-          item.removeAttribute("open");
+          setGroupOpen(item, false);
         }
-      }, 140);
+      }, 180);
     };
 
     const setMenu = (open) => {
@@ -1041,16 +1745,24 @@
 
     navGroups.forEach((item) => {
       const summary = item.querySelector("summary");
+      summary?.setAttribute("aria-expanded", String(item.open));
 
       item.addEventListener("toggle", () => {
+        summary?.setAttribute("aria-expanded", String(item.open));
         if (item.open) closeGroups(item);
+      });
+
+      summary?.addEventListener("click", (event) => {
+        if (!desktopHover.matches) return;
+        event.preventDefault();
+        openGroup(item);
       });
 
       summary?.addEventListener("keydown", (event) => {
         if (event.key !== "Enter" && event.key !== " ") return;
         event.preventDefault();
         if (item.open) {
-          item.removeAttribute("open");
+          setGroupOpen(item, false);
         } else {
           openGroup(item);
         }
@@ -1064,6 +1776,22 @@
         if (desktopHover.matches) queueClose(item);
       });
 
+      item.addEventListener("focusin", () => {
+        if (desktopNav.matches) openGroup(item);
+      });
+
+      item.addEventListener("focusout", () => {
+        if (desktopNav.matches) queueClose(item);
+      });
+    });
+
+    plainNavItems.forEach((item) => {
+      item.addEventListener("pointerenter", () => {
+        if (desktopHover.matches) closeGroups();
+      });
+      item.addEventListener("focusin", () => {
+        if (desktopNav.matches) closeGroups();
+      });
     });
 
     menuToggle.addEventListener("click", () => {

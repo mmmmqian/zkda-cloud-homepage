@@ -1,0 +1,11 @@
+# 只发布站点文件，排除项目内部资料与仓库元数据
+.git
+.gitignore
+docs
+review
+project-state.yaml
+任务说明.md
+node_modules
+.DS_Store
+._*
+*.md

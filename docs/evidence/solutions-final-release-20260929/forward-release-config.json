@@ -1,0 +1,29 @@
+{
+  "duration": 6,
+  "fps": 60,
+  "output_size": [1650, 1000],
+  "source_size": [1651, 1000],
+  "cursor_asset": "/Volumes/mq work/codex/ZKDACloud/web/project002/assets/images/final-cta-figma-20260923/cta-background-03.png",
+  "cursor_hotspot": [0, 0],
+  "cursor_scale": 0.01,
+  "click_strength": 0,
+  "rotation_strength_degrees": 0,
+  "shots": {
+    "current": "/private/tmp/zkda-solutions-card03-desktop-a.png",
+    "release-25": "/private/tmp/zkda-solutions-card03-desktop-c.png",
+    "release-50": "/private/tmp/zkda-solutions-card03-desktop-d.png",
+    "release-75": "/private/tmp/zkda-solutions-card03-desktop-e.png",
+    "left": "/private/tmp/zkda-solutions-card03-desktop-f.png"
+  },
+  "scene_starts": [
+    [0, "current", "fade"],
+    [1.2, "release-25", "fade"],
+    [2.4, "release-50", "fade"],
+    [3.6, "release-75", "fade"],
+    [4.8, "left", "fade"]
+  ],
+  "cursor_keys": [[0, -1000, -1000], [6, -1000, -1000]],
+  "camera_keys": [[0, 825.5, 500, 1], [6, 825.5, 500, 1]],
+  "click_times": [],
+  "output": "/Volumes/mq work/codex/ZKDACloud/web/project002/docs/evidence/solutions-final-release-20260929/solutions-card03-final-release-forward.mp4"
+}
