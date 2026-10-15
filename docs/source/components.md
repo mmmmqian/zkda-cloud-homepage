@@ -1,5 +1,7 @@
 # 网站共用部件
 
+- 2026-10-12 智算云 Hero 外置网格：网格保留 Figure 的定位父层与等轴投影，但自身范围限定为 `min(110%,1240px)`，中心 `50% / 54%`。两轴共享完整线族、线色、线宽和单一二维 Mask；底座净空以柔化等轴轮廓实现，Figure 的尺寸、位置和 Pointer / Tour 不消费该范围参数。三档证据见 `docs/evidence/compute-grid-large-screen-20261012/`。
+
 - Status: in-review
 - Updated in stage: visual
 - User approval: selected B + C combination on 2026-08-24
@@ -82,3 +84,14 @@
 - 2026-10-10：共享 Header 支持 `data-header-theme="light|dark"`。检测线固定在实际 Header 底边下一像素，不进行页面像素取色，也不读取卡片内部色面。Light 使用既有浅色 surface、深色 Logo/文字与 `#F3F4F5` Pill；Dark 使用 `#020801`、白色 Logo/文字、低对比度浅色 Divider 与 `#1A211E` Pill。Logo 双版本在同一固定盒内叠加，切换不改变尺寸。Dropdown Panel 继续保持浅色阅读面，打开状态在主题切换时不重置；移动端整屏菜单继续使用既有浅色 surface。
 - 2026-10-10：Dropdown V4/V4.1 只修改二级面板，不改变一级导航。16 个公开页面统一为分组标题 + 本地线性图标 + 标题/描述 + 右侧状态箭头；Panel 直接继承 Header 的 Light/Dark token，内容页不再硬编码独立 surface。V4.1 把面板锚点从 `calc(100% - .42rem)` 修为完整 62px 导航行的 `top:100%`，Panel/Item/Icon 圆角收为 `0/4/4px`，移除阴影，Dark 使用中性冷黑 `#0B0C0F` 系列。既有 pointer/focus/open/mobile details 状态机与一级胶囊 Hover 保持不变。
 - 2026-10-10：CAPABILITIES 的 `.platform-capability-card__body` 是卡片固有内容，不再消费 `.is-active / .is-past / .is-future` 作为显示条件。描述保持左下、图标保持右下，卡片移动时正文整体同行；Collapsed 标题条由后续高层卡片和现有 `overflow` 自然遮挡，不主动隐藏正文。证据见 `docs/evidence/capabilities-content-visibility-v94-20261010/runtime-qa.md`。
+
+## Footer brand canvas
+
+- 2026-10-12 V95：Footer 反白组合 Logo 使用 SVG 原生 `1579×360` 比例填满品牌画布可用宽度，`width:100%`、`max-width:none`、`height:auto`，不允许固定像素上限、拉伸或裁切。
+- 品牌画布高度与 Logo 使用同一几何来源：`(viewport width - 2 × gutter) × 360 / 1579 + 2 × gutter`。Desktop / Tablet / Mobile 只改变既有 gutter，不建立第二套 Logo 尺寸系统。
+- SVG viewBox 已确认没有额外透明边界；Footer Navigation、Contact、Legal 与 Curtain Lift 层级不参与 Logo 尺寸计算。
+
+## Footer account actions
+
+- 2026-10-12 V96：Footer 账户入口是一个独立 Grid Item，并由 `.home-footer__directory .home-footer__account` 唯一持有内部布局：横向 Flex、`align-items:center`、`justify-content:flex-end`、`gap:32px`、禁止换行。
+- `align-self:start` 使操作组顶部与其他 Footer 栏目标题对齐；两个链接不再分别参与目录 Grid 排版。邮箱、品牌画布、Legal 与 Curtain Lift 不受该组件规则影响。

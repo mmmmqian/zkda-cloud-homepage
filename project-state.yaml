@@ -1584,3 +1584,95 @@ capabilities_content_visibility_v94:
     - 1280
     - 1024
   evidence: docs/evidence/capabilities-content-visibility-v94-20261010/runtime-qa.md
+footer_brand_logo_responsive_v95:
+  status: implemented-and-runtime-verified
+  date: 2026-10-12
+  root_cause: svg-logo-and-brand-canvas-were-independently-capped-at-1579px-and-433px
+  change:
+    - logo-width-fills-brand-canvas-with-no-max-width
+    - brand-canvas-height-derived-from-available-width-and-svg-1579-by-360-ratio
+    - responsive-gutter-aware-height-formulas
+  preserved:
+    - footer-navigation-contact-and-legal-content
+    - curtain-lift-sticky-owner-direction-and-layer-order
+    - svg-art-color-and-viewbox
+    - reduced-motion-normal-flow-order
+  qa_widths:
+    - 1280
+    - 1600
+    - 1920
+    - 2560
+  runtime_qa: full-width-logo-zero-horizontal-overflow-stable-svg-ratio-legal-no-overlap-and-forward-reverse-curtain-recovery-passed
+  evidence: docs/evidence/footer-brand-responsive-v95-20261012/runtime-qa.md
+footer_account_actions_v96:
+  status: implemented-and-runtime-verified
+  date: 2026-10-12
+  root_cause: footer-account-inherited-directory-grid-layout-and-login-link-lacked-the-shared-hover-underline-utility
+  change:
+    - account-actions-use-one-horizontal-flex-owner-with-32px-gap
+    - account-item-is-top-aligned-and-right-aligned-with-the-footer-content-boundary
+    - both-actions-reuse-global-u-underline-hover-draw-on-hover-motion
+  preserved:
+    - footer-columns-email-and-legal-layout
+    - footer-brand-logo-responsive-v95
+    - curtain-lift-sticky-motion
+    - header-pill-hover-and-all-other-sections
+  qa_widths:
+    - 1024
+    - 1280
+    - 1600
+    - 1920
+  runtime_qa: exact-heading-top-alignment-identical-link-baselines-32px-gap-zero-horizontal-overflow-and-login-hover-draw-passed
+  evidence: docs/evidence/footer-account-v96-20261012/runtime-qa.md
+compute_hero_grid_large_screen_project028:
+  status: implemented-and-runtime-verified-pending-visual-review
+  date: 2026-10-12
+  scope: external-grid-range-mask-and-line-strength-only
+  geometry: width-min-110-percent-1240px-left-50-percent-top-54-percent
+  mask: single-radial-field-with-softened-isometric-platform-clearance
+  line_style: identical-two-axis-paths-stroke-dbe0e7-width-0.65
+  preserved: figure-size-position-camera-pointer-tour-copy-cta-and-header
+  qa_viewports: 1600x900-2048x1030-2560x1440
+  runtime_qa: unchanged-figure-rects-zero-horizontal-overflow-pointer-rest-unit03-rest-and-zero-console-errors-warnings
+  evidence: docs/evidence/compute-grid-large-screen-20261012/runtime-qa.md
+capabilities_typography_responsive_v97:
+  status: implemented-and-runtime-verified
+  date: 2026-10-12
+  scope: capability-card-title-index-description-typography-and-description-width-only
+  implementation:
+    - cards-stack-is-inline-size-query-container
+    - title-clamp-28-to-48-with-cqi-and-svh-cap
+    - description-clamp-15-to-24-line-height-1.5-width-58-percent-max-44rem
+    - index-clamp-15-to-20-with-cqi-and-svh-cap
+  preserved:
+    - desktop-50-50-layout-and-left-summary
+    - fullscreen-stage-minimum-height-and-six-card-equal-height-rules
+    - illustrations-and-icon-sizing
+    - progress-v79-and-scroll-step-1.05-stage-height
+    - content-always-visible-rule
+    - colors-content-and-mobile-sticky-mode
+  qa_viewports:
+    - 1280x800
+    - 1600x900
+    - 1920x1080
+    - 2560x1440
+    - 2560x900
+  runtime_qa: all-six-cards-forward-and-reverse-equal-height-zero-overlap-zero-horizontal-overflow-and-zero-console-errors-warnings
+  evidence: docs/evidence/capabilities-typography-v97-20261012/runtime-qa.md
+advantages_cost_perspective_v98:
+  status: implemented-and-runtime-verified
+  date: 2026-10-12
+  scope: advantage-03-cost-optimization-svg-platform-thickness-geometry-only
+  diagnosis: cube-upper-nodes-grid-and-platform-top-faces-already-share-0.54-axis-platform-bottom-front-corners-were-compressed-to-about-0.43
+  implementation:
+    - corrected-three-platform-bottom-front-corners
+    - each-bottom-face-is-top-face-plus-17px-vertical-offset
+    - all-platform-diagonals-now-parallel-to-the-0.54-isometric-axis
+  preserved:
+    - 441x818-canvas-viewbox-composition-and-whitespace
+    - center-cube-upper-nodes-grid-connectors-centerline-and-arrow
+    - stroke-width-colors-opacity-animation-and-reduced-motion
+    - advantage-panel-contain-renderer-and-tab-state-machine
+    - other-five-advantage-assets
+  runtime_qa: standalone-svg-and-homepage-1600x900-pass-zero-horizontal-overflow-zero-console-errors-warnings
+  evidence: docs/evidence/advantages-cost-perspective-v98-20261012-runtime-qa.md

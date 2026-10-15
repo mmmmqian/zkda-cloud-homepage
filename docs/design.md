@@ -313,6 +313,8 @@ Global layout ranges use `992 / 768 / 480` as semantic boundaries, while Navigat
 - 2026-10-09 CAPABILITIES 短屏最小高度约束同步改为 `minimumStageHeight = (cardCount - 1) × collapsedHeight + minimumExpandedHeight`。`minimumExpandedHeight` 由六张卡真实标题、正文、图标与 padding 的最大需求运行时测量；1920px 为 266px，因此最小 Stage 仍为 `5 × 76 + 266 = 646px`。当可用高度不足时，Stage 从 Header 下边界向页面下方自然延伸，不使用负 sticky top、不缩放文字与图标、不创建卡片内部滚动；Resize 保持当前 progress / active card。
 - 2026-10-09 CAPABILITIES Scroll Step V78 将旧的固定 `430svh` 轨道改为同 Stage 几何联动：`scrollStep = 1.05 × stageHeight`，`trackHeight = stageHeight + (cardCount - 1) × scrollStep`。六卡五次接管使用同一滚动距离；不拦截 Wheel、不使用 Scroll Snap、不限制每帧索引变化。1600×900 / 1280×800 / 1024×768 的每卡行程分别由约 606.7 / 540.7 / 519.5px 提高到 878.325 / 773.325 / 740.25px，Resize 保持现有 progress 并同步更新 Step 与 Track。
 - 2026-10-09 CAPABILITIES Progress Mapping V79 修复 04/05 在连续输入中的“进入未完成即被下一张接管”。根因不是区间长度或索引，而是 Active Index 由 Scroll Progress 决定、卡片 Y 位置却仍由独立 620ms CSS transition 决定；惯性滚动可在补间完成前跨到下一阈值。五段 Step、50% Active threshold 与 `1.05 × Stage` 均保持不变，卡片 Y 改为唯一 Scroll Progress 的确定性映射：每段 0–50% 保持 Current，50–100% 使用 smoothstep 把 Next 从 Stage bottom 移到统一折叠 Top。停止滚动即停止位置变化，Reverse 走完全相同路径；不使用 Wheel interception、Snap 或索引限流。
+- 2026-10-12 CAPABILITIES Typography Responsive V97 仅扩展卡内文字系统：query owner 为既有右侧 `.platform-capabilities__cards`，标题、描述、序号均使用 cqi 与 svh 双约束的 `clamp()`；描述占内容区 58%、最大 44rem，并继续左下对齐。五档视口中六卡标题均单行、描述 1–2 行，文字—插画净距最小 53.77px；正反向 01–06、等高与 `1.05 × Stage` 均保持。
+- 2026-10-12 ADVANTAGES「技术降本」V98 仅修正三层承载平台的厚度底边：原平台顶面与蓝色立方体均为 `0.54` 轴测斜率，但底边前角被压缩为约 `0.43`。三个底面现在分别是对应顶面向下 17px 的平行偏移；中心立方体、上方节点、网格、连接线、中轴、箭头、色彩、线宽、动画和 441×818 构图均保持。
 
 ## Evidence and sources
 
@@ -323,6 +325,7 @@ Global layout ranges use `992 / 768 / 480` as semantic boundaries, while Navigat
 - `.u-underline-hover` 用于默认无下划线的 Header、Footer、产品/资源和 CTA 文字链接；Hover/Focus 左→右绘制，离开时左→右擦除。Filled Button、Tabs、Card 与结构分割线不使用该规则。
 - 减少动画模式禁用 underline animation/transition，直接显示语义状态；实现仅使用 CSS transform 与伪元素，不使用 JS 逐帧更新。
 - 2026-10-08：所有首页联系邮箱统一改用 `.email-link--underline-sweep`。该类保持单行并复用相同的两段 transform sweep；专用 token `--motion-email-underline-duration: 850ms` 仅覆盖邮箱，普通文字链接仍使用原有时长。Hero、Final CTA 与 Footer 只因颜色和字号不同而不同；下划线定位继续沿用各区既有设计值。
+- 2026-10-12：Footer 底部品牌画布的反白组合 Logo 不再使用 `1579px` 最大宽度；它始终填满扣除页面 gutter 后的可用宽度并保持 SVG `1579:360` 原始比例。品牌画布高度由同一比例公式响应式增长，1651px 基准保持约 432px，宽屏不再产生右侧空白；Curtain Lift、Legal 层级与 Footer 其余排版保持不变。
 - 2026-10-08：邮箱文字颜色由所在 surface 决定，不随 `:link` / `:visited` / `:hover` / `:focus-visible` / `:active` 改变。Hero 使用 `#11110F`，CTA 与 Footer 保持白色；Underline Sweep 仍通过 `currentColor` 绘制线条。
 - 2026-10-08：Underline Motion V2 将默认已显示线的 keyframe 明确为：0% `scaleX(1)` / right origin，50% `scaleX(0)` / right origin，50.01% 在零宽度时切换为 left origin，100% `scaleX(1)` / left origin。这样 Hover / Focus 单次连续完成 Full → Erase → Invisible → Draw → Full；Hover Leave 直接回到完整默认线，不倒放。邮箱保持 850ms，其余 Sweep 继续使用普通时长。
 - 2026-10-08：CAPABILITIES Card 05「模型服务 / Token Hub」与 Card 06「AI 驱动开发 / AutoDev」仅交换既有背景 token：05 使用 #071326，06 使用 #020801；其余四张卡、文字、视觉和 staged interaction 不变。
@@ -362,3 +365,4 @@ Global layout ranges use `992 / 768 / 480` as semantic boundaries, while Navigat
 - 2026-10-09 V82 统一透明背景契约：六个 SVG 根节点不再绘制 `#F9FAFC` 画布背景，`.core-advantages__visual` 也不再持有独立 `#f1f3f3` surface，两层均为 transparent，最终只透出 `.core-advantages` 的 `--home-paper`。实际插图填充、辅助网格、结构线、Shadow DOM、原生 `441×818` 画布和 wrapper-only scale 均保持不变。
 - 2026-10-09 V83 统一插图透视轴系：六组 SVG 以中心蓝色立方体为基准，所有左/右等轴边使用同一 `0.54` rise/run，垂直边与中心轴保持垂直；承托面、辅助菱形、外围小模块、Scene 04 防护框和 Scene 06 网络折线均收敛到这三种方向。浅色参考网格同步改为同轴的两组斜线与中央竖轴。原生 `441×818`、透明背景、Shadow DOM wrapper-only scale、颜色、线描/SMIL 动画、容器与右侧切换逻辑不变；独立预览交付为 `ZKDACloud_CoreAdvantages_FigmaPreview.html`。
 - 2026-10-09 V84 修复桌面 Header 导航文字基线：普通 `<a>`、Dropdown `<summary>` 与登录/CTA 统一为 62px 高的居中 flex 控件，block padding 为 0、`line-height:1`、文字单行；下拉箭头继续使用 6px 间距并与文字中心误差不超过 0.25px。下拉浮层保持 absolute，不参与 Header 高度；不允许以单项 margin/top/transform 校正。1600 / 1280 / 1024px 的八项文字中心一致，展开菜单无位移。
+- 2026-10-12 V96：Footer 右侧操作组采用同一水平基线和 `32px` 间距，整体与内容右边界对齐、顶部与 Footer 栏目标题对齐。「登录 / 立即体验」均为默认无线、Hover / Focus 后绘制下划线的普通文字链接，不增加按钮底色或改变 Footer 其他栏目的栅格。

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <radialGradient id="grid-fade" gradientUnits="userSpaceOnUse" cx="195" cy="176" r="188" gradientTransform="matrix(1 0 0 .58 0 73.92)">
+      <stop offset="0" stop-color="#fff" stop-opacity="1"/>
+      <stop offset="0.46" stop-color="#fff" stop-opacity="0.96"/>
+      <stop offset="0.66" stop-color="#fff" stop-opacity="0.75"/>
+      <stop offset="0.80" stop-color="#fff" stop-opacity="0.42"/>
+      <stop offset="0.92" stop-color="#fff" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="grid-platform-soften" x="-12%" y="-18%" width="124%" height="136%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="5.5"/>
+    </filter>
+    <mask id="grid-mask" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" x="0" y="0" width="400" height="320">
+      <rect width="400" height="320" fill="url(#grid-fade)"/>
+      <polygon points="193 72 352 151 193 245 34 165" fill="#000" filter="url(#grid-platform-soften)"/>
+    </mask>
+  </defs>
+  <g transform="translate(0 10)" mask="url(#grid-mask)" fill="none" stroke="#dbe0e7" stroke-width="0.65" stroke-linecap="round" vector-effect="non-scaling-stroke">
+    <path d="M0 -208L400 -8M0 -192L400 8M0 -176L400 24M0 -160L400 40M0 -144L400 56M0 -128L400 72M0 -112L400 88M0 -96L400 104M0 -80L400 120M0 -64L400 136M0 -48L400 152M0 -32L400 168M0 -16L400 184M0 0L400 200M0 16L400 216M0 32L400 232M0 48L400 248M0 64L400 264M0 80L400 280M0 96L400 296M0 112L400 312M0 128L400 328M0 144L400 344M0 160L400 360M0 176L400 376M0 192L400 392M0 208L400 408M0 224L400 424M0 240L400 440M0 256L400 456M0 272L400 472M0 288L400 488M0 304L400 504M0 320L400 520"/>
+    <path d="M0 -16L400 -216M0 0L400 -200M0 16L400 -184M0 32L400 -168M0 48L400 -152M0 64L400 -136M0 80L400 -120M0 96L400 -104M0 112L400 -88M0 128L400 -72M0 144L400 -56M0 160L400 -40M0 176L400 -24M0 192L400 -8M0 208L400 8M0 224L400 24M0 240L400 40M0 256L400 56M0 272L400 72M0 288L400 88M0 304L400 104M0 320L400 120M0 336L400 136M0 352L400 152M0 368L400 168M0 384L400 184M0 400L400 200M0 416L400 216M0 432L400 232M0 448L400 248M0 464L400 264M0 480L400 280M0 496L400 296M0 512L400 312"/>
+  </g>
+  <g transform="translate(0 10)" mask="url(#grid-mask)" fill="#dbe0e7" opacity="0.54">
+    <circle cx="120" cy="204" r="0.72"/><circle cx="152" cy="188" r="0.72"/>
+    <circle cx="184" cy="204" r="0.72"/><circle cx="216" cy="188" r="0.72"/>
+    <circle cx="248" cy="204" r="0.72"/><circle cx="280" cy="188" r="0.72"/>
+    <circle cx="312" cy="204" r="0.72"/><circle cx="168" cy="236" r="0.72"/>
+    <circle cx="200" cy="252" r="0.72"/><circle cx="232" cy="236" r="0.72"/>
+    <circle cx="264" cy="252" r="0.72"/><circle cx="296" cy="236" r="0.72"/>
+  </g>
+</svg>

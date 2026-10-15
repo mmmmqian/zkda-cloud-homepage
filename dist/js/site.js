@@ -255,7 +255,7 @@
     const advantageIllustrations = [
       "assets/images/core-advantages-20261009/01_multi_chip.svg?v=20261009-isometric-v83",
       "assets/images/core-advantages-20261009/02_smooth_migration.svg?v=20261009-isometric-v83",
-      "assets/images/core-advantages-20261009/03_cost_optimization.svg?v=20261009-isometric-v83",
+      "assets/images/core-advantages-20261009/03_cost_optimization.svg?v=20261012-cost-perspective-v98",
       "assets/images/core-advantages-20261009/04_security_control.svg?v=20261009-isometric-v83",
       "assets/images/core-advantages-20261009/05_intelligent_operations.svg?v=20261009-isometric-v83",
       "assets/images/core-advantages-20261009/06_industry_knowledge.svg?v=20261009-isometric-v83",
