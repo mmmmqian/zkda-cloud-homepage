@@ -1,0 +1,113 @@
+/* All visual changes are opt-in; the desktop CSS cascade is untouched. */
+.portrait-preview .product-hero.is-portrait {
+  --portrait-gutter: clamp(24px, 4.2vw, 44px);
+  --portrait-gap: clamp(18px, 2.3vw, 28px);
+  --portrait-title: clamp(56px, 9.4cqi, 88px);
+  height: auto;
+  min-height: 0;
+  overflow: visible;
+}
+.portrait-preview .is-portrait .product-hero__inner {
+  display: grid;
+  grid-template-columns: minmax(0,1fr);
+  gap: var(--portrait-gap);
+  flex: none;
+  min-height: 0;
+  padding: clamp(24px, 3.2vw, 36px) var(--portrait-gutter) clamp(24px, 3.2vw, 36px);
+  overflow: visible;
+  box-sizing: border-box;
+}
+.portrait-preview .is-portrait .product-hero__topline {
+  position: static;
+  order: 0;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: clamp(9px, 1.3vw, 11px);
+}
+.portrait-preview .is-portrait .portrait-figure-stage {
+  position: relative;
+  order: 1;
+  width: 100%;
+  height: var(--portrait-stage-height, 360px);
+  overflow: visible;
+}
+.portrait-preview .product-hero.is-portrait .product-hero__visual {
+  position: absolute;
+  inset: auto;
+  left: var(--portrait-owner-left, 0px);
+  top: var(--portrait-owner-top, 0px);
+  width: var(--portrait-owner-width, 100%);
+  max-width: none;
+  height: auto;
+  aspect-ratio: 5 / 4;
+  opacity: 1;
+  transform: none;
+}
+.portrait-preview .is-portrait .product-hero__content {
+  position: relative;
+  order: 2;
+  inset: auto;
+  width: 100%;
+  min-width: 0;
+  pointer-events: auto;
+  container-type: inline-size;
+}
+.portrait-preview .is-portrait .compute-hero__grid {
+  max-width: calc(100vw - 8px);
+  mask-image: var(--portrait-grid-mask, none);
+  -webkit-mask-image: var(--portrait-grid-mask, none);
+}
+.portrait-preview .is-portrait .product-hero__badge {
+  margin: 0 0 clamp(14px, 1.8vw, 20px);
+  font-size: 14px;
+}
+.portrait-preview .product-hero.is-portrait .product-hero__title {
+  width: 100%;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: normal;
+  font-size: var(--portrait-title);
+  line-height: 1.13;
+  letter-spacing: -.065em;
+}
+.portrait-preview .product-hero.is-portrait .product-hero__description {
+  max-width: min(100%, 34rem);
+  margin: clamp(18px, 2.2vw, 24px) 0 0;
+  font-size: clamp(15px, 1.9vw, 17px);
+  line-height: 1.85;
+}
+.portrait-preview .product-hero.is-portrait .product-hero__title br {display:none}
+.portrait-preview .product-hero.is-portrait .product-hero__title > span {display:block}
+.portrait-preview .is-portrait .product-hero__aside {
+  display: flex;
+  position: static;
+  order: 3;
+  width: auto;
+  justify-content: flex-start;
+  margin: 0;
+  font-size: 9px;
+}
+.portrait-preview .is-portrait .product-hero__foot {
+  height: auto;
+  min-height: 64px;
+  flex-basis: auto;
+  padding: 18px var(--portrait-gutter);
+  gap: 14px;
+}
+.portrait-preview .is-portrait .product-hero__foot > div {gap:14px}
+@media(max-width:599px) {
+  .portrait-preview .product-hero.is-portrait {
+    --portrait-gutter: 24px;
+    --portrait-gap: clamp(16px, 4.8vw, 22px);
+    --portrait-title: clamp(38px, 12cqi, 54px);
+  }
+  .portrait-preview .is-portrait .product-hero__badge {
+    min-height: 30px;
+    padding: 4px 12px;
+    font-size: 12px;
+    margin-bottom: 14px;
+  }
+  .portrait-preview .is-portrait .product-hero__topline {gap:8px;font-size:8px;letter-spacing:.7px}
+  .portrait-preview .is-portrait .product-hero__topline-rule {width:18px}
+  .portrait-preview .is-portrait .product-hero__foot {min-height:60px;font-size:10px}
+}

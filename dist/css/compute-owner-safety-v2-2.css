@@ -1,0 +1,6 @@
+/* Desktop-only, opt-in correction. No Figure or public component changes. */
+.portrait-preview .product-hero--compute:not(.is-portrait) .product-hero__visual.is-owner-safe {
+  left:var(--qa-safe-left);
+  right:auto;
+  top:var(--qa-safe-top);
+}

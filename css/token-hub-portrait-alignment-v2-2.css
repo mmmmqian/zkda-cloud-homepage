@@ -1,0 +1,8 @@
+/* Shared content alignment algorithm is adopted only by the Token preview. */
+.portrait-preview .product-hero--token.is-portrait .product-hero__inner {
+  grid-template-rows:auto var(--portrait-alignment-space, 0px) auto auto minmax(0, 1fr) auto;
+}
+.portrait-preview .product-hero--token.is-portrait .portrait-figure-stage {
+  width:calc(100% + 2 * var(--portrait-gutter));
+  margin-left:calc(-1 * var(--portrait-gutter));
+}

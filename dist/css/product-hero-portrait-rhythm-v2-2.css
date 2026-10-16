@@ -1,0 +1,22 @@
+/* Container-only refinement. Original Figure Stage and typography are inherited. */
+.portrait-preview .product-hero.is-portrait {
+  min-height: calc(100svh - var(--portrait-header-height, 63px));
+}
+.portrait-preview .is-portrait .product-hero__inner {
+  flex: 1 0 auto;
+  grid-template-rows: auto minmax(0, 3fr) auto auto minmax(0, 2fr) auto;
+  row-gap: 0;
+}
+.portrait-preview .is-portrait .product-hero__topline {grid-row:1}
+.portrait-preview .is-portrait .portrait-figure-stage {
+  grid-row:3;
+  margin-top:var(--portrait-gap);
+}
+.portrait-preview .is-portrait .product-hero__content {
+  grid-row:4;
+  margin-top:var(--portrait-gap);
+}
+.portrait-preview .is-portrait .product-hero__aside {
+  grid-row:6;
+  margin-top:var(--portrait-gap);
+}

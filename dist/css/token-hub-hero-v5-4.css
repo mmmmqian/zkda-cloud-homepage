@@ -1,0 +1,25 @@
+/* Token Hub V5.4 · C2 Immersive Scale production integration.
+   Figure geometry stays frozen. A single responsive owner controls width and
+   position from the measured visible ink and Routing Hub geometry. */
+
+.token-hub-v54 .token-hero__figure {
+  --hairline-hi: #1b58f4;
+  --hairline-edge: #9698a1;
+  --hairline-mid: #c4c5cb;
+  --hairline-lo: #e0e0e4;
+  --hairline-plate: #f9fafc;
+}
+
+.token-hub-v54 .product-hero__visual--token.is-responsive-ready {
+  left: var(--token-owner-left);
+  top: var(--token-owner-top);
+  right: auto;
+  width: var(--token-owner-width);
+  max-width: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .token-hub-v54 .product-hero__visual :is(path, polygon, ellipse, line, circle) {
+    transition: none !important;
+  }
+}

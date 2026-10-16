@@ -7,6 +7,7 @@
   if (!stage || !readout || typeof HL === "undefined") return;
 
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const tourEnabled = new URLSearchParams(window.location.search).get("tour") !== "0";
   let handle = null;
   let tourHandle = null;
   let figureDefinition = null;
@@ -29,7 +30,7 @@
 
   const startTour = () => {
     stopTour();
-    if (!handle || reduceMotion.matches || !figureDefinition?.tour?.length) return;
+    if (!tourEnabled || !handle || reduceMotion.matches || !figureDefinition?.tour?.length) return;
     tourHandle = HL.tour(stage, figureDefinition.tour, (index) => {
       stage.dataset.tourStop = String(index);
     });
